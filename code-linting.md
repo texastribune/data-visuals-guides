@@ -15,4 +15,5 @@ Per [Wikipedia](http://en.wikipedia.org/wiki/Lint_(software)):
 * SublimeLinter-flake8
 * Sublime​Linter-contrib-scss-lint
 
- **Note**: This requires you to have package manager installed.
+
+**Note**: This requires you to have package manager installed.
