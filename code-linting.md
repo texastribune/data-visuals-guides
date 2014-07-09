@@ -12,8 +12,8 @@ Per [Wikipedia](http://en.wikipedia.org/wiki/Lint_(software)):
 **Sublime Text 3**—Start by [installing the SublimeLinter package](http://sublimelinter.readthedocs.org/en/latest/installation.html#installing-via-pc). Then install the following additional packages:
 
 * `SublimeLinter-jshint`
-* `SublimeLinter-flake8`
 * `Sublime​Linter-contrib-scss-lint`
+* `SublimeLinter-flake8`
 
 	This requires you to have the Sublime package manager installed.
 
