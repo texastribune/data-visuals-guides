@@ -7,13 +7,18 @@ Per [Wikipedia](http://en.wikipedia.org/wiki/Lint_(software)):
 
 ###Installation
 
-**Atom**—Run the following code in your terminal to install linting tools for Atom: `apm install atom-lint`. This will install lots of linting tools including 
+**Atom**—Execute the following in your terminal to install linting tools for Atom: `apm install atom-lint`. Alternativly, go the Atom package manager, search for `atom-lint`, and install the package. This will install lots of linting tools including jshint, flake8, and scsslint.
 
 **Sublime Text 3**—Start by [installing the SublimeLinter package](http://sublimelinter.readthedocs.org/en/latest/installation.html#installing-via-pc). Then install the following additional packages:
 
-* SublimeLinter-jshint
-* SublimeLinter-flake8
-* Sublime​Linter-contrib-scss-lint
+* `SublimeLinter-jshint`
+* `SublimeLinter-flake8`
+* `Sublime​Linter-contrib-scss-lint`
 
+	**Note**: This requires you to have package manager installed.
 
-**Note**: This requires you to have package manager installed.
+**Command Line**—You can also use these tools directly from the command line.
+
+* **jshint**—To install [jshint](http://www.jshint.com/docs/) run `npm install jshint -g`. Whenever you want to lint your code, just run `jshint /path/to/file`. 
+* **scss-lint**—To install [scss-lint](https://github.com/causes/scss-lint), run `gem install scss-lint`. Then run `scss-lint` on the folder or file you want to check.
+* **flake8**—To install [flake8](https://flake8.readthedocs.org/en/2.1.0/), run `pip install flake8`. Then run `flake8` on the folder or file you want to check.
