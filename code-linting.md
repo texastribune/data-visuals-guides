@@ -15,6 +15,7 @@ Per [Wikipedia](http://en.wikipedia.org/wiki/Lint_(software)):
 * `SublimeLinter-flake8`
 * `Sublime​Linter-contrib-scss-lint`
 
+
 	This requires you to have the Sublime package manager installed.
 
 **Command Line**—You can also use these tools directly from the command line.
