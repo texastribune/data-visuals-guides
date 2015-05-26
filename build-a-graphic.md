@@ -12,7 +12,7 @@ This is where all of the news apps dailies live. The first step is to create a b
 
 ##[newsapps-graphics-kit](https://github.com/texastribune/newsapps-graphic-kit)
 
-This is the generator for all of our graphics. You'll use this for pretty much everything- unless you're making a huge app in which case you'll use the Apps Kit. Clone this onto your desktop or into your trib folder so you don't have to dig for it every time you start a project.
+This is the generator for all of our graphics. You'll use this for pretty much everything- unless you're making a huge app in which case you'll use the [newsapps-app-kit](https://github.com/texastribune/newsapps-app-kit). Clone this onto your desktop or into your trib folder so you don't have to dig for it every time you start a project.
 
 Copy the contents of this folder into your new project folder in newsapps-dailies. Delete the `.git` folder in there, so github doesn't get mad (github will make a new git folder when you push your folder up with the newsapps-dailies). If you don't know how to find hidden files, follow [this tutorial](http://ianlunn.co.uk/articles/quickly-showhide-hidden-files-mac-os-x-mavericks/).
 
@@ -52,9 +52,12 @@ Remember that lead art you asked so nicely for? It's time to use it! Click the m
 
 ![tags and tribpedia entries](http://i.imgur.com/qMs4Tp3.png)
 
-Open the *Advanced Options* section and scroll down to the HTML embed field. Copy and paste the second bit of code at the bottom of [http://localhost:3000/preview.html](http://localhost:3000/preview.html) into that section. This is what activates [Pym.js](http://blog.apps.npr.org/pym.js/) and adjusts the height of the iframe you put into the story whenever the page (or your graphic) resizes.
+Open the *Advanced Options* section and scroll down to the HTML embed field.
 
 ![advanced options](http://i.imgur.com/0ArGcIw.png)
+
+Copy and paste the second bit of code at the bottom of [http://localhost:3000/preview.html](http://localhost:3000/preview.html) into that section. This is what activates [Pym.js](http://blog.apps.npr.org/pym.js/) and adjusts the height of the iframe you put into the story whenever the page (or your graphic) resizes.
+
 ![advanced options expanded](http://i.imgur.com/9AWbD8T.png)
 
 Click the ![Save and continue editing](http://i.imgur.com/9biiKWw.png) button at the top and then 'view on site'. You should see your graphic on the page in the story.
