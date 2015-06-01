@@ -75,7 +75,7 @@ So you're done with your changes and you're ready to see if your teammate wants 
 
 * **Step 1:** Go to the project on github.com. On the right-hand side, you should see a little icon that looks like this:
 ![pull request icon](http://i.imgur.com/iVuRZHq.png)
-* **Step 2:** Click it, and click the ![new pull request](http://i.imgur.com/5MzyvY7.png) button.
+* **Step 2:** Click it, and click the ![new pull request](http://i.imgur.com/5MzyvY7.png?1)<img src="http://i.imgur.com/5MzyvY7.png" style="width:50%"> button.
 * **Step 3:** At the top, you'll see two dropdown menus. One says 'base', the other says 'compare'. 9 times out of 10, the 'base' is going to be master. 100% of the time, your-branch-name is going to be 'compare'.
 ![base and compare](http://i.imgur.com/tEe8yCw.png)
 * **Step 4:** Fill in the text boxes! The title of the pull request can be the name of the branch, or it can be the name of the to-do on basecamp. Make your description specific. If you changed something visual (made a button look different, added a template, whatever) plz include a screenshot shot in your description.
