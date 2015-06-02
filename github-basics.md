@@ -10,10 +10,14 @@ Follow our 'News apps environment tutorial' instructions for setting up git.
 
 ###Clone###
 
-To get a repository from github and onto your computer, copy the HTTPS clone URL on the right-hand column of the repo you're looking for. Open your terminal, `cd` to the folder you're working in, and execute the following command: `git clone your-copied-url`. Type `ls` into the terminal, and you should see your brand new folder in there! Now you're ready to get cracking.
+To get a repository from github and onto your computer, copy the HTTPS clone URL on the right-hand column of the repo you're looking for. 
+
+![clone repository](http://i.imgur.com/ZnwYssk.png?1)
+
+Open your terminal, `cd` to the folder you're working in, and execute the following command: `git clone your-copied-url`. Type `ls` into the terminal, and you should see your brand new folder in there! Now you're ready to get cracking.
 
 
-###Commit & Push changes!###
+###Commit & Push changes!
 
 So you've made some changes in the code and you're ready to commit them to github. This is the intermediary step between pushing your changes onto the github site, and saving them so git knows they're there. You'll want to do this every time you make a change. For instance, say you pull down this file and want to add another couple steps- each step should be its own commit. This process is unique to everyone, but it's a good idea to commit often so you have a solid record of your process for later.
 
@@ -23,7 +27,7 @@ So you've made some changes in the code and you're ready to commit them to githu
 * **Step 4:** After you've committed a few changes (or you need to share what you have with your team) you're ready to share your new code with the world. To do that, you'll `git push origin branch-you're-on`. Always double-check on github to make sure your changes actually got pushed through accurately, and then you're good to go!
 
 
-###Pulls and Merge Conflicts Aren't so Scary###
+###Pulls and Merge Conflicts Aren't so Scary
 
 We did it! We pushed a change and the whole world can see it! But what if someone else pushed their change before yours, and github refuses your change? That's cool- we'll just pull their changes down and then push ours up. Here's how:
 
@@ -32,7 +36,7 @@ We did it! We pushed a change and the whole world can see it! But what if someon
 Your terminal will then give you a vim editor- it's scary looking, but not so bad. It just says that you're merging a pull. All you need to do is type `ZZ` to get out of there. Then do a `git push` and get back to what you were doing.
 
 
-####OH NO! I GOT A CONFLICT!####
+####OH NO! I GOT A CONFLICT!
 
 Unless you and your friends are working on the same folder at the same time, you shouldn't have to worry about the dreaded `CONFLICT` that could appear in your terminal. But if you did get a CONFLICT, it's okay! You're going to be fine! I'm going to walk you through it.
 
@@ -75,7 +79,7 @@ So you're done with your changes and you're ready to see if your teammate wants 
 
 * **Step 1:** Go to the project on github.com. On the right-hand side, you should see a little icon that looks like this:
 ![pull request icon](http://i.imgur.com/xBlJKPF.png?1)
-* **Step 2:** Click it, and click the ![new pull request](http://i.imgur.com/5MzyvY7.png?1) button.
+* **Step 2:** Click it, and click the ![new pull request](http://i.imgur.com/itaLpTX.png?1) button.
 * **Step 3:** At the top, you'll see two dropdown menus. One says 'base', the other says 'compare'. 9 times out of 10, the 'base' is going to be master. 100% of the time, your-branch-name is going to be 'compare'.
 ![base and compare](http://i.imgur.com/4gtwcLx.png?1)
 * **Step 4:** Fill in the text boxes! The title of the pull request can be the name of the branch, or it can be the name of the to-do on basecamp. Make your description specific. If you changed something visual (made a button look different, added a template, whatever) plz include a screenshot shot in your description.
