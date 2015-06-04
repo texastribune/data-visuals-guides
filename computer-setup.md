@@ -8,20 +8,28 @@ Welcome to the Tribune! Your new computer is super shiny and ready to get starte
 Go to system preferences
 Users & groups
 Do you see your name with Admin written below it? Awesome! You're the admin.
+Otherwise, go bug IT (or in our case, Rodney) and ask to be the admin.
 
-###Check your apps
+###Check for updates
 Go to the App Store
 Make sure you don't have any updates hanging out up there
-Update them if you do
+Update them and reboot as necessary
 
 ###You and your Terminal
 Your Terminal is going to be your bff for a little while, so you might as well make it not look so terrible. Here's how to make it not look quite so blinding and gross.
 
-###Show invisible files
-Run this command `defaults write com.apple.finder AppleShowAllFiles YES`
-And relaunch Finder.
+Open Terminal. You can either find it in your Applications folder, or find it with Spotlight (that cute little magnifying glass at the top right of your screen next to your name). Type 'Terminal' and it should come right up.
 
-This'll make it easier to find things like .git folers or your .bash-profile
+You'll notice that it's just a white box with some scary, unreadable black text. Let's fix that.
+
+Under Terminal up at the top, click on Preferences. Up at the top of the preferences box, click on 'Profiles' and pick a cute color scheme that speaks to you from the side menu, or get crazy and click that little + at the bottom of the menu and make your own. At the bottom of the side menu next to the +, you'll see a button for Default- click that when you've made your selection.
+
+Beautiful!
+
+###Show invisible files
+Run this command `defaults write com.apple.finder AppleShowAllFiles YES` in terminal, and relaunch Finder.
+
+This'll make it easier to find things like .git folers or your .bash-profile and to open files and folders stright from your terminal.
 
 ###Install Sublime
 Click [here](http://www.sublimetext.com/3)
