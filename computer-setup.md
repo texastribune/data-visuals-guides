@@ -33,7 +33,7 @@ Under terminal up at the top, click on Preferences. Up at the top of the prefere
 Beautiful!
 
 ###Show invisible files
-Run this command `defaults write com.apple.finder AppleShowAllFiles YES` in terminal, and relaunch Finder.
+Run this command `defaults write com.apple.finder AppleShowAllFiles YES` in terminal, and relaunch Finder by clicking the apple in the very top left, selecting 'Force Quit', selecting 'Finder' and hitting the 'Relaunch' button.
 
 This'll make it easier to find things like .git folers or your .bash_profile and to open files and folders stright from your terminal.
 
@@ -249,7 +249,7 @@ Copy and paste the string of whatever it spits out into your terminal... Did it 
 
 Quit terminal, reopen, and try to clone something else into your folder. You might have to do the `cd where/your/folder/lives` to get back to where your github repositories live.
 
-Yay! Congratulations on your new special snowflake token.
+Yay! Congratulations on your new special snowflake token. Don't worry, you don't need to save this or put it anywhere.
 
 ###Two Factor Auth
 
