@@ -100,7 +100,9 @@ So you're done with your changes and you're ready to see if your teammate wants 
 * **Step 5:** After you've submitted your pull request, send a link to the rest of the team so someone can look over it and merge it in. 
 
 If you're ever asked to merge in a pull request- just click the merge button.
+
 ![This pull request can be automatically merged](http://i.imgur.com/25nVRSY.png)
+
 It should say 'This pull request can be automatically merged' because the owner of the pull request should have merged master before requesting the pull. Otherwise, the button will be purple and you might have to resolve some conflicts.
 
 ##You did it!
