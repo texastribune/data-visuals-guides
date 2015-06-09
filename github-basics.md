@@ -6,7 +6,7 @@ Congratulations! You made it this far. Welcome to Github- a collaborative space 
 
 ##Git & Github: The watered down version
 
-**Git**- Git is not the same as Github. Git is the software aspect of Github. It is a version control system that is accessed through the command line, or Terminal, and it keeps track of changes you make on projects as you work on them. 
+**Git**- Git is not the same as Github. Git is the software aspect of Github. It is a version control system that is accessed through the command line, or Terminal, and it keeps track of changes you make on projects as you work on them. [This is a far more detailed guide](https://git-scm.com/about) then you'll need for now, but it'll be helpful if you ever get stuck.
 
 **Github**- Github is the place where all of your code trcked by Git is hosted so the rest of the world can see it. In addition to all of the cool things Git does, Github also offers lots of great collaboration tools such as wikis, task management, and feature requests. Wikipedia has a pretty good explanation of Github that you can check out [here](http://en.wikipedia.org/wiki/GitHub). 
 
