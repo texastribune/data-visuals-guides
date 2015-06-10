@@ -16,7 +16,7 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
     - [Suggested reading](#suggested-reading)
 - [Installing Homebrew](#installing-homebrew)
   - [Installation](#installation)
-  - [You and your `.bash_profile`](#you-and-your-bash-profile)
+  - [You and your `.bash_profile`](#you-and-your-bash_profile)
 - [Installing Python](#installing-python)
   - [Virtual environments](#virtual-environments)
     - [Installing `virtualenv` and `virtualenvwrapper`](#installing-virtualenv-and-virtualenvwrapper)
@@ -34,6 +34,8 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
   - [Installing boot2docker](#installing-boot2docker)
 - [Installing PostgreSQL](#installing-postgresql)
 - [awscli and SSH](#awscli-and-ssh)
+
+- [&#9733; Bonus Rounds! &#9733;](#bonus-rounds)
 
 ## Pre-setup
 
