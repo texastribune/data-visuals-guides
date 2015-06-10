@@ -35,7 +35,10 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
 - [Installing PostgreSQL](#installing-postgresql)
 - [awscli and SSH](#awscli-and-ssh)
 
-- [&#9733; Bonus Rounds! &#9733;](#bonus-rounds)
+- [&#9733; Bonus Rounds! &#9733;](#-bonus-rounds-)
+  - [Show invisible files](#show-invisible-files)
+  - [Hub](#hub)
+
 
 ## Pre-setup
 
