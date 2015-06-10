@@ -36,6 +36,8 @@ After you've finished your graphic, pushed it up to github, and ran your `gulp b
 
 So you've finished building your beautiful graphic and are ready to put it into a story page in the CMS.
 
+**BEFORE YOU START** Check with all involved editors and reporters that they aren't working on the same story as you in the CMS. If two people are working on the same thing in the CMS, whoever saves last will win- resulting in all edits by the other person getting deleted and everyone being mad.
+
 Sign into the CMS and click on 'Stories' in the 'Content' section. Make sure the reporter hasn't already created a story page by either asking them (duh) or looking through the listed stories- they're listed chronalogically so it should be near the top. Otherwise, click 'Add Story'. 
 
 Do the normal stuff: add authors (usually reporters go first), publication status is draft and find out the publish date/time from the editor.
