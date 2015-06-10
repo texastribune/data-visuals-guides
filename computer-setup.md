@@ -1,323 +1,393 @@
-#Set up your News Apps Environment
+# Set up your News Apps environment
 
-Welcome to the Tribune! Your new computer is super shiny and I know you're probably dying to get started, but first- there are a few things we have to do to get it ready for all the cool stuff you're going to build.
+Welcome to the News Apps team! We know you're probably dying to get started, but first there are a few things we have to do to get it ready for all the cool stuff you're going to build.
 
-This guide is based loosely on [this guide](http://blog.apps.npr.org/2013/06/06/how-to-setup-a-developers-environment.html) by our friends at NPR Visuals.
+## Pre-setup
 
-##The Basics
+### Make sure you're the admin
 
-###Make sure you're the admin
-Go to system preferences
-Click on Users & groups
-Do you see your name with Admin written below it on the left? Awesome! You're the admin.
-Otherwise, go bug IT (or in our case, Rodney) and ask to be the admin.
+Everything we do here is only going to work if you have admin privileges. How do you know if you have it?
 
-![are you the admin?](http://i.imgur.com/rTsdp5C.png?1)
+1. Open your `System Preferences`.
+2. Click on `Users & Groups`.
+3. Do you see your name with `Admin` written below it on the left? Awesome! You're the admin.
 
-###Check for updates
-Go to the App Store
-Make sure you don't have any updates hanging out up there
-Update them and reboot as necessary
+![Are you the admin?](http://i.imgur.com/rTsdp5C.png?1)
 
-###You and your terminal
-Your terminal is going to be your bff for a little while, so you might as well make it not look so terrible. Here's how to make it not look quite so blinding and gross.
+Don't have admin powers? Reach out to [Rodney](rgibbs@texastribune.org) and he'll get you set up.
 
-Open terminal. You can either find it in your Applications folder, or find it with Spotlight (that cute little magnifying glass at the top right of your screen next to your name). Type 'terminal' and it should come right up.
+## Check for OSX updates
 
-You'll notice that it's just a white box with some scary, unreadable black text. Let's fix that.
+If your computer is brand new, you may have a few outstanding operating system updates. Make sure to grab those first. [Use this guide to update](https://support.apple.com/en-us/HT201541).
 
-Under terminal up at the top, click on Preferences. Up at the top of the preferences box, click on 'Profiles' and pick a cute color scheme that speaks to you from the side menu, or get crazy and click that little + at the bottom of the menu and make your own. At the bottom of the side menu next to the +, you'll see a button for Default- click that when you've made your selection.
+## You and your terminal
+
+Your terminal is going to be your BFF, so it might as well not look terrible.
+
+Open `Terminal`. It can be found in your `Applications` folder, or, search for it with `Spotlight` – it's the cute little magnifying glass at the top right of your screen next to your name. Type `Terminal` and it should come right up!
+
+Currently it's just a white box with some scary, unreadable black text. Let's fix that.
+
+With `Terminal` in focus, open the `Preferences`. Up at the top of the box, click on `Profiles` and pick a cute color scheme that speaks to you from the side menu, or get crazy and click that little `+` at the bottom of the menu and make your own. At the bottom of the side menu next to the `+` you'll see a button for   `Default` – click that after you've made your selection.
 
 ![terminal preferences window](http://i.imgur.com/Oaphc7L.png)
 
-Beautiful!
+Beautiful! There's a whole world of color schemes out there that go beyond the defaults (and this article). We encourage you to seek them out when you want to spice things up!
 
-###Show invisible files
-Run this command `defaults write com.apple.finder AppleShowAllFiles YES` in terminal, and relaunch Finder by clicking the apple in the very top left, selecting 'Force Quit', selecting 'Finder' and hitting the 'Relaunch' button.
+### Xcode Command Line Tools
 
-This'll make it easier to find things like .git folers or your .bash_profile and to open files and folders stright from your terminal.
+In your terminal, run this command:
 
-###Install Sublime
-Click [here](http://www.sublimetext.com/3)
-Install the IOS one
+```sh
+xcode-select --install
+```
+
+Your computer should send you some kind of prompt to install the tools. This'll take a minute...
+
+If it doesn't prompt you, or you get some kind of error, you'll have to [get them from Apple](developer.apple.com/downloads/index.action).
+
+Search for "command line tools" in the top left and download the one that matches your version of OSX.
+
+## Code Editors
+
+Two editors are used here at The Texas Tribune – [Sublime Text 3](http://www.sublimetext.com/3) and [Atom](https://atom.io/). We have no particular preference for either – try them both out! You're welcome to use anything else, too, but you'll be on your own.
+
+### Sublime Text 3
+
+[Download the installer](http://www.sublimetext.com/3) and install as normal.
+
+#### Wait, why version 3 instead of version 2?
+
+> Sublime Text has an interesting release strategy – although `2` is the current version, `3` is the one everyone uses and a majority of plugins support now. Use `2` at your own peril.
+
+#### Hook Sublime Text 3 into your terminal
+
+Run the following in your terminal:
+
+```sh
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+```
+
+Now you can type `subl <path>` in your terminal and Sublime will open that file or folder.
+
+### Atom
+
+[Download the installer](https://atom.io/) and install as normal.
+
+#### Hook Atom into your terminal
+
+Atom does this automatically on install.
+
+#### Suggested reading
+
+Check out the [Atom Flight Manual](https://atom.io/docs/v0.208.0/) – it's a good overview on how Atom works.
+
+## Installing Homebrew
+
+Homebrew describes itself as "The missing package manager for OSX." This means that it helps with the installation of many of the tools you'll use. It also gives you little beers for every package you install, so that's fun.
+
+### Installation
+
+[Go to Homebrew's site](http://brew.sh/), look for `Install Homebrew`, and grab the command there. Because it could potentially change, we won't be providing that command here, but it should start with something that looks like `ruby -e "$(curl...`.
+
+It'll then ask for your computer's admin password – normally this isn't a good idea, but this will prevent you from ever having to run a command with `sudo`.
+
+Next, run Homebrew's status check:
+
+```sh
+brew doctor
+```
+
+This will make sure everything is cool. If you get any warnings, we'll need to handle those before moving forward. Do what it asks – or grab someone else on the team for help – until `brew doctor` comes back clean.
+
+Now we need to tell our computer where our cool new package manager and all of the packages live.
+
+### You and your `.bash_profile`
+
+Your `.bash_profile` is a hidden file that live in your root directory. Your `.bash_profile` is where settings for your terminal belong.
+
+The easiest way to edit your `.bash_profile` with your text editor we installed earlier. In a freshly opened terminal window, run either `subl .bash_profile` or `atom .bash_profile`. (You can always do it with vim – `vim .bash_profile` – too.)
+
+Add this to the top of your `.bash_profile`:
+
+```sh
+export PATH=/usr/local/bin:$PATH
+```
+
+This tells your terminal to look in `/usr/local/bin` folder for commands you run before hunting for it somewhere else in your `$PATH`. It just so happens that `/usr/local/bin` is where Homebrew installs commands, so this will ensure you are using the Homebrew packages we install. Save this file.
+
+Now you'll need to either open a new terminal window – which will make the `.bash_profile` file load – or `source` it directly. Don't forget to do this every time you make a change!
+
+```sh
+source .bash_profile
+```
+
+## Installing Python
+
+The first Homebrew package we're going to install is Python. "But wait," you say, "my computer already has Python!"
+
+You're right! But it's a good idea to not monkey around with your computer's installed software. There's some fragile stuff in there that your computer depends on to function, so we try our best not to disturb it. Plus it is much easier to troubleshoot if you know exactly where your version of Python lives.
+
+Homebrew has [dedicated an entire document](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Homebrew-and-Python.md) to how it works with Python, but for our purposes, you need these three commands:
+
+```sh
+brew install python
+pip install --upgrade setuptools
+pip install --upgrade pip
+```
+
+### Virtual environments
+
+When you start working on group projects, it's important to make sure that everyone's working environment is as close to identical as possible. Virtual environments keep a Python project's installs in their own little boxes so there are no conflicts between versions being used in other projects, or those already installed on your computer.
+
+#### Installing `virtualenv` and `virtualenvwrapper`
 
 Run this command in your terminal:
-`ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl`
-Now, everytime you type `subl /path/to/folder` in your terminal, it will open whatever file or folder you tell it to in Sublime and you will be super happy.
 
-We'll worry about setting up the other cool stuff on Sublime later, it's just handy to have now for some of the stuff we'll do for set up later.
+```sh
+pip install virtualenvwrapper
+```
 
-###X-Code Command Line Tools
-NOT THE X-CODE APP unless you want to die waiting for it to install on your computer and deal with daily annoying and terrible updates.
+To look at a list of what's currently installed in your environment, you can run the following:
 
-Instead run this command:
-`xcode-select --install`
+```sh
+pip freeze
+```
 
-Your computer should send you some kind of prompt to install the tools- do that.
+Now we need to use our `.bash_profile` to set some settings for `virtualenv`.
+Open your `.bash_profile` and add these lines:
 
-This'll take a minute...
+```sh
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+```
 
-If it doesn't prompt you, or you get some kind of error, you'll have to get them from Apple [developer.apple.com/downloads/index.action](developer.apple.com/downloads/index.action). 
+Save, then source your `.bash_profile`.
 
-Search for "command line tools" on the top left and download the one that matches your version of OS X. Yay!
+#### Creating a virtual environment
 
-##Homebrew
+Virtual environments are created with the `mkvirtualenv` command.
 
-Homebrew describes itself as 'The missing package manager for OSX'. Basically that means that it installs a bunch of tools you'll use all the time (python, Node, etc.) in one simple step and it stores them all in the same place. It also gives you little beers for every package you install, so that's fun. For more fun stuff about Homebrew and Python and the other fun stuff it does, you [check this out](http://docs.python-guide.org/en/latest/starting/install/osx/).
+Try it out!
 
-Click [here](http://brew.sh/) to go to brew.sh
+```sh
+mkvirtualenv test
+```
 
-Scroll down to Install Homebrew, and copy that line of code underneath it. It should look something like:
+You'll get some feedback as it installs `pip`, then your new  terminal prompt should begin with `(test)`.
 
-`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-
-Or you could just type that- but just in case they change it on us, we want to make sure you can find it.
-
-It'll then ask for your computer password, so type that. Then do a `brew doctor` to make sure everything's cool. We like to be super thorough around here, so open a new tab in your terminal and type `brew doctor` again. Still cool? Righteous. Moving on.
-
-Before we start installing things willy nilly, we should probably make sure we grabbed the most recent version of brew, `brew update`
-
-Now we need to tell our computer where our cool new package manager and all of its packages lives.
-
-###You and your `.bash_profile`
-
-Your `.bash_profile` is one of those invisible files that live in your root (the root is the base level of where files on your computer live. Things like the Applications folder and Desktop live here). Your `.bash_profile` is what keeps all of your custom envirnment variables for your terminal, or command line, set.
-
-The easiest way to edit your `.bash_profile` is to `subl ~/.bash_profile`. You can always do it with vim (`vim ~/.bash_profile`) or nano (`nano ~/.bash_profile) or your text editor of choice.
-
-We'll be doing a lot of monkeying around in our `.bash_profile`, so best to get comfortable with it now.
-
-Copy and paste this into your `.bash_profile`:
-
-`export PATH=/usr/local/bin:$PATH`
-
-This tells your computer that you're handing Homebrew the reins to update and maintain its packages. Save it. Now you'll need to source it. 
-
-Any time you edit your `.bash_profile` you'll need to let your computer know aboutt he changes. Do this by running `source .bash_profile` in your terminal.
-
-####WARNING about Homebrew
-
-Don't get weird and start brew installing when you're in a virtual environment (we'll get to those later). You're going to have a bad time.
-
-##Python
-
-The first Homebrew package we're going to install is Python. 
-
-You say: "But Mac already has Python!" 
-
-I know- but it's usually a good idea to not monkey around too much in your computer's installed software. There's some fragile stuff in there, plus it's much easier to troubleshoot if you know exactly where your Python came from and lives.
-
-Find the docs for Homebrew Python [here](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Homebrew-and-Python.md)
-
-* **Step 1:** `brew install python` 
-* **Step 2:** `pip install --upgrade setuptools`
-* **Step 3:** `pip install --upgrade pip` 
-
-##Virtual Environments
-
-Virtual environments aren't as scary as they sound. When you start working on group projects, chances are everyone's computer is set up differently. Maybe they have a different version of something, or maybe they don't already have something installed. 
-
-Virtualenv keeps all of your python projects in their own little boxes so everyone's installs are on the same page.
-
-Learn more about virtual environments [here](https://virtualenvwrapper.readthedocs.org/en/latest/)
-
-###To install:
-
-`pip install virtualenvwrapper` in your terminal
-
-Check it with `pip freeze` and you should see it listed there.
-
-Open your .bash_profile (run `subl ~/.bash_profile` in your terminal)
-
-and copy and paste these into your text editor:
-
-`export WORKON_HOME=$HOME/.virtualenvs`
-
-and
-
-`source /usr/local/bin/virtualenvwrapper.sh`
-
-Save it in your text editor, and source it (`source .bash_profile`) in your terminal
-
-Run this: `mkvirtualenv test` in your terminal to test it
-
-Did it work? Yay!
-
-`deactivate` in your terminal turns it off.
+To turn off your environment, run `deactivate`.
 
 Great job! You did it!
 
-##Node
+> HEADS UP! Make sure you **are not in a virtual environment** when installing packages with Homebrew. Things could get weird. Always `deactivate` before any `brew install` commands.
 
-Node is another package manager. You can never have too many package managers.
+## Installing Node.js
 
-Run `brew install node` in your terminal to install it...
+[Node.js](https://nodejs.org/) makes is possible to build server-side apps using JavaScript. At the Tribune, we use it to run our project building tools.
 
-`which node` should tell you it's in your bin/local
+Let's install it!
 
-###Gulp
+```sh
+brew install node
+```
 
-Now that we have Node, we can install all the things that use it like Gulp. Basically- Gulp is what pushes your changes to your local server as you save things in your text editor so you don't have to refresh every time.
+### Installing Gulp
 
-`npm install -g gulp` in your terminal installs it
+We use [Gulp](http://gulpjs.com/) as our task runner and build system.
 
-(`-g` means global- so you don't have to install it again for every project)
+To install it, run the following:
 
-`which gulp` should tell you where it is, which should be `local/bin/gulp`
+```sh
+npm install -g gulp
+```
 
-###Grunt
+#### What's npm?
 
-Grunt is basically the same as Gulp, we just don't use it anymore for newer projects. Mainly we're installing this in case we need to update an older project that uses Gulp.
+> [npm](https://www.npmjs.com/) is the package manager for Node.js. It was installed when you installed Node.js earlier. Much like how we use Homebrew – `brew install` – to install packages, and `pip` – `pip install` – to install Python packages, Node.js uses `npm`.
 
-Run `npm install -g grunt -cli`
+#### What does -g mean?
 
-Yay done with Node!
+> `-g` means global – it adds the Gulp command to your terminal.
 
-##Ruby
+### Installing Grunt
 
-It's going to be okay. We only use Ruby for our Sass- the language we use to write our CSS that makes our graphics beautiful.
+[Grunt](http://gruntjs.com/) is similar to Gulp. We used to use it instead of Gulp, but typically you'll only see it these days if you're working on a dinosaur.
 
-`brew info rbenv` in your terminal.
+```sh
+npm install -g grunt-cli
+```
 
-There should be an if statement in there that looks something like:
+## Installing Ruby
 
-`if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi`
+Wait – Ruby too? Yup! We use Ruby to power [Sass](http://sass-lang.com/). We also have a few projects that depend on [Middleman](https://middlemanapp.com/).
 
-Copy that.
+First we need to install the tool that builds Ruby – `ruby-build` – and a Ruby environment manager – `rbenv`.
 
-Then run `brew install rbenv`
+```sh
+brew install rbenv ruby-build
+```
 
-Followed by `brew install ruby-build`
+Next, we need to add this line to our `.bash_profile` so it knows about `rbenv`. (Don't forget to `source .bash_profile`!)
 
-(Keep that if statement you copied earlier. We'll need it shortly.)
+```sh
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+```
 
-`brew info ruby-buld`
+Run `rbenv install -l` to see a list of available versions. At this time, the most recent, non-beta version is `2.2.2`.
 
-Then put that if statement you copied in your .bash_profile (`subl ~/.bash_profile`)
+To install it, run the following:
 
-Source it (`source .bash_profile`)
+```sh
+rbenv install 2.2.2
+```
 
-Run `which rbenv` ...Is it in there? Yay!
+Next, we need to tell our computer to use this version of Ruby by default. `rbenv` handles this, too.
 
-Run `rbenv install -l` and scroll down to see which version is the newest, the one just before the version number -dev (as of today it's 2.2.2)
+```sh
+rbenv global 2.2.2
+```
 
-Then install it with `rbenv global 2.2.2` or whatever version number you have.
+### Sass
 
-###Sass
+[Sass](http://sass-lang.com/) is our CSS extension language of choice.
 
-Sass is our CSS extension language of choice. 
+To install, run:
 
-Learn more about it [here](http://sass-lang.com/) 
+```sh
+gem install sass
+```
 
-Run `gem install sass` followed by `which sass` to make sure it's in there.
+## Installing Git
 
-##Git
+> You'll need a [GitHub](http://github.com/) account and be a member of the Texas Tribune organization. Someone should help you get this set up – don't worry!
 
-This assumes you already have a github.com login with The Texas Tribune and have access to our repositories. It's a pretty inrense 
+To get this started, install git:
 
-First run `brew install git`
+```sh
+brew install git
+```
 
-Then `git config --global user.name "yourname"` Your user name can really be whatever you want your commits to be listed as. 
+Now we need to set some defaults for the git client. First we need to your name for commits.
 
-Then set up your email/github account with one of the email accounts associated with your github account 
+> This should not be your GitHub user account name. It's meant to be your real name – like Jenny Smith – but you are not required to do so. This name will be public and attached to every one of your commits. Feel free to use a pseudonym!
 
-`git config --global user.email "email@email.com"` 
+To set your name, run the following:
 
-If you don't know which emails are under your github account, you can check by going to github.com, clicking the gear in the top right, and finding 'emails' in the side menu. 
+```sh
+git config --global user.name "<your-name>"
+```
 
-Anyway... back to terminal. Run `git credential -osxkeychain`
+Next we'll set your email. This needs to be an email account associated with your Github account. Like the name, this email will be publically available and attached to each of your commits. If you don't know which emails are under your GitHub account, you can [check on GitHub](https://github.com/settings/emails).
 
-Then `git config --global credential.helper osxkeychain`
+```sh
+git config --global user.email "<your-email>"
+```
 
-Make a folder to put all of your news apps in somewhere on your computer. I have mine on my Desktop, some people put theirs at the root, but you can put it anywhere.
+> Don't want your email public? GitHub can help with that. On the email settings page, there is a setting at the bottom labeled `Keep my email address private`. You can then use the proxy email GitHub provides.
 
-`cd` to your folder, (for me it's `cd Desktop/trib`) and clone a project in there to test it (if you're new to github, you can learn how to clone [here]()) 
+Next we'll set up authentication. The Homebrew install of git adds a helper that allows it to use OSX's built-in Keychain.
 
-Oh no! It wants a ~*token*~! What's that??
+Run the following to tell git to use it:
 
-###Personal Access Tokens
+```sh
+git config --global credential.helper osxkeychain
+```
 
-Personal access tokens authenticate with github (like when you're pulling/pushing to a private repo) so it can check against this rather than you typing in your password every time.
+We also need to tell git to use `https` for cloning.
 
-Get one of these puppies by going back up to your gear in the top right, finding Persona access tokens in the side menu, and clicking the generate a new token button.
+```sh
+git config --global hub.protocol https
+```
 
-It'll ask for a name- most of us call it terminal- but it can be whatever you want your new special snowflake token to be called. Beneath the Token description, you'll see 'Select scopes' with a bunch of check-boxes. Check 'repo', 'gist', and 'user'.
+## Installing Docker
 
-Finally, click the 'Generate token'
+Docker is a tool for containerizing apps. We use it for deploys and database management.
 
-Copy and paste the string of whatever it spits out into your terminal... Did it work?
+### Installing VirtualBox
 
-Quit terminal, reopen, and try to clone something else into your folder. You might have to do the `cd where/your/folder/lives` to get back to where your github repositories live.
+Docker depends on VirtualBox – so we'll install that first. [Download the OSX version](https://www.virtualbox.org/wiki/Downloads) and go through the normal install process.
 
-Yay! Congratulations on your new special snowflake token. Don't worry, you don't need to save this or put it anywhere.
+Now we'll use Homebrew to install Docker.
 
-###Two Factor Auth
+```sh
+brew install boot2docker
+```
 
-For security!
+Next we will initialize `boot2docker`. This depends on VirtualBox, so if it crashes and burns, make sure that succeeded.
 
-Download some kind of auth app on your smartphone. There are, like, a million, and most of them are free. I use Google Authenticator and it seems to work great, some of us use Duo Mobile- whatever, just get one.
+```sh
+boot2docker init
+```
 
-Open the app and follow the instructions...
+After start up, it'll give you some exports to add to your `.bash_profile`. They'll look something like this:
 
-It'll eventually ask you to go to github.com and scan a code or do something with a code. Click the gear in the top right, find 'Security' in the side menu, go to Set Up 2 Factor Auth' and follow the instructions.
+```sh
+export DOCKER_CERT_PATH=/Users/...
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192...
+```
 
-Once it's finished, it'll ask you if you want to save the alternate auth files- *YOU DO*. This is in case you don't have your phone anymore, something weird happened, or you're stranded on an island- you might need these. Print them out, save them in your drafts, put them in some weird file, put them in your Dropbox, whatever you do- just keep them.
+Make sure to `source .bash_profile` after adding. Now we're ready to start Docker!
 
+```sh
+boot2docker up
+```
 
-####BONUS ROUND: HUB
+Run `docker version`, and it should report back with happiness. Great job!
 
-*You don't need this. It's just a cool thing we use sometimes.*
+## Installing PostgreSQL
 
-Hub is a fun git extension that adds some extra commands like git browse that will open your browser to whatever folder you're in on github.com. Read more about it [here](https://hub.github.com/)
+Nearly all of our projects use [PostgreSQL](http://www.postgresql.org/) as their backend. Instead of installing it with Homebrew, we use [Postgres.app](http://postgresapp.com/) instead.
 
-`brew install hub`
+Visit [http://postgresapp.com/](http://postgresapp.com/) and download the installer. After installing, run the app. You should get a pop up window and see a cute little elephant romping around in your menu bar in the top right. If you see the elephant, Postgres.app is live.
 
-`which hub` ...should be in there
+Next we need to add Postgres.app's folder to our `$PATH` so our terminal can find the PostgreSQL commands. We will do this in our `.bash_profile`.
 
-Next you'll need to alias hub to point to git in your .bash_profile
+> Note: This line needs to come **before** what we added for Homebrew. Otherwise, Homebrew's `brew doctor` will throw a fit. This is to ensure that command added by Homebrew are seen before the PostgreSQL commands.
 
-Paste `alias git=hub` in your .bash_profile
-
-Then `source .bash_profile`
-
-And finally, `git config --global hub.protocol https` so it knows where to look when you're cloning things.
-
-##DOCKER
-
-Docker is a virtual environment we use to keep and manage databases. The idea is that it's intened to emulate a shipping dock, hence 'Docker' with a bunch of containers that hold things and have their own little environments inside.
-
-This one's complicated, so let's take it step-by-step.
-
-* **Step 1:**First thing, go to the Internet and download [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
-* **Step 2:** Quit your terminal.
-* **Step 3:** Open it back up, and `brew install boot2docker`
-* **Step 4:** `boot2docker init`
-* **Step 5:** `boot2docker up`
-* **Step 6:** After you start it up, it'll tell you some stuff to put in your .bash_profile (everything with export in front of it). Copy those and put those in your .bash_profile (`subl ~/.bash_profile`)
-* **Step 7:** Source it. `source .bash_profile`
-* **Step 8:** `docker version` should give you a bunch of stuff about what you just did...
-
-And you did it! You now have Docker installed. Great job!
-
-##Postgres
-
-Go to [postgresapp.com](http://postgresapp.com/) and download the app.
-
-Open it up (might have to spotlight it) and you should see a cute little elephant up in your very top browser next to your battery and wifi stuff on your computer. Look for that if you ever want to know if it's running.
-
-Go back to [postgresapp.com](http://postgresapp.com/) and scroll down to where it says 'Quick Installation Guide'. Copy and paste the stuff on step 3 at the very top of the `.bash_profile`. It should look something like this:
+Add this line to the top, then `source .bash_profile`:
 
 `export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH`
 
-Then, of course, `source .bash_profile`
+Run `which psql` in your terminal to make sure your computer recognizes your changes.
 
-Back to your terminal, run `which psql` to make sure your computer recognizes it, and `brew doctor` to make sure everyone's happy.
+## awscli and SSH
 
-##AWS & SSH
+For now, it's best to have one us set you up with these. We'll have to send you files that aren't safe to share publicly on the guide.
 
-Bug us about getting you set up with these. We have special news apps ones.
+# &#9733; Bonus Rounds !&#9733;
 
+Below are some things you can set up that aren't necessary, but can be very useful.
 
+## Show invisible files
 
+Run this command in your terminal to show hidden files in Finder:
 
+```sh
+defaults write com.apple.finder AppleShowAllFiles YES
+```
 
+Next, you'll need to restart Finder for the change to take effect.
+
+```sh
+killall Finder
+```
+
+In the next Finder window you open, you'll start seeing hidden files!
+
+## Hub
+
+`hub` is an extension for git that adds extra functionality. [Read more about the perks](https://hub.github.com/).
+
+To install, we'll use Homebrew:
+
+```sh
+brew install hub
+```
+
+Next, we'll need to alias `hub` to point to git in your `.bash_profile`. (Don't forget to `source`!)
+
+```sh
+alias git=hub
+```
