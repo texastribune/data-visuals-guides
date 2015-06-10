@@ -24,7 +24,7 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
 - [Installing Node.js](#installing-nodejs)
   - [Installing Gulp](#installing-gulp)
     - [What's npm?](#whats-npm)
-    - [What does -g mean?](#what-does-g-mean)
+    - [What does -g mean?](#what-does--g-mean)
   - [Installing Grunt](#installing-grunt)
 - [Installing Ruby](#installing-ruby)
   - [Sass](#sass)
