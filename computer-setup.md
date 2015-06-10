@@ -356,7 +356,7 @@ Run `which psql` in your terminal to make sure your computer recognizes your cha
 
 For now, it's best to have one us set you up with these. We'll have to send you files that aren't safe to share publicly on the guide.
 
-# &#9733; Bonus Rounds !&#9733;
+# &#9733; Bonus Rounds! &#9733;
 
 Below are some things you can set up that aren't necessary, but can be very useful.
 
