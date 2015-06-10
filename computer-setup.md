@@ -76,7 +76,7 @@ Now you can type `subl <path>` in your terminal and Sublime will open that file 
 
 #### Hook Atom into your terminal
 
-Atom does this automatically on install.
+Atom does this automatically on install. You should be able to type `atom <path>` in your terminal to open files and folders with Atom.
 
 #### Suggested reading
 
