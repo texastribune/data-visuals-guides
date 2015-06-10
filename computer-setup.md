@@ -2,6 +2,15 @@
 
 Welcome to the News Apps team! We know you're probably dying to get started, but first there are a few things we have to do to get it ready for all the cool stuff you're going to build.
 
+- [Pre-setup](#pre-setup)
+- [Code editors](#code-editors)
+- [Installing Python](#installing-python)
+- [Installing Node.js](#installing-nodejs)
+- [Installing Ruby](#installing-ruby)
+- [Installing git](#installing-git)
+- [Installing Docker](#installing-docker)
+- [Installing PostgreSQL](#installing-postgresql)
+
 ## Pre-setup
 
 ### Make sure you're the admin
@@ -258,7 +267,7 @@ To install, run:
 gem install sass
 ```
 
-## Installing Git
+## Installing git
 
 > You'll need a [GitHub](http://github.com/) account and be a member of the Texas Tribune organization. Someone should help you get this set up – don't worry!
 
@@ -308,7 +317,9 @@ Docker is a tool for containerizing apps. We use it for deploys and database man
 
 Docker depends on VirtualBox – so we'll install that first. [Download the OSX version](https://www.virtualbox.org/wiki/Downloads) and go through the normal install process.
 
-Now we'll use Homebrew to install Docker.
+### Installing boot2docker
+
+Now we'll use Homebrew to install `boot2docker` and `docker`.
 
 ```sh
 brew install boot2docker
