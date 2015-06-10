@@ -3,13 +3,37 @@
 Welcome to the News Apps team! We know you're probably dying to get started, but first there are a few things we have to do to get it ready for all the cool stuff you're going to build.
 
 - [Pre-setup](#pre-setup)
+  - [Make sure you're the admin](#make-sure-youre-the-admin)
+  - [Check for OSX updates](#check-for-osx-updates)
+  - [You and your terminal](#you-and-your-terminal)
+  - [Xcode Command Line Tools](#xcode-command-line-tools)
 - [Code editors](#code-editors)
+  - [Sublime Text 3](#sublime-text-3)
+    - [Wait, why version 3 instead of version 2?](#wait-why-version-3-instead-of-version-2)
+    - [Hook Sublime Text 3 into your terminal](#hook-sublime-text-3-into-your-terminal)
+  - [Atom](#atom)
+    - [Hook Atom into your terminal](#hook-atom-into-your-terminal)
+    - [Suggested reading](#suggested-reading)
+- [Installing Homebrew](#installing-homebrew)
+  - [Installation](#installation)
+  - [You and your `.bash_profile`](#you-and-your-bash-profile)
 - [Installing Python](#installing-python)
+  - [Virtual environments](#virtual-environments)
+    - [Installing `virtualenv` and `virtualenvwrapper`](#installing-virtualenv-and-virtualenvwrapper)
+    - [Creating a virtual environment](#creating-a-virtual-environment)
 - [Installing Node.js](#installing-nodejs)
+  - [Installing Gulp](#installing-gulp)
+    - [What's npm?](#whats-npm)
+    - [What does -g mean?](#what-does-g-mean)
+  - [Installing Grunt](#installing-grunt)
 - [Installing Ruby](#installing-ruby)
+  - [Sass](#sass)
 - [Installing git](#installing-git)
 - [Installing Docker](#installing-docker)
+  - [Installing VirtualBox](#installing-virtualbox)
+  - [Installing boot2docker](#installing-boot2docker)
 - [Installing PostgreSQL](#installing-postgresql)
+- [awscli and SSH](#awscli-and-ssh)
 
 ## Pre-setup
 
@@ -25,11 +49,11 @@ Everything we do here is only going to work if you have admin privileges. How do
 
 Don't have admin powers? Reach out to [Rodney](rgibbs@texastribune.org) and he'll get you set up.
 
-## Check for OSX updates
+### Check for OSX updates
 
 If your computer is brand new, you may have a few outstanding operating system updates. Make sure to grab those first. [Use this guide to update](https://support.apple.com/en-us/HT201541).
 
-## You and your terminal
+### You and your terminal
 
 Your terminal is going to be your BFF, so it might as well not look terrible.
 
