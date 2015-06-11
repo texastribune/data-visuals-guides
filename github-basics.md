@@ -114,4 +114,5 @@ Nice work. Now you know pretty much everything you need to know about Github for
 * [Hub](https://hub.github.com/)- we go over how to set this as a bonus round when setting up your News Apps computer. It makes some commands like switching between branches and commits slightly less cryptic.
 * Autocomplete- I don't have a link for this, help a sister out.
 
+![you made it!](http://hugelolcdn.com/i/59378.gif)
 
