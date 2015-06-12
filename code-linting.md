@@ -65,7 +65,7 @@ This should give you some sweet, naggy rulers for all of your .py files.
 
 ###`Sublime​Linter-contrib-scss-lint`
 
-This is your SCSS or Sass linter. It'll point out things like forgetting to pit a space between your class name and the bracket or when you forget to alphabetize attributes.
+This is your SCSS or Sass linter. It'll point out things like forgetting to put a space between your class name and the bracket or when you forget to alphabetize attributes.
 
 Open your command palatte in Sublime and type `contrib-scss` and you should see `SublimeLinter-contrib-scss-lint`. Install it...
 
