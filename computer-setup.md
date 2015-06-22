@@ -358,6 +358,15 @@ brew install boot2docker
 
 Next we will initialize `boot2docker`. This depends on VirtualBox, so if it crashes and burns, make sure that succeeded.
 
+First let's start up docker
+
+```sh
+boot2docker up
+```
+
+Then initialize it on your machine.
+
+
 ```sh
 boot2docker init
 ```
