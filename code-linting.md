@@ -1,84 +1,83 @@
-
-#Code Linting Guide
+# Code Linting Guide
 
 Per [Wikipedia](http://en.wikipedia.org/wiki/Lint_(software)):
 
->In computer programming, lint was the name originally given to a particular program that flagged some suspicious and non-portable constructs (likely to be bugs) in C language source code. The term is now applied generically to tools that flag suspicious usage in software written in any computer language. The term lint-like behavior is sometimes applied to the process of flagging suspicious language usage. Lint-like tools generally perform static analysis of source code.
+> In computer programming, lint was the name originally given to a particular program that flagged some suspicious and non-portable constructs (likely to be bugs) in C language source code. The term is now applied generically to tools that flag suspicious usage in software written in any computer language. The term lint-like behavior is sometimes applied to the process of flagging suspicious language usage. Lint-like tools generally perform static analysis of source code.
 
-tl;dr Linters yell at you when you write bad code. They're more helpful than annoying, we promise.
+tl;dr &mdash; Linters tell you when you write suboptimal code. They're helpful!
 
-##Atom
+## Sublime Text 3
 
-Execute the following in your terminal to install linting tools for Atom: `apm install atom-lint`. Alternativly, go the Atom package manager, search for `atom-lint`, and install the package. This will install lots of linting tools including jshint, flake8, and scsslint.
+This tutorial will require you to restart Sublime Text 3 multiple times &mdash; go ahead and close all open Sublime Text windows completely with CMD + Q. It's also a good idea to start with a fresh Terminal window.
 
-##Sublime Text 3
+### Package Control
 
-This tutorial involves alot of quitting and restarting Sublime, so ex out of all open Sublime windows and completely quit Sublime so it doesn't keep trying to open up your last opened window when you try to restart. It's also a good idea to start with a fresh terminal window free of running processes and virtual environments, so quit and restart terminal while you're at it.
+This guide also assumes you've installed [Package Control](https://packagecontrol.io/installation). This makes it possible to install plugins. To open Package Control's installer, press `CMD` + `SHIFT` + `P` to open Sublime Text's Command Palette, then search for `Package Control: Install Package`. We'll be making all our selections in this list.
 
-Start by [installing the SublimeLinter package](http://sublimelinter.readthedocs.org/en/latest/installation.html#installing-via-pc): 
+### SublimeLinter
 
-* **Step 1:** Quit Sublime (all the way, `cmd`+`q`) and open a brand new Sublime window. 
-* **Step 2:** Hit `cmd`+`shft`+`p` - this opens Sublime's Command Palatte which is basically a list of all of the supported add-ons for Sublime.
-* **Step 3:** Type `install` and you should see `Package Control: Install Package` hit enter...
-* **Step 4:** A list of available packages should show up (this takes a minute- there are LOTS of packages). Type `linter` and find `SublimeLinter`. Hit enter again.
-* **Step 5:** It'll take a minute or two to install. Once it's finished, you'll see an install message in your text editor. Make sure it's not an error message and restart Sublime.
+First, we'll install [SublimeLinter](http://www.sublimelinter.com/en/latest/).
 
-###`SublimeLinter-jshint`
+Navigate to Package Control's installer and search for `SublimeLinter`. A long list of available packages will show up &mdash; we're looking for the one just named `SublimeLinter`. Highlight it and hit enter.
 
-Jshint, as you probably guessed, is a JavaScript linter. It'll call you out for things like single quotes vs. double quotes and pesky syntax errors.
+It'll take a few seconds. Once it's finished, you'll see an install message. Make sure it's not an error message, then restart Sublime Text.
 
-Look for SiblimeLinter-jshint with `cmd`+`shft`+`p` and typing `jshint`
+### SublimeLinter-jshint
 
-Hit enter to install. Wait for the install message, and restart Sublime.
+> `jshint` depends on Node.js &mdash; make sure it's installed and working.
 
-This linter depends on some other packages being installed on your computer from your terminal. Get those by opening your terminal and running `npm install jshint`.
+[JSHint](http://jshint.com/) a JavaScript linter. It'll call you out for things like misplaced double quotes and other syntax errors.
 
-Quit Sublime, and open a JavsScript file from one of your projects from the command line (run `subl <project path>`). If you don't see any yellow circles on the side or angry red boxes, open the command palatte and type `lint this view`. Hit enter and you should see at least a few lines of angry code.
+Look for `SublimeLinter-jshint` in Package Control's install list, highlight it, then hit enter to install. Wait for the install message then restart Sublime Text.
 
-### `SublimeLinter-flake8`
+`SublimeLinter-jshint` depends on the Node.js package [`jshint`](https://github.com/jshint/jshint). We need to install it in our terminal so SublimeLinter can use it.
 
-Flake8 is a python linter. It'll call out things like trailing white space and calling a variable or function that's never used in the file.
+To install it, run the following:
 
-Start by going into your terminal and running `pip freeze` (make sure you're not in a virtual environment)
-
-Followed by `pip install flake8`
-
-Quit Sublime, and open a .py file. Like jshint, you should see some yellow dots and boxes around things meaning that it worked.
-
-One thing that's slightly more important about Python than other languages is line length - no line should exceed 79 characters. This is to help your code be more readable and to prevent you from getting too crazy stringing things together. It's almost always better to break your code up into smaller, more managable chunks (this is true for just about everything)
-
-To help keep you honest, let's put some rulers in your `.py` files.
-
-While you're still looking at your `.py` file in Sublime, go up to the top bar and...
-
-`Sublime Text` > `Preferences` > `Settings - More` > `Syntax Specific - User`
-
-Copy + paste this snippet in there:
-
-```py
-{
-  "rulers": [72, 79],
-  "tab_size": 4
-}
+```sh
+npm install -g jshint
 ```
-This should give you some sweet, naggy rulers for all of your .py files.
 
-###`Sublime​Linter-contrib-scss-lint`
+Quit and restart Sublime Text, and then open a JavsScript file from one of your projects from the command line with the `subl` command. You should see some red or yellow errors (unless you're really good).
 
-This is your SCSS or Sass linter. It'll point out things like forgetting to put a space between your class name and the bracket or when you forget to alphabetize attributes.
+### SublimeLinter-flake8
 
-Open your command palatte in Sublime and type `contrib-scss` and you should see `SublimeLinter-contrib-scss-lint`. Install it...
+> `flake8` depends on Python &mdash; make sure it's installed and working.
 
-Back to your terminal (this one runs on Ruby so we'll have to do some Ruby things), and run `gem install scss-lint` followed by `rbenv rehash`.
+[Flake8](https://flake8.readthedocs.org/en/2.3.0/) is a Python linter. It's a wrapper around PyFlakes, pep8 and Ned Batchelder’s McCabe script. It'll call out things like trailing white space and declaring variables or functions that are never used. It'll also point out when your functions get too complex and should be broken into smaller pieces.
 
-Restart Sublime and restart your terminal. Open both back up and open an SCSS file from the terminal (`subl <path to scss file>`). You should see some yellow dots.
+First, find `SublimeLinter-flake8` via Package Control's install, highlight it, then hit enter. Wait for the install message and restart Sublime Text.
 
-##Now go fix your sloppy code.
+It's important to not be in a virtual environment for this next step! If you aren't sure, open a brand new Terminal window.
 
-![fix the internet](http://media.giphy.com/media/Ra7IydVtYkxdm/giphy.gif)
+Then run:
 
-<!-- **Command Line**—You can also use these tools directly from the command line.
+```sh
+pip install flake8
+```
 
-* **jshint**—To install [jshint](http://www.jshint.com/docs/) run `npm install jshint -g`. Whenever you want to lint your code, just run `jshint /path/to/file`. 
-* **scss-lint**—To install [scss-lint](https://github.com/causes/scss-lint), run `gem install scss-lint`. Then run `scss-lint` on the folder or file you want to check.
-* **flake8**—To install [flake8](https://flake8.readthedocs.org/en/2.1.0/), run `pip install flake8`. Then run `flake8` on the folder or file you want to check. -->
+### Sublime​Linter-contrib-scss-lint
+
+> `scss-lint` depends on Ruby &mdash; make sure it's installed and working.
+
+[scss-lint](https://github.com/brigade/scss-lint) is a SCSS linter. It'll point out things like forgetting to put a space between your class name and the bracket, or when you forget to alphabetize attributes.
+
+Search for `SublimeLinter-contrib-scss-lint` in Package Control's installer, highlight it, and hit enter.
+
+In your terminal, we need to install the Ruby gem `scss-lint` so SublimeLinter can use it.
+
+```sh
+gem install scss_lint
+```
+
+Restart Sublime and restart your terminal. Now `.scss` files should show errors.
+
+### SublimeLinter-json
+
+This package adds linting for `.json` files. Luckily the linter is built in to Sublime Text, so no extra installs are needed.
+
+Just install `SublimeLinter-json` via the Package Control installer, restart Sublime Text, and you're good to go.
+
+## Atom
+
+TK
