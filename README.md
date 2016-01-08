@@ -14,7 +14,7 @@ GitHub is an essential tool for our team. If you're new to GitHub or haven't had
 
 Code linters are super helpful, and we hope you install them. They'll help you catch bugs and typos, which can save you massive amounts of time, prevent headaches and those moments when you feel really dumb, because you spent an hour trying to solve a problem that turned out to be a missing semicolon. 
 
-- [Build a News Apps Graphic](build-a-graphic.md)
+## [Build a News Apps Graphic](build-a-graphic.md)
 
 You're finally ready! Here's how basic practices for building embeddable graphics for dailies and short term projects. Keep in mind, we store the sausage for nearly all small daily projects in the [newsapps-dailies](https://github.com/texastribune/newsapps-dailies) repo. You can find lots of code examples there in the other project folders. 
 
