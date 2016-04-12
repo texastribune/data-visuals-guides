@@ -84,7 +84,7 @@ xcode-select --install
 
 Your computer should send you some kind of prompt to install the tools. This'll take a minute...
 
-If it doesn't prompt you, or you get some kind of error, you'll have to [get them from Apple](developer.apple.com/downloads/index.action).
+If it doesn't prompt you, or you get some kind of error, you'll have to [get them from Apple](https://developer.apple.com/downloads/index.action).
 
 Search for "command line tools" in the top left and download the one that matches your version of OSX.
 
