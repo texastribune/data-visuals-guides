@@ -1,6 +1,6 @@
-# Texas Tribune News Apps Guides
+# Texas Tribune Data Visuals Guides
 
-There are many great things in our news apps guides to help you get started. Do them all!
+Here you will find a collection of guides for doing various Data Visuals tasks. Find yourself needing to describe how to setup something for a project? Try to document it here instead so it can be linked to later!
 
 ## [Set up your News Apps computer environment](computer-setup.md)
 
@@ -20,4 +20,4 @@ You're finally ready! Here's how basic practices for building embeddable graphic
 
 ## License
 
-Guides are licensed under a [Creative Commons BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/) license.
+All guides are licensed under a [Creative Commons BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/) license.
