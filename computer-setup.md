@@ -90,7 +90,19 @@ Search for "command line tools" in the top left and download the one that matche
 
 ## Code Editors
 
-Two editors are used here at The Texas Tribune – [Sublime Text 3](http://www.sublimetext.com/3) and [Atom](https://atom.io/). We have no particular preference for either – try them both out! You're welcome to use anything else, too, but you'll be on your own.
+Three editors are used here at The Texas Tribune – [Atom](https://atom.io/), [Sublime Text 3](http://www.sublimetext.com/3) and [Visual Studio Code](https://code.visualstudio.com). We have no particular preference – try them all out! You're welcome to use anything else, too, but you'll be on your own.
+
+### Atom
+
+[Download the installer](https://atom.io/) and install as normal.
+
+#### Hook Atom into your terminal
+
+Atom does this automatically on install. You should be able to type `atom <path>` in your terminal to open files and folders with Atom.
+
+#### Suggested reading
+
+Check out the [Atom Flight Manual](https://atom.io/docs/v0.208.0/) – it's a good overview on how Atom works.
 
 ### Sublime Text 3
 
@@ -110,17 +122,9 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 
 Now you can type `subl <path>` in your terminal and Sublime will open that file or folder.
 
-### Atom
+### Visual Studio Code
 
-[Download the installer](https://atom.io/) and install as normal.
-
-#### Hook Atom into your terminal
-
-Atom does this automatically on install. You should be able to type `atom <path>` in your terminal to open files and folders with Atom.
-
-#### Suggested reading
-
-Check out the [Atom Flight Manual](https://atom.io/docs/v0.208.0/) – it's a good overview on how Atom works.
+[Download the installer](https://code.visualstudio.com/docs/setup/mac) and install. Continue following the guide to set up shell access.
 
 ## Installing Homebrew
 
@@ -168,12 +172,17 @@ The first Homebrew package we're going to install is Python. "But wait," you say
 
 You're right! But it's a good idea to not monkey around with your computer's installed software. There's some fragile stuff in there that your computer depends on to function, so we try our best not to disturb it. Plus it is much easier to troubleshoot if you know exactly where your version of Python lives.
 
-Homebrew has [dedicated an entire document](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Homebrew-and-Python.md) to how it works with Python, but for our purposes, you need these three commands:
+Homebrew has [dedicated an entire document](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Homebrew-and-Python.md) to how it works with Python. It's worth a quick read.
+
+The Data Visuals team defaults to **Python 3**. So we'll install both Python 2 and 3.
 
 ```sh
 brew install python
-pip install --upgrade setuptools
-pip install --upgrade pip
+pip install --upgrade setuptools pip
+pip install --upgrade
+
+brew install python3
+pip3 install --upgrade setuptools pip wheel
 ```
 
 ### Virtual environments
@@ -185,13 +194,13 @@ When you start working on group projects, it's important to make sure that every
 Run this command in your terminal:
 
 ```sh
-pip install virtualenvwrapper
+pip3 install virtualenvwrapper
 ```
 
 To look at a list of what's currently installed in your environment, you can run the following:
 
 ```sh
-pip freeze
+pip3 freeze
 ```
 
 Now we need to use our `.bash_profile` to set some settings for `virtualenv`.
@@ -202,7 +211,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 ```
 
-Save, then source your `.bash_profile`.
+Save, then `source` your `.bash_profile`.
 
 #### Creating a virtual environment
 
@@ -214,7 +223,7 @@ Try it out!
 mkvirtualenv test
 ```
 
-You'll get some feedback as it installs `pip`, then your new  terminal prompt should begin with `(test)`.
+You'll get some feedback as it installs `pip`, then your new terminal prompt should begin with `(test)`.
 
 To turn off your environment, run `deactivate`.
 
@@ -226,77 +235,7 @@ Great job! You did it!
 
 [Node.js](https://nodejs.org/) makes is possible to build server-side apps using JavaScript. At the Tribune, we use it to run our project building tools.
 
-Let's install it!
-
-```sh
-brew install node
-```
-
-### Installing Gulp
-
-We use [Gulp](http://gulpjs.com/) as our task runner and build system.
-
-To install it, run the following:
-
-```sh
-npm install -g gulp
-```
-
-#### What's npm?
-
-> [npm](https://www.npmjs.com/) is the package manager for Node.js. It was installed when you installed Node.js earlier. Much like how we use Homebrew – `brew install` – to install packages, and `pip` – `pip install` – to install Python packages, Node.js uses `npm`.
-
-#### What does -g mean?
-
-> `-g` means global – it adds the Gulp command to your terminal.
-
-### Installing Grunt
-
-[Grunt](http://gruntjs.com/) is similar to Gulp. We used to use it instead of Gulp, but typically you'll only see it these days if you're working on a dinosaur.
-
-```sh
-npm install -g grunt-cli
-```
-
-## Installing Ruby
-
-Wait – Ruby too? Yup! We use Ruby to power [Sass](http://sass-lang.com/). We also have a few projects that depend on [Middleman](https://middlemanapp.com/).
-
-First we need to install the tool that builds Ruby – `ruby-build` – and a Ruby environment manager – `rbenv`.
-
-```sh
-brew install rbenv ruby-build
-```
-
-Next, we need to add this line to our `.bash_profile` so it knows about `rbenv`. (Don't forget to `source .bash_profile`!)
-
-```sh
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-```
-
-Run `rbenv install -l` to see a list of available versions. At this time, the most recent, non-beta version is `2.2.2`.
-
-To install it, run the following:
-
-```sh
-rbenv install 2.2.2
-```
-
-Next, we need to tell our computer to use this version of Ruby by default. `rbenv` handles this, too.
-
-```sh
-rbenv global 2.2.2
-```
-
-### Sass
-
-[Sass](http://sass-lang.com/) is our CSS extension language of choice.
-
-To install, run:
-
-```sh
-gem install sass
-```
+Let's install it! We use [`nvm`](https://github.com/creationix/nvm) to manage versions. Here's a [direct link to the install instructions](https://github.com/creationix/nvm#install-script).
 
 ## Installing git
 
@@ -342,50 +281,7 @@ git config --global hub.protocol https
 
 ## Installing Docker
 
-Docker is a tool for containerizing apps. We use it for deploys and database management.
-
-### Installing VirtualBox
-
-Docker depends on VirtualBox – so we'll install that first. [Download the OSX version](https://www.virtualbox.org/wiki/Downloads) and go through the normal install process.
-
-### Installing boot2docker
-
-Now we'll use Homebrew to install `boot2docker` and `docker`.
-
-```sh
-brew install boot2docker
-```
-
-Next we will initialize `boot2docker`. This depends on VirtualBox, so if it crashes and burns, make sure that succeeded.
-
-First let's start up docker
-
-```sh
-boot2docker up
-```
-
-Then initialize it on your machine.
-
-
-```sh
-boot2docker init
-```
-
-After start up, it'll give you some exports to add to your `.bash_profile`. They'll look something like this:
-
-```sh
-export DOCKER_CERT_PATH=/Users/...
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192...
-```
-
-Make sure to `source .bash_profile` after adding. Now we're ready to start Docker!
-
-```sh
-boot2docker up
-```
-
-Run `docker version`, and it should report back with happiness. Great job!
+Docker is a tool for containerizing apps. We use it for deploys and database management. You'll need [Docker for Mac](https://docs.docker.com/docker-for-mac/).
 
 ## Installing PostgreSQL
 
@@ -399,7 +295,7 @@ Next we need to add Postgres.app's folder to our `$PATH` so our terminal can fin
 
 Add this line to the top, then `source .bash_profile`:
 
-`export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH`
+`export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH`
 
 Run `which psql` in your terminal to make sure your computer recognizes your changes.
 
