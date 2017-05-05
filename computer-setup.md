@@ -29,4 +29,3 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
   - [Hub](https://github.com/texastribune/data-visuals-guides/blob/modularize/setup-guides/git.md#hub)
 - [Installing Docker](https://github.com/texastribune/data-visuals-guides/blob/modularize/setup-guides/docker.md)
 - [Installing PostgreSQL](https://github.com/texastribune/data-visuals-guides/blob/modularize/setup-guides/postgreSQL.md#installing-postgresql)
-- [awscli and SSH](#awscli-and-ssh)
