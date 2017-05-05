@@ -1,4 +1,4 @@
-# Installing Homebrew
+# Homebrew
 
 Homebrew describes itself as "The missing package manager for OSX." This means that it helps with the installation of many of the tools you'll use. It also gives you little beers for every package you install, so that's fun.
 
