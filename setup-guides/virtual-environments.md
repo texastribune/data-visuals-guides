@@ -1,4 +1,4 @@
-### Virtual environments
+# Virtual environments
 
 When you start working on group projects, it's important to make sure that everyone's working environment is as close to identical as possible. Virtual environments keep a Python project's installs in their own little boxes so there are no conflicts between versions being used in other projects, or those already installed on your computer.
 

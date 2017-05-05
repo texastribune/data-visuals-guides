@@ -1,4 +1,4 @@
-## Installing Node.js
+# Installing Node.js
 
 [Node.js](https://nodejs.org/) makes is possible to build server-side apps using JavaScript. At the Tribune, we use it to run our project building tools.
 

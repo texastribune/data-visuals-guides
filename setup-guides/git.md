@@ -1,4 +1,4 @@
-## Installing git
+# Installing git
 
 > You'll need a [GitHub](http://github.com/) account and be a member of the Texas Tribune organization. Someone should help you get this set up – don't worry!
 

@@ -24,7 +24,5 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
 - [Installing Node.js](#installing-nodejs)
 - [Installing git](#installing-git)
 - [Installing Docker](#installing-docker)
-  - [Installing VirtualBox](#installing-virtualbox)
-  - [Installing boot2docker](#installing-boot2docker)
 - [Installing PostgreSQL](#installing-postgresql)
 - [awscli and SSH](#awscli-and-ssh)

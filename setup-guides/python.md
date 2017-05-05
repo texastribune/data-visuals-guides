@@ -1,4 +1,4 @@
-## Installing Python
+# Installing Python
 
 The first Homebrew package we're going to install is Python. "But wait," you say, "my computer already has Python!"
 

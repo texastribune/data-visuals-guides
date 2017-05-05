@@ -1,3 +1,5 @@
+# Setting up your Mac
+
 ### Make sure you're the admin
 
 Everything we do here is only going to work if you have admin privileges. How do you know if you have it?

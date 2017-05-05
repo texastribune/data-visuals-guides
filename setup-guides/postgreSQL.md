@@ -1,4 +1,4 @@
-## Installing PostgreSQL
+# Installing PostgreSQL
 
 Nearly all of our projects use [PostgreSQL](http://www.postgresql.org/) as their backend. Instead of installing it with Homebrew, we use [Postgres.app](http://postgresapp.com/) instead.
 

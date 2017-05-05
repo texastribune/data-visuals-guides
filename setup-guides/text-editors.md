@@ -1,4 +1,4 @@
-## Code Editors
+# Text Editors
 
 Three editors are used here at The Texas Tribune – [Atom](https://atom.io/), [Sublime Text 3](http://www.sublimetext.com/3) and [Visual Studio Code](https://code.visualstudio.com). We have no particular preference – try them all out! You're welcome to use anything else, too, but you'll be on your own.
 

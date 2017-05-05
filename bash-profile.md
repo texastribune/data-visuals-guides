@@ -1,4 +1,4 @@
-### You and your `.bash_profile`
+# You and your `.bash_profile`
 
 Your `.bash_profile` is a hidden file that live in your root directory. Your `.bash_profile` is where settings for your terminal belong.
 
