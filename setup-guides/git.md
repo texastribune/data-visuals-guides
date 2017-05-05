@@ -40,6 +40,8 @@ We also need to tell git to use `https` for cloning.
 git config --global hub.protocol https
 ```
 
+If you're new to git, learn more about [how our team uses git and github](https://github.com/texastribune/data-visuals-guides/blob/master/github-basics.md).
+
 ###BONUS!
 ## Hub
 
