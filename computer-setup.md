@@ -34,6 +34,7 @@ Want to go the extra mile? Check these out.
 [&#9733; Bonus Rounds! &#9733;](#-bonus-rounds-)
 - [Show invisible files](#show-invisible-files)
 - [Hub](#hub)
+- [But I need Python 2!](#but-i-need-python-2)
 
 
 ## Pre-setup
@@ -116,15 +117,17 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 
 Now you can type `subl <path>` in your terminal and Sublime will open that file or folder.
 
-### Visual Studio Code
-
-[Download the installer](https://code.visualstudio.com/docs/setup/mac) and install. Continue following the guide to set up shell access.
-
 ## Installing Homebrew
 
 Homebrew describes itself as "The missing package manager for OSX." This means that it helps with the installation of many of the tools you'll use. It also gives you little beers for every package you install, so that's fun.
 
 ### Installation
+
+First, we need to make sure your OS and Xcode is cool with Homebrew. Run this in your terminal:
+
+```sh
+xcode-select --install
+```
 
 [Go to Homebrew's site](http://brew.sh/), look for `Install Homebrew`, and grab the command there. Because it could potentially change, we won't be providing that command here, but it should start with something that looks like `ruby -e "$(curl...`.
 
@@ -139,26 +142,6 @@ brew doctor
 This will make sure everything is cool. If you get any warnings, we'll need to handle those before moving forward. Do what it asks – or grab someone else on the team for help – until `brew doctor` comes back clean.
 
 Now we need to tell our computer where our cool new package manager and all of the packages live.
-
-### You and your `.bash_profile`
-
-Your `.bash_profile` is a hidden file that live in your root directory. Your `.bash_profile` is where settings for your terminal belong.
-
-The easiest way to edit your `.bash_profile` with your text editor we installed earlier. In a freshly opened terminal window, run either `subl .bash_profile` or `atom .bash_profile`. (You can always do it with vim – `vim .bash_profile` – too.)
-
-Add this to the top of your `.bash_profile`:
-
-```sh
-export PATH=/usr/local/bin:$PATH
-```
-
-This tells your terminal to look in `/usr/local/bin` folder for commands you run before hunting for it somewhere else in your `$PATH`. It just so happens that `/usr/local/bin` is where Homebrew installs commands, so this will ensure you are using the Homebrew packages we install. Save this file.
-
-Now you'll need to either open a new terminal window – which will make the `.bash_profile` file load – or `source` it directly. Don't forget to do this every time you make a change!
-
-```sh
-source .bash_profile
-```
 
 ## Installing Python
 
@@ -226,16 +209,6 @@ Great job! You did it!
 
 > HEADS UP! Make sure you **are not in a virtual environment** when installing packages with Homebrew. Things could get weird. Always `deactivate` before any `brew install` commands.
 
-#### But I need Python 2!
-
-The way we set up `virtualenvwrapper` defaults to using Python 3 in the environment. But it is still possible to create Python 2 environments.
-
-```sh
-mkvirtualenv --python `which python` <name-of-environment>
-```
-
-The ``--python `which python` `` tells `mkvirtualenv` to use regular `python` to create the environment. In our case, that is referencing our Python 2 instance we installed earlier with Homebrew.
-
 ## Installing Node.js
 
 [Node.js](https://nodejs.org/) makes is possible to build server-side apps using JavaScript. At the Tribune, we use it to run our project building tools.
@@ -284,6 +257,8 @@ We also need to tell git to use `https` for cloning.
 git config --global hub.protocol https
 ```
 
+For more information on git and guthub, check out [this interactive tutorial](https://try.github.io/) or [this walk through](https://guides.github.com/activities/hello-world/) to get started.
+
 ## Installing Docker
 
 Docker is a tool for containerizing apps. We use it for deploys and database management. You'll need [Docker for Mac](https://docs.docker.com/docker-for-mac/).
@@ -293,16 +268,6 @@ Docker is a tool for containerizing apps. We use it for deploys and database man
 Nearly all of our projects use [PostgreSQL](http://www.postgresql.org/) as their backend. Instead of installing it with Homebrew, we use [Postgres.app](http://postgresapp.com/) instead.
 
 Visit [http://postgresapp.com/](http://postgresapp.com/) and download the installer. After installing, run the app. You should get a pop up window and see a cute little elephant romping around in your menu bar in the top right. If you see the elephant, Postgres.app is live.
-
-Next we need to add Postgres.app's folder to our `$PATH` so our terminal can find the PostgreSQL commands. We will do this in our `.bash_profile`.
-
-> Note: This line needs to come **before** what we added for Homebrew. Otherwise, Homebrew's `brew doctor` will throw a fit. This is to ensure that command added by Homebrew are seen before the PostgreSQL commands.
-
-Add this line to the top, then `source .bash_profile`:
-
-`export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH`
-
-Run `which psql` in your terminal to make sure your computer recognizes your changes.
 
 ## awscli and SSH
 
@@ -343,3 +308,13 @@ Next, we'll need to alias `hub` to point to git in your `.bash_profile`. (Don't 
 ```sh
 alias git=hub
 ```
+
+## But I need Python 2!
+
+The way we set up `virtualenvwrapper` defaults to using Python 3 in the environment. But it is still possible to create Python 2 environments.
+
+```sh
+mkvirtualenv --python `which python` <name-of-environment>
+```
+
+The ``--python `which python` `` tells `mkvirtualenv` to use regular `python` to create the environment. In our case, that is referencing our Python 2 instance we installed earlier with Homebrew.
