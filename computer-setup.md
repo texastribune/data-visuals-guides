@@ -2,40 +2,37 @@
 
 Welcome to the News Apps team! We know you're probably dying to get started, but first there are a few things we have to do to get it ready for all the cool stuff you're going to build.
 
-- [Pre-setup](#pre-setup)
-  - [Make sure you're the admin](#make-sure-youre-the-admin)
-  - [Check for OSX updates](#check-for-osx-updates)
-  - [You and your terminal](#you-and-your-terminal)
-  - [Xcode Command Line Tools](#xcode-command-line-tools)
-- [Code editors](#code-editors)
-  - [Sublime Text 3](#sublime-text-3)
-    - [Wait, why version 3 instead of version 2?](#wait-why-version-3-instead-of-version-2)
-    - [Hook Sublime Text 3 into your terminal](#hook-sublime-text-3-into-your-terminal)
-  - [Atom](#atom)
-    - [Hook Atom into your terminal](#hook-atom-into-your-terminal)
-    - [Suggested reading](#suggested-reading)
-- [Installing Homebrew](#installing-homebrew)
-  - [Installation](#installation)
-  - [You and your `.bash_profile`](#you-and-your-bash_profile)
-- [Installing Python](#installing-python)
-  - [Virtual environments](#virtual-environments)
-    - [Installing `virtualenv` and `virtualenvwrapper`](#installing-virtualenv-and-virtualenvwrapper)
-    - [Creating a virtual environment](#creating-a-virtual-environment)
-- [Installing Node.js](#installing-nodejs)
-- [Installing git](#installing-git)
-- [Installing Docker](#installing-docker)
-  - [Installing VirtualBox](#installing-virtualbox)
-  - [Installing boot2docker](#installing-boot2docker)
-- [Installing PostgreSQL](#installing-postgresql)
-- [awscli and SSH](#awscli-and-ssh)
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+- [Set up your News Apps environment](#set-up-your-news-apps-environment)
 
-Want to go the extra mile? Check these out.
+  - [Pre-setup](#pre-setup)
+    - [Make sure you're the admin](#make-sure-youre-the-admin)
+    - [Check for MacOS updates](#check-for-macos-updates)
+    - [You and your terminal](#you-and-your-terminal)
+  - [Code Editors](#code-editors)
+    - [Atom](#atom)
+      - [Hook Atom into your terminal](#hook-atom-into-your-terminal)
+      - [Suggested reading](#suggested-reading)
+    - [Sublime Text](#sublime-text)
+      - [Hook Sublime Text into your terminal](#hook-sublime-text-into-your-terminal)
+  - [Installing Homebrew](#installing-homebrew)
+    - [Installation](#installation)
+  - [Installing Python](#installing-python)
+    - [Virtual environments](#virtual-environments)
+      - [Installing `virtualenv` and `virtualenvwrapper`](#installing-virtualenv-and-virtualenvwrapper)
+      - [Creating a virtual environment](#creating-a-virtual-environment)
+  - [Installing Node.js](#installing-nodejs)
+  - [Installing git](#installing-git)
+  - [Installing Docker](#installing-docker)
+  - [Installing PostgreSQL](#installing-postgresql)
+  - [awscli and SSH](#awscli-and-ssh)
+- [&#9733; Bonus Rounds! &#9733;](#9733-bonus-rounds-9733)
+  - [Show invisible files](#show-invisible-files)
+  - [Hub](#hub)
+  - [But I need Python 2!](#but-i-need-python-2)
 
-[&#9733; Bonus Rounds! &#9733;](#-bonus-rounds-)
-- [Show invisible files](#show-invisible-files)
-- [Hub](#hub)
-- [But I need Python 2!](#but-i-need-python-2)
-
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Pre-setup
 
@@ -51,17 +48,17 @@ Everything we do here is only going to work if you have admin privileges. How do
 
 Don't have admin powers? Reach out to [Rodney](rgibbs@texastribune.org) and he'll get you set up.
 
-### Check for OSX updates
+### Check for MacOS updates
 
 If your computer is brand new, you may have a few outstanding operating system updates. Make sure to grab those first. [Use this guide to update](https://support.apple.com/en-us/HT201541).
 
 ### You and your terminal
 
-Your terminal is going to be your BFF, so it might as well not look terrible.
+The terminal is going to be your BFF, so it might as well not look terrible.
 
 Open `Terminal`. It can be found in your `Applications` folder, or, search for it with `Spotlight` – it's the cute little magnifying glass at the top right of your screen next to your name. Type `Terminal` and it should come right up!
 
-Currently it's just a white box with some scary, unreadable black text. Let's fix that.
+Currently it's just a white box with black text. Let's fix that.
 
 With `Terminal` in focus, open the `Preferences`. Up at the top of the box, click on `Profiles` and pick a cute color scheme that speaks to you from the side menu, or get crazy and click that little `+` at the bottom of the menu and make your own. At the bottom of the side menu next to the `+` you'll see a button for   `Default` – click that after you've made your selection.
 
@@ -69,23 +66,9 @@ With `Terminal` in focus, open the `Preferences`. Up at the top of the box, clic
 
 Beautiful! There's a whole world of color schemes out there that go beyond the defaults (and this article). We encourage you to seek them out when you want to spice things up!
 
-### Xcode Command Line Tools
-
-In your terminal, run this command:
-
-```sh
-xcode-select --install
-```
-
-Your computer should send you some kind of prompt to install the tools. This'll take a minute...
-
-If it doesn't prompt you, or you get some kind of error, you'll have to [get them from Apple](https://developer.apple.com/downloads/index.action).
-
-Search for "command line tools" in the top left and download the one that matches your version of OSX.
-
 ## Code Editors
 
-Three editors are used here at The Texas Tribune – [Atom](https://atom.io/), [Sublime Text 3](http://www.sublimetext.com/3) and [Visual Studio Code](https://code.visualstudio.com). We have no particular preference – try them all out! You're welcome to use anything else, too, but you'll be on your own.
+Three editors are used here at The Texas Tribune – [Atom](https://atom.io/) and [Sublime Text](http://www.sublimetext.com/). We have no particular preference – try them both out! (You're welcome to use anything else, too.)
 
 ### Atom
 
@@ -97,29 +80,21 @@ Atom does this automatically on install. You should be able to type `atom <path>
 
 #### Suggested reading
 
-Check out the [Atom Flight Manual](https://atom.io/docs/v0.208.0/) – it's a good overview on how Atom works.
+Check out the [Atom Flight Manual](http://flight-manual.atom.io/) – it's a good overview on how Atom works.
 
-### Sublime Text 3
+### Sublime Text
 
-[Download the installer](http://www.sublimetext.com/3) and install as normal.
+[Download the installer](http://www.sublimetext.com/) and install as normal.
 
-#### Wait, why version 3 instead of version 2?
+#### Hook Sublime Text into your terminal
 
-> Sublime Text has an interesting release strategy – although `2` is the current version, `3` is the one everyone uses and a majority of plugins support now. Use `2` at your own peril.
-
-#### Hook Sublime Text 3 into your terminal
-
-Run the following in your terminal:
-
-```sh
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
-```
+If you want to be able to open Sublime Text from your Terminal, you'll need to [follow this guide](https://www.sublimetext.com/docs/3/osx_command_line.html).
 
 Now you can type `subl <path>` in your terminal and Sublime will open that file or folder.
 
 ## Installing Homebrew
 
-Homebrew describes itself as "The missing package manager for OSX." This means that it helps with the installation of many of the tools you'll use. It also gives you little beers for every package you install, so that's fun.
+Homebrew describes itself as "The missing package manager for MacOS." This means that it helps with the installation of many of the tools you'll use.
 
 ### Installation
 
@@ -151,13 +126,9 @@ You're right! But it's a good idea to not monkey around with your computer's ins
 
 Homebrew has [dedicated an entire document](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Homebrew-and-Python.md) to how it works with Python. It's worth a quick read.
 
-The Data Visuals team defaults to **Python 3**. So we'll install both Python 2 and 3.
+The Data Visuals team defaults to **Python 3**. If are in the rare situation where you still need **Python 2**, we have [a guide for you at the bottom](#but-i-need-python-2).
 
 ```sh
-brew install python
-pip install --upgrade setuptools pip
-pip install --upgrade
-
 brew install python3
 pip3 install --upgrade setuptools pip wheel
 ```
@@ -215,6 +186,16 @@ Great job! You did it!
 
 Let's install it! We use [`nvm`](https://github.com/creationix/nvm) to manage versions. Here's a [direct link to the install instructions](https://github.com/creationix/nvm#install-script).
 
+Now, if you run `nvm ls-remote`, you'll be able to see all the versions of Node.js that are available.
+
+We currently base all of our projects on the current Long-term Support (LTS) version. Currently, that's `Node.js v6`.
+
+To install that, run the following:
+
+```sh
+nvm install lts/boron
+```
+
 ## Installing git
 
 > You'll need a [GitHub](http://github.com/) account and be a member of the Texas Tribune organization. Someone should help you get this set up – don't worry!
@@ -235,7 +216,7 @@ To set your name, run the following:
 git config --global user.name "<your-name>"
 ```
 
-Next we'll set your email. This needs to be an email account associated with your Github account. Like the name, this email will be publically available and attached to each of your commits. If you don't know which emails are under your GitHub account, you can [check on GitHub](https://github.com/settings/emails).
+Next we'll set your email. This needs to be an email account associated with your Github account. Like the name, this email will be publicly available and attached to each of your commits. If you don't know which emails are under your GitHub account, you can [check on GitHub](https://github.com/settings/emails).
 
 ```sh
 git config --global user.email "<your-email>"
@@ -243,7 +224,7 @@ git config --global user.email "<your-email>"
 
 > Don't want your email public? GitHub can help with that. On the email settings page, there is a setting at the bottom labeled `Keep my email address private`. You can then use the proxy email GitHub provides.
 
-Next we'll set up authentication. The Homebrew install of git adds a helper that allows it to use OSX's built-in Keychain.
+Next we'll set up authentication. The Homebrew install of git adds a helper that allows it to use MacOS's built-in Keychain.
 
 Run the following to tell git to use it:
 
@@ -313,8 +294,17 @@ alias git=hub
 
 The way we set up `virtualenvwrapper` defaults to using Python 3 in the environment. But it is still possible to create Python 2 environments.
 
+You'll need to install Homebrew's `Python 2` first.
+
+```sh
+brew install python
+pip install --upgrade setuptools pip
+```
+
+Then, you'll be able to tell `virtualenvwrapper` which Python to use when creating the environment.
+
 ```sh
 mkvirtualenv --python `which python` <name-of-environment>
 ```
 
-The ``--python `which python` `` tells `mkvirtualenv` to use regular `python` to create the environment. In our case, that is referencing our Python 2 instance we installed earlier with Homebrew.
+The `` --python `which python` `` tells `mkvirtualenv` to use regular `python` to create the environment. In our case, that is referencing our Python 2 instance we installed earlier with Homebrew.
