@@ -31,7 +31,3 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 ```
 
 Now you can type `subl <path>` in your terminal and Sublime will open that file or folder.
-
-### Visual Studio Code
-
-[Download the installer](https://code.visualstudio.com/docs/setup/mac) and install. Continue following the guide to set up shell access.
