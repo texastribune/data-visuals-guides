@@ -178,7 +178,7 @@ To turn off your environment, run `deactivate`.
 
 Great job! You did it! 
 
-To go back to your enivronment, you can run `workon test,` and to list all virtual environments running, you can run `lsvirtualenv`.
+To go back to your enivronment, you can run `workon test`. To list all the virtual environments you've created, run `lsvirtualenv`.
 
 > HEADS UP! Make sure you **are not in a virtual environment** when installing packages with Homebrew. Things could get weird. Always `deactivate` before any `brew install` commands.
 
@@ -240,7 +240,7 @@ We also need to tell git to use `https` for cloning.
 git config --global hub.protocol https
 ```
 
-For more information on git and github, check out [this interactive tutorial](https://try.github.io/) or [this walk through](https://guides.github.com/activities/hello-world/) to get started.
+For more information on git and GitHub, check out [this interactive tutorial](https://try.github.io/) or [this walk through](https://guides.github.com/activities/hello-world/) to get started.
 
 ## Installing Docker
 
