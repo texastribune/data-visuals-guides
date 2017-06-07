@@ -152,7 +152,7 @@ pip3 freeze
 ```
 
 Now we need to use our `.bash_profile` to set some settings for `virtualenv`.
-Open your `.bash_profile` and add these lines:
+Open `~/.bash_profile` and add these lines:
 
 ```sh
 export WORKON_HOME=$HOME/.virtualenvs
@@ -160,7 +160,7 @@ export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 source /usr/local/bin/virtualenvwrapper.sh
 ```
 
-Save, then `source` your `.bash_profile`.
+Save, then run `source ~/.bash_profile`.
 
 #### Creating a virtual environment
 
@@ -176,7 +176,9 @@ This will create a Python 3 environment. You'll get some feedback as it installs
 
 To turn off your environment, run `deactivate`.
 
-Great job! You did it!
+Great job! You did it! 
+
+To go back to your enivronment, you can run `workon test`. To list all the virtual environments you've created, run `lsvirtualenv`.
 
 > HEADS UP! Make sure you **are not in a virtual environment** when installing packages with Homebrew. Things could get weird. Always `deactivate` before any `brew install` commands.
 
@@ -238,7 +240,7 @@ We also need to tell git to use `https` for cloning.
 git config --global hub.protocol https
 ```
 
-For more information on git and guthub, check out [this interactive tutorial](https://try.github.io/) or [this walk through](https://guides.github.com/activities/hello-world/) to get started.
+For more information on git and GitHub, check out [this interactive tutorial](https://try.github.io/) or [this walk through](https://guides.github.com/activities/hello-world/) to get started.
 
 ## Installing Docker
 
