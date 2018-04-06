@@ -126,11 +126,11 @@ You're right! But it's a good idea to not monkey around with your computer's ins
 
 Homebrew has [dedicated an entire document](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Homebrew-and-Python.md) to how it works with Python. It's worth a quick read.
 
-The Data Visuals team defaults to **Python 3**. If are in the rare situation where you still need **Python 2**, we have [a guide for you at the bottom](#but-i-need-python-2).
+The Data Visuals team defaults to **Python 3**. If are in the rare situation where you still need **Python 2**, let someone know and we can help.
 
 ```sh
-brew install python3
-pip3 install --upgrade setuptools pip wheel
+brew install python
+pip install --upgrade setuptools pip wheel
 ```
 
 ### Virtual environments
@@ -142,13 +142,13 @@ When you start working on group projects, it's important to make sure that every
 Run this command in your terminal:
 
 ```sh
-pip3 install virtualenvwrapper
+pip install virtualenvwrapper
 ```
 
 To look at a list of what's currently installed in your environment, you can run the following:
 
 ```sh
-pip3 freeze
+pip freeze
 ```
 
 Now we need to use our `.bash_profile` to set some settings for `virtualenv`.
@@ -190,12 +190,12 @@ Let's install it! We use [`nvm`](https://github.com/creationix/nvm) to manage ve
 
 Now, if you run `nvm ls-remote`, you'll be able to see all the versions of Node.js that are available.
 
-We currently base all of our projects on the current Long-term Support (LTS) version. Currently, that's `Node.js v6`.
+We currently base all of our projects on the current Long-term Support (LTS) version. Currently, that's `Node.js 8`.
 
 To install that, run the following:
 
 ```sh
-nvm install lts/boron
+nvm install lts/carbon
 ```
 
 ## Installing git
@@ -291,22 +291,3 @@ Next, we'll need to alias `hub` to point to git in your `.bash_profile`. (Don't 
 ```sh
 alias git=hub
 ```
-
-## But I need Python 2!
-
-The way we set up `virtualenvwrapper` defaults to using Python 3 in the environment. But it is still possible to create Python 2 environments.
-
-You'll need to install Homebrew's `Python 2` first.
-
-```sh
-brew install python
-pip install --upgrade setuptools pip
-```
-
-Then, you'll be able to tell `virtualenvwrapper` which Python to use when creating the environment.
-
-```sh
-mkvirtualenv --python `which python` <name-of-environment>
-```
-
-The `` --python `which python` `` tells `mkvirtualenv` to use regular `python` to create the environment. In our case, that is referencing our Python 2 instance we installed earlier with Homebrew.
