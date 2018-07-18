@@ -68,7 +68,7 @@ Beautiful! There's a whole world of color schemes out there that go beyond the d
 
 ## Code Editors
 
-Three editors are used here at The Texas Tribune – [Atom](https://atom.io/) and [Sublime Text](http://www.sublimetext.com/). We have no particular preference – try them both out! (You're welcome to use anything else, too.)
+Two editors are used here at The Texas Tribune – [Atom](https://atom.io/) and [Sublime Text](http://www.sublimetext.com/). We have no particular preference – try them both out! (You're welcome to use anything else, too.)
 
 ### Atom
 
