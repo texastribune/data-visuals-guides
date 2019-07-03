@@ -133,54 +133,20 @@ brew install python
 pip install --upgrade setuptools pip wheel
 ```
 
-### Virtual environments
+### Pipenv
+
+**NOTE:** This is only required for full-time staffers, although fellows are more than welcome to install if they want.
 
 When you start working on group projects, it's important to make sure that everyone's working environment is as close to identical as possible. Virtual environments keep a Python project's installs in their own little boxes so there are no conflicts between versions being used in other projects, or those already installed on your computer.
 
-#### Installing `virtualenv` and `virtualenvwrapper`
-
-Run this command in your terminal:
+Currently, the team uses [pipenv](https://github.com/pypa/pipenv) to create virtual environments. To install, run:
 
 ```sh
-pip install virtualenvwrapper
+brew install pipenv
 ```
 
-To look at a list of what's currently installed in your environment, you can run the following:
+That's all you will need to do for now. You will use them more as you get up and running on projects that use them. A few include the [salaries app](https://github.com/texastribune/salaries.texastribune.org) and the [Republic API](https://github.com/texastribune/republic).
 
-```sh
-pip freeze
-```
-
-Now we need to use our `.bash_profile` to set some settings for `virtualenv`.
-Open `~/.bash_profile` and add these lines:
-
-```sh
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-source /usr/local/bin/virtualenvwrapper.sh
-```
-
-Save, then run `source ~/.bash_profile`.
-
-#### Creating a virtual environment
-
-Virtual environments are created with the `mkvirtualenv` command.
-
-Try it out!
-
-```sh
-mkvirtualenv test
-```
-
-This will create a Python 3 environment. You'll get some feedback as it installs `pip`, then your new terminal prompt should begin with `(test)`.
-
-To turn off your environment, run `deactivate`.
-
-Great job! You did it! 
-
-To go back to your enivronment, you can run `workon test`. To list all the virtual environments you've created, run `lsvirtualenv`.
-
-> HEADS UP! Make sure you **are not in a virtual environment** when installing packages with Homebrew. Things could get weird. Always `deactivate` before any `brew install` commands.
 
 ## Installing Node.js
 
@@ -190,12 +156,24 @@ Let's install it! We use [`nvm`](https://github.com/creationix/nvm) to manage ve
 
 Now, if you run `nvm ls-remote`, you'll be able to see all the versions of Node.js that are available.
 
-We currently base all of our projects on the current Long-term Support (LTS) version. Currently, that's `Node.js 8`.
+We currently base all of our projects on the current Long-term Support (LTS) version.
 
 To install that, run the following:
 
 ```sh
 nvm install lts/carbon
+```
+
+We also use [npx](https://github.com/zkat/npx) with our kit that is used to create graphics, which will be explaining later. In the meantime, make sure it's installed by running:
+
+```sh
+npx
+```
+
+If that doesn't work, run:
+
+```sh
+npm install -g npx
 ```
 
 ## Installing git
@@ -242,7 +220,28 @@ git config --global hub.protocol https
 
 For more information on git and GitHub, check out [this interactive tutorial](https://try.github.io/) or [this walk through](https://guides.github.com/activities/hello-world/) to get started.
 
+## Installing the data-visuals kit
+
+Our team has a kit that is designed to provide you with the framework for creating graphics. Included is the basic page structure, files to put SCSS and javascript, a simple workflow for working with Google spreadsheets and a way to test locally and deploy.
+
+The kit is more fully documented on its [Github page](https://github.com/texastribune/data-visuals-create). You can install by running:
+
+```sh
+npm install -g @data-visuals/create
+```
+
+If you want to check it out, you can create a test project by running:
+
+```sh
+npx @data-visuals/create graphic test
+```
+
+Check out its Github page for info on how the folders are structured and how to hook up a Google spreadsheet to pull data to use with your graphic.
+
+
 ## Installing Docker
+
+**NOTE:** This is only required for full-time staffers
 
 Docker is a tool for containerizing apps. We use it for deploys and database management. You'll need [Docker for Mac](https://docs.docker.com/docker-for-mac/).
 
