@@ -1,6 +1,6 @@
 # Set up for our explorers
 
-Here's a list up all the explorers and apps we maintain, along with setup instructions for each. Most of these are documented in other locations. This doc attempts to gather all those links into one place
+Here's a list up all the explorers and apps we maintain, along with setup instructions for each. Most of these are documented in other locations. This doc attempts to gather all those links into one place.
 
 This assumes that everything in the [computer setup](computer-setup.md) section has been installed.
 
@@ -41,7 +41,7 @@ This section will be more fleshed out next time we update schools.
 
 ## [Republic API](https://republic.texastribune.org/api/v1/)
 
-
+This is the API that powers our directory, as well
 
 ## Campaign finance
 
@@ -52,6 +52,8 @@ This section will be more fleshed out as we begin using the app more and more.
 ## [Elections](https://apps.texastribune.org/elections/2018/texas-midterm-election-results)
 
 These [scripts will pull](https://github.com/texastribune/sos-collector) election results from the Secretary of State. We also have a little bit of documention on election night on [this Confluence page](https://wiki.texastribune.org/display/APPS/Ryan's+Brain#Ryan'sBrain-ElectionNight).
+
+More information on how to work with election results, as well as plans for the next election cycle, is documented in [this Google doc](https://docs.google.com/document/d/1UaUfQKH01QucTewv2p9fuQRx6JCO90PGaik91JilMZM/edit#heading=h.x2ziamsevlx).
 
 This section will be more fleshed out as we get closer to the next elections.
 
