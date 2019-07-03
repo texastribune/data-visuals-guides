@@ -21,7 +21,11 @@ This assumes that everything in the [computer setup](computer-setup.md) section 
 
 ## Salaries
 
-The basic setup is documented on i.
+The basic setup is documented on in its [Github repo](https://github.com/texastribune/salaries.texastribune.org).
+
+How to update salaries in [documented on Confluence](https://wiki.texastribune.org/pages/viewpage.action?pageId=12420703).
+
+You will need SSH into the production server in order to update the DB. You will first need to create a `~/.ssh/config` file if you don't have one already. And then copy the salaries production info shown at the bottom of this [Confluence readme](https://wiki.texastribune.org/display/TECH/AWS+hosts0).
 
 ## Prisons
 
