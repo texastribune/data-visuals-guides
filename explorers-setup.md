@@ -12,6 +12,7 @@ This assumes that everything in the [computer setup](computer-setup.md) section 
 - [Prisons](#prisons)
 - [Schools](#schools)
 - [Republic API](#republic-api)
+  - [Cloud SQL proxy](#cloud-sql-proxy)
 - [Campaign finance](#campaign-finance)
 - [Elections](#elections)
 
