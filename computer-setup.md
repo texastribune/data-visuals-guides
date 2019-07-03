@@ -31,6 +31,7 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
 - [&#9733; Bonus Rounds! &#9733;](#9733-bonus-rounds-9733)
   - [Show invisible files](#show-invisible-files)
   - [Hub](#hub)
+  - [Pyenv](#pyenv)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -310,3 +311,15 @@ Next, we'll need to alias `hub` to point to git in your `.bash_profile`. (Don't 
 ```sh
 alias git=hub
 ```
+
+## Pyenv
+
+Pyenv can help manage [python versions](https://github.com/pyenv/pyenv) on your computer. You can install with the following:
+
+```sh
+brew install pyenv
+```
+
+This is optional and depends on the setup on your machine.
+
+You can also download the [Python Wrangler](http://littlecolumns.com/tools/python-wrangler/) to keep track of python versions on your computer.
