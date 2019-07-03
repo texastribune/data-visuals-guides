@@ -29,6 +29,8 @@ You will need SSH into the production server in order to update the DB. You will
 
 ## Prisons
 
+Prisons is part of the Github repo for the Tribune's main site. It's updated once a month. We've documented how to updated in [this readme](https://github.com/texastribune/texastribune/tree/master/snollygoster/dataapps/prisons/scripts).
+
 ## Schools
 
 ## Republic API
