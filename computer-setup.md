@@ -19,9 +19,7 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
   - [Installing Homebrew](#installing-homebrew)
     - [Installation](#installation)
   - [Installing Python](#installing-python)
-    - [Virtual environments](#virtual-environments)
-      - [Installing `virtualenv` and `virtualenvwrapper`](#installing-virtualenv-and-virtualenvwrapper)
-      - [Creating a virtual environment](#creating-a-virtual-environment)
+    - [Pipenv](#pipenv)
   - [Installing Node.js](#installing-nodejs)
   - [Installing git](#installing-git)
   - [Installing Docker](#installing-docker)
@@ -238,6 +236,17 @@ npx @data-visuals/create graphic test
 
 Check out its Github page for info on how the folders are structured and how to hook up a Google spreadsheet to pull data to use with your graphic.
 
+## Credentials
+
+Congratulations! You're nearly done with setting up your computer. At this point, you will need several files added to the root directory on your computer, which will provide you with the credentials needed to run the kit. They include:
+
+* .google_client_secrets.json
+* .google_drive_fetch_token
+* .tt_kit_google_client_secrets.json
+* .aws/config
+* .aws/credentials
+
+You will need to ask someone on the team to get you those file to load onto your computer. These can't be shared on Github and shouldn't be emailed or sent over Slack.
 
 ## Installing Docker
 
@@ -246,6 +255,8 @@ Check out its Github page for info on how the folders are structured and how to 
 Docker is a tool for containerizing apps. We use it for deploys and database management. You'll need [Docker for Mac](https://docs.docker.com/docker-for-mac/).
 
 ## Installing PostgreSQL
+
+**NOTE:** This is optional for fellows, depending on if they will be working on database projects during their fellowship. It can always be installed later if you're not sure.
 
 Nearly all of our projects use [PostgreSQL](http://www.postgresql.org/) as their backend. Instead of installing it with Homebrew, we use [Postgres.app](http://postgresapp.com/) instead.
 
