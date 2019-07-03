@@ -41,7 +41,24 @@ This section will be more fleshed out next time we update schools.
 
 ## [Republic API](https://republic.texastribune.org/api/v1/)
 
-This is the API that powers our directory, as well
+This is the API that powers our directory, as well election results. Basic setup information is located in it's [Github repo](https://github.com/texastribune/republic).
+
+Once you are have this downloaded and the `pipenv` environment set up, you have several [make commands](https://github.com/texastribune/republic/blob/master/Makefile) at your disposal.
+
+For instance, you can run:
+
+```sh
+make init_db
+```
+
+To get a database set up locally. As of right now, the database is called `tt_dev2_republic_v2`.
+
+To deploy any changes to production, you will need to be added to our `data-visuals` project on the [Google Cloud Platform](https://console.cloud.google.com/home/dashboard?project=data-visuals-161818).
+
+
+
+
+
 
 ## Campaign finance
 
