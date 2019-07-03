@@ -22,6 +22,8 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
     - [Pipenv](#pipenv)
   - [Installing Node.js](#installing-nodejs)
   - [Installing git](#installing-git)
+  - [Installing the data-visuals kit](#installing-the-data-visuals-kit)
+    - [Credentials](#credentials)
   - [Installing Docker](#installing-docker)
   - [Installing PostgreSQL](#installing-postgresql)
   - [awscli and SSH](#awscli-and-ssh)
