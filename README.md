@@ -4,9 +4,10 @@ Here you will find a collection of guides for doing various Data Visuals tasks. 
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-- [Texas Tribune Data Visuals Guides](#texas-tribune-data-visuals-guides)
+
 
 - [Set up your News Apps computer environment](#set-up-your-news-apps-computer-environment)
+- [Explorers setup](#explorers-setup)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -14,6 +15,10 @@ Here you will find a collection of guides for doing various Data Visuals tasks. 
 ## [Set up your News Apps computer environment](computer-setup.md)
 
 There are a few things we have to do to get your computer ready for all the cool stuff you're going to build.
+
+## [Explorers setup](explorers-setup.md)
+
+Here's how you get specific explorers set up on your computer
 
 ## License
 

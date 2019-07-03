@@ -1,1 +1,36 @@
 # Set up for our explorers
+
+**NOTE:** This is a work in progress.
+
+Here's a list up all the explorers and apps we maintain, along with setup instructions for each. Most of these are documented in other locations. This doc attempts to gather all those links into one place
+
+This assumes that everything in the [computer setup](computer-setup.md) section has been installed.
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Salaries](#salaries)
+- [Prisons](#prisons)
+- [Schools](#schools)
+- [Republic API](#republic-api)
+- [Campaign finance](#campaign-finance)
+- [Elections](#elections)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Salaries
+
+The basic setup is documented on i.
+
+## Prisons
+
+## Schools
+
+## Republic API
+
+## Campaign finance
+
+## Elections
+
+

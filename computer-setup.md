@@ -4,7 +4,7 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-- [Set up your News Apps environment](#set-up-your-news-apps-environment)
+
 
   - [Pre-setup](#pre-setup)
     - [Make sure you're the admin](#make-sure-youre-the-admin)
@@ -19,7 +19,7 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
   - [Installing Homebrew](#installing-homebrew)
     - [Installation](#installation)
   - [Installing Python](#installing-python)
-    - [Pipenv](#pipenv)
+    - [Pipenv for virtual environments](#pipenv-for-virtual-environments)
   - [Installing Node.js](#installing-nodejs)
   - [Installing git](#installing-git)
   - [Installing the data-visuals kit](#installing-the-data-visuals-kit)
@@ -27,11 +27,10 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
   - [ai2html](#ai2html)
   - [Installing Docker](#installing-docker)
   - [Installing PostgreSQL](#installing-postgresql)
-  - [awscli and SSH](#awscli-and-ssh)
+  - [Explorer credentials](#explorer-credentials)
 - [&#9733; Bonus Rounds! &#9733;](#9733-bonus-rounds-9733)
   - [Show invisible files](#show-invisible-files)
   - [Hub](#hub)
-  - [But I need Python 2!](#but-i-need-python-2)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -134,7 +133,7 @@ brew install python
 pip install --upgrade setuptools pip wheel
 ```
 
-### Pipenv
+### Pipenv for virtual environments
 
 **NOTE:** This is only required for full-time staffers, although fellows are more than welcome to install if they want.
 
