@@ -1,4 +1,4 @@
-# Set up for our explorers
+# Set up our explorers on your computer
 
 Here's a list up all the explorers and apps we maintain, along with setup instructions for each. Most of these are documented in other locations. This doc attempts to gather all those links into one place.
 

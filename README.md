@@ -16,7 +16,7 @@ Here you will find a collection of guides for doing various Data Visuals tasks. 
 
 There are a few things we have to do to get your computer ready for all the cool stuff you're going to build.
 
-## [Explorers setup](explorers-setup.md)
+## [Set up our explorers on your computer](explorers-setup.md)
 
 Here's how you get specific explorers set up on your computer
 
