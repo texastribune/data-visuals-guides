@@ -24,6 +24,7 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
   - [Installing git](#installing-git)
   - [Installing the data-visuals kit](#installing-the-data-visuals-kit)
     - [Credentials](#credentials)
+  - [ai2html](#ai2html)
   - [Installing Docker](#installing-docker)
   - [Installing PostgreSQL](#installing-postgresql)
   - [awscli and SSH](#awscli-and-ssh)
@@ -222,9 +223,9 @@ For more information on git and GitHub, check out [this interactive tutorial](ht
 
 ## Installing the data-visuals kit
 
-Our team has a kit that is designed to provide you with the framework for creating graphics. Included is the basic page structure, files to put SCSS and javascript, a simple workflow for working with Google spreadsheets and a way to test locally and deploy.
+Our team has a kit that is designed to provide you with a framework for creating graphics. Included is the basic page structure, files to put SCSS and javascript in, a simple workflow for working with Google spreadsheets and a way to test your project locally and deploy to a server.
 
-The kit is more fully documented on its [Github page](https://github.com/texastribune/data-visuals-create). You can install by running:
+The kit is more fully documented on its [Github page](https://github.com/texastribune/data-visuals-create). You can it install by running:
 
 ```sh
 npm install -g @data-visuals/create
@@ -235,12 +236,11 @@ If you want to check it out, you can create a test project by running:
 ```sh
 npx @data-visuals/create graphic test
 ```
-
 Check out its Github page for info on how the folders are structured and how to hook up a Google spreadsheet to pull data to use with your graphic.
 
-## Credentials
+### Credentials
 
-Congratulations! You're nearly done with setting up your computer. At this point, you will need several files added to the root directory on your computer, which will provide you with the credentials needed to run the kit. They include:
+Congratulations! You're nearly done with setting up your computer. At this point, you will need several files added to the root directory on your computer, which will provide you with the credentials needed to run the kit and other team projects. They include:
 
 * .google_client_secrets.json
 * .google_drive_fetch_token
@@ -248,7 +248,13 @@ Congratulations! You're nearly done with setting up your computer. At this point
 * .aws/config
 * .aws/credentials
 
-You will need to ask someone on the team to get you those file to load onto your computer. These can't be shared on Github and shouldn't be emailed or sent over Slack.
+## ai2html
+
+We use Illustrator to create many of our graphics. As part of our setup, we also use [ai2html](http://ai2html.org/) to convert Illustrator files to HTML to put on our site.
+
+To set this up, check out our [instructions on Basecamp](https://3.basecamp.com/3098728/buckets/80634/uploads/1035900039)
+
+You will need to ask someone on the team to get you those files to load onto your computer. These can't be shared on Github and shouldn't be emailed or sent over Slack.
 
 ## Installing Docker
 
@@ -264,9 +270,11 @@ Nearly all of our projects use [PostgreSQL](http://www.postgresql.org/) as their
 
 Visit [http://postgresapp.com/](http://postgresapp.com/) and download the installer. After installing, run the app. You should get a pop up window and see a cute little elephant romping around in your menu bar in the top right. If you see the elephant, Postgres.app is live.
 
-## awscli and SSH
+## Explorer credentials
 
-For now, it's best to have one us set you up with these. We'll have to send you files that aren't safe to share publicly on the guide.
+Separate credentials are required for setting up our explorers. Instructions for them explorers are in a separate readme.
+
+On your first day, you won't need to worry about setting them up.
 
 # &#9733; Bonus Rounds! &#9733;
 
