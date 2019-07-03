@@ -55,6 +55,18 @@ To get a database set up locally. As of right now, the database is called `tt_de
 
 To deploy any changes to production, you will need to be added to our `data-visuals` project on the [Google Cloud Platform](https://console.cloud.google.com/home/dashboard?project=data-visuals-161818). Daniel can get you set up with this.
 
+Then you will need to install the Cloud SDK. Instructions for Mac users is available on [this Google Cloud](https://cloud.google.com/sdk/docs/quickstart-macos) page.
+
+Once installed, you can run the following to get credentials installed to `gcloud`:
+
+```sh
+gcloud init
+```
+
+Make sure when it's time to pick a project, you pick the one that starts with `data-visuals`.
+
+### Cloud SQL proxy
+
 We use a cloud sql proxy to open a connection locally to the production database. You will need to install the proxy client using [these instructions](https://cloud.google.com/sql/docs/postgres/quickstart-proxy-test).
 
 Once you've installed the proxy, go to [this page](https://console.cloud.google.com/sql/instances/data-visuals-db/overview?project=data-visuals-161818&duration=PT1H) and copy the `Instance connection name` for the database.
@@ -68,10 +80,10 @@ Copy that instance name and run the following command with it:
 This will open a proxy. Now open a new tab in your terminal and run the following to get the production database running on your local machine:
 
 ```sh
-python manage.py runserver --settings=republic.settings.production
+python manage.py runserver
 ```
 
-You can run the following to start ending the data on the production database:
+You can run the following to start editing the data on the production database:
 
 ```sh
 python manage.py shell_plus
