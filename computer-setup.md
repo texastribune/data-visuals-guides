@@ -248,13 +248,13 @@ Congratulations! You're nearly done with setting up your computer. At this point
 * .aws/config
 * .aws/credentials
 
+You will need to ask someone on the team to get you those files to load onto your computer. These can't be shared on Github and shouldn't be emailed or sent over Slack.
+
 ## ai2html
 
-We use Illustrator to create many of our graphics. As part of our setup, we also use [ai2html](http://ai2html.org/) to convert Illustrator files to HTML to put on our site.
+We use Illustrator to create many of our graphics. A team password for the Adobe Creative Cloud is available in 1Password.
 
-To set this up, check out our [instructions on Basecamp](https://3.basecamp.com/3098728/buckets/80634/uploads/1035900039).
-
-You will need to ask someone on the team to get you those files to load onto your computer. These can't be shared on Github and shouldn't be emailed or sent over Slack.
+As part of our setup, we also use [ai2html](http://ai2html.org/) to convert Illustrator files to HTML to put on our site. To set this up, check out our [instructions on Basecamp](https://3.basecamp.com/3098728/buckets/80634/uploads/1035900039).
 
 ## Installing Docker
 
