@@ -200,5 +200,11 @@ We also use Illustrator for some charts. All Illustrator files are put into the 
 
 We then use `ai2html` to convert the Illustrator file into HTML, which is exported into [this directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/app/templates/ai2html-output). You can then [call the Illustrator graphic(s)](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/map.html#L7) inside an html file in the `apps/` direcotry. 
 
+```html
+<div id="graphic-budget-scraps" class="graphic app">
+  {% set ai2html = "census-map" %}
+  {% include "ai2html-output/" + ai2html + ".html" %}
+</div>
+```
 
 ## Creating a feature story
