@@ -8,6 +8,7 @@ Here's instructions for how [our data visuals kit](https://github.com/texastribu
 
 - [Credentials](#credentials)
 - [Creating a graphic](#creating-a-graphic)
+  - [Nunjucks](#nunjucks)
 - [Creating a feature story](#creating-a-feature-story)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -66,7 +67,7 @@ npm run data:fetch
 
 The spreadsheet will be converted into a json file called `data.json` and put into your `data` directory inside your graphic.
 
-#### Nunjucks
+### Nunjucks
 
 Now we're going to get the data from that json file onto the page by recreating the table in [this project](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/index.html). We're using [Nunjucks](https://mozilla.github.io/nunjucks/) as our templating language to make it happen.
 
