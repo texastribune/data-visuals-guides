@@ -144,4 +144,61 @@ This is why we can loop through it.
 
 Fire up your localhost if it's not already. And you should a table!
 
+### Other chart types
+
+#### D3
+
+We also use D3 for some of our charts. For these, you will be using the [loadJsonScript](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/utils/load-json-script.js) to load in the data from our json file in the data directory.
+
+For example, [this line chart](https://www.texastribune.org/2019/04/18/dallas-fort-worth-metro-area-saw-biggest-2018-texas-population-growth/) uses D3. It's `data.json file` looks like so:
+
+```js
+{
+  "ace": [
+    {
+      "year": 2015,
+      "ace": 51742.02327901564
+    },
+    {
+      "year": 2016,
+      "ace": 54681.095079787236
+    },
+    {
+      "year": 2017,
+      "ace": 56553.653136531364
+    },
+    {
+      "year": 2018,
+      "ace": 57983.79047619048
+    }
+  ...
+  ...
+  ...
+  ],
+  "text": {
+    "title": "Dallas ISD incentivized higher-rated teachers to work at low-performing schools",
+    "source": "Texas Education Agency",
+    "prose": "At Dallas ISD, higher-rated teachers make more money. When the district implemented the first iteration of the Accelerating Campus Excellence, also known as ACE,  program at seven schools in 2015-16, bonuses helped lure more higher-paid teachers to those underperforming schools.",
+    "credit": "Shiying Cheng",
+    "note": ""
+  }
+}
+```
+
+And it's imported into the graphic.js file doing:
+
+```js
+const aceData = loadJsonScript('ace-data');
+```
+
+You can see more about how D3 charts are created by looking inside this [project's graphic.js file](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/graphic.js).
+
+
+#### Illustrator
+
+We also use Illustrator for some charts. All Illustrator files are put into the [workspace directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/workspace).
+
+We then use `ai2html` to convert the Illustrator file into HTML, which is exported into [this directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/app/templates/ai2html-output). You can then [call the Illustrator graphic(s)](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/map.html#L7) inside an html file in the `apps/` direcotry. 
+
+
 ## Creating a feature story
