@@ -20,6 +20,10 @@ There are a few things we have to do to get your computer ready for all the cool
 
 Here's how you get specific explorers set up on your computer
 
+## [Setting up, testing the kit on your machine](kit-setup.md)
+
+Here's how to set up and deploy your first projects
+
 ## License
 
 All guides are licensed under a [Creative Commons BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/) license.
