@@ -2,6 +2,16 @@
 
 Here's instructions for how [our data visuals kit](https://github.com/texastribune/data-visuals-create) works and how you can get it working on your machine.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Credentials](#credentials)
+- [Creating a graphic](#creating-a-graphic)
+- [Creating a feature story](#creating-a-feature-story)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Credentials
 
 First thing you'll need to do is grab a few files to give you credentials to use and deploy our graphics. They will need to be given to you on a thumb drive. Take those files out of the `credentials` folder on the thumb drive and put them into your root directory. For example, on my computer it's `User/chrisessig`.
@@ -46,7 +56,7 @@ We use Google spreadsheets to host the data for our graphics. Here's an example 
 
 Now ahead and make a new spreadsheet and hook it up to the test graphic you created. The [readme in the create repo](https://github.com/texastribune/data-visuals-create#how-to-work-with-google-doc-and-google-sheet-files) will provide you the information you need to get this set up.
 
-Once you've created a new spreadsheet, copy over the data from [this example](https://docs.google.com/spreadsheets/d/102dLzZtUAD-kCcXIWKTnzbMM0KKhwlmE4WIVmKwSPWU/edit#gid=0). Go ahead and copy over both sheets and change their sheet names to match.
+Once you've created a new spreadsheet, copy over the data from [that example](https://docs.google.com/spreadsheets/d/102dLzZtUAD-kCcXIWKTnzbMM0KKhwlmE4WIVmKwSPWU/edit#gid=0). Go ahead and copy over both sheets and change their sheet names to match.
 
 Now you can run the following to download the data:
 
@@ -95,6 +105,36 @@ You'll notice that this includes the following for loop:
 {% for row in context.datapoints %}
 ```
 
+We're grabbing the `context` variable, which we just created and includes json data from our spreadsheet and looping through it, putting values on the page as it goes through. The `datapoints` item is a reference to the sheet name in the Google spreadsheet. It gets converted into the `data.json` file like so:
 
+```js
+{
+  "datapoints": [
+    {
+      "2010": 82,
+      "2018": 152,
+      "CTYNAME": "Loving County",
+      "change": 0.8536585365853658
+    },
+    {
+      "2010": 157107,
+      "2018": 222631,
+      "CTYNAME": "Hays County",
+      "change": 0.41706607598642964
+    },
+    ...
+    ...
+    ...
+  ],
+  "text": {
+    "title": "headline",
+    "source": "U.S. Census Bureau",
+    "prose": "graphic_prose",
+    "credit": "Shiying Cheng"
+  }
+}
+```
+
+This is why we can loop through it.
 
 ## Creating a feature story
