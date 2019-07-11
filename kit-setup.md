@@ -66,13 +66,17 @@ npm run data:fetch
 
 The spreadsheet will be converted into a json file called `data.json` and put into your `data` directory inside your graphic.
 
-Then go into your `app/index.html` file and the following:
+#### Nunjucks
+
+Now we're going to get the data from that json file onto the page by recreating the table in [this project](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/index.html). We're using [Nunjucks](https://mozilla.github.io/nunjucks/) as our templating language to make it happen.
+
+First you'll go into your `app/index.html` file and add the following near the top of the page (but under `base.html`):
 
 ```html
 {% set context = data.data %}
 ```
 
-This will put the json data into a variable called `context`.
+This will put the json data you downloaded into a variable called `context`.
 
 And then put this inside the `<div class="app">` tag:
 
@@ -105,7 +109,7 @@ You'll notice that this includes the following for loop:
 {% for row in context.datapoints %}
 ```
 
-We're grabbing the `context` variable, which we just created and includes json data from our spreadsheet and looping through it, putting values on the page as it goes through. The `datapoints` item is a reference to the sheet name in the Google spreadsheet. It gets converted into the `data.json` file like so:
+We're grabbing the `context` variable, which we just created and includes json data from our spreadsheet and looping through it, putting values from the json data on the page as it goes through. The `datapoints` item is a reference to the sheet name in the Google spreadsheet. It gets converted into the `data.json` file and looks like:
 
 ```js
 {
@@ -136,5 +140,7 @@ We're grabbing the `context` variable, which we just created and includes json d
 ```
 
 This is why we can loop through it.
+
+Fire up your localhost if it's not already. And you should a table!
 
 ## Creating a feature story
