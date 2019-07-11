@@ -67,6 +67,10 @@ npm run data:fetch
 
 The spreadsheet will be converted into a json file called `data.json` and put into your `data` directory inside your graphic.
 
+The name of the json file is set inside the project.config.js file. Each file in the `data` directory has its own object inside the `files` array. You can change the name of the json file by changing the `name` attribute.
+
+This is useful when you want to have multiple json files for your project. 
+
 ### Nunjucks
 
 Now we're going to get the data from that json file onto the page by recreating the table in [this project](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/index.html). We're using [Nunjucks](https://mozilla.github.io/nunjucks/) as our templating language to make it happen.
@@ -198,7 +202,7 @@ You can see more about how D3 charts are created by looking inside this [project
 
 We also use Illustrator for some charts. All Illustrator files are put into the [workspace directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/workspace).
 
-We then use `ai2html` to convert the Illustrator file into HTML, which is exported into [this directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/app/templates/ai2html-output). You can then [call the Illustrator graphic(s)](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/map.html#L7) inside an html file in the `apps/` direcotry. 
+We then use `ai2html` to convert the Illustrator file into HTML, which is exported into [app/templates/ai2html-output/ directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/app/templates/ai2html-output). You can then [call the Illustrator graphic(s)](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/map.html#L7) inside an html file in the `apps/` direcotry. 
 
 ```html
 <div id="graphic-budget-scraps" class="graphic app">
@@ -208,3 +212,11 @@ We then use `ai2html` to convert the Illustrator file into HTML, which is export
 ```
 
 ## Creating a feature story
+
+All of the commands are the same for feature stories. The difference is you start with an entire article.
+
+We use a Google doc to house the text for feature stories. Here's a [good example of one](https://docs.google.com/document/d/1CLKjPANEVPMOMPdjX-nrw8DetFXe__zPWeaqx8iQCZs/edit).
+
+We use `archieML` to  convert the text into json. Like graphics, we `data:fetch` them in the same way and the data is put into the `data/data.json` file.
+
+Once you are ready for the story to go live, make sure you change the `bucket` in the `project.config.js` from moose to apps. Here's what it [should look like](https://github.com/texastribune/feature-asset-forfeiture-2019-05/blob/master/project.config.js#L14) when you're done.
