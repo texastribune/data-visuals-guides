@@ -46,4 +46,55 @@ We use Google spreadsheets to host the data for our graphics. Here's an example 
 
 Now ahead and make a new spreadsheet and hook it up to the test graphic you created. The [readme in the create repo](https://github.com/texastribune/data-visuals-create#how-to-work-with-google-doc-and-google-sheet-files) will provide you the information you need to get this set up.
 
+Once you've created a new spreadsheet, copy over the data from [this example](https://docs.google.com/spreadsheets/d/102dLzZtUAD-kCcXIWKTnzbMM0KKhwlmE4WIVmKwSPWU/edit#gid=0). Go ahead and copy over both sheets and change their sheet names to match.
+
+Now you can run the following to download the data:
+
+```sh
+npm run data:fetch
+```
+
+The spreadsheet will be converted into a json file called `data.json` and put into your `data` directory inside your graphic.
+
+Then go into your `app/index.html` file and the following:
+
+```html
+{% set context = data.data %}
+```
+
+This will put the json data into a variable called `context`.
+
+And then put this inside the `<div class="app">` tag:
+
+```html
+<table class="dv-table">
+  <thead>
+    <tr> 
+      <th>County</th>
+      <th class="number">2010 pop. </th>
+      <th class="number">2018 pop. </th>
+      <th class="number">Percent change</th>
+    </tr>
+  </thead>
+  <tbody>
+     {% for row in context.datapoints %}
+       <tr>
+        <td> {{ row.CTYNAME }} </td>
+        <td class="number"> {{ row["2010"] | intcomma }} </td>
+        <td class="number"> {{ row["2018"] | intcomma }} </td>
+        <td class="percent"> +{{ (row.change * 100) | round(2) }}%</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+```
+
+You'll notice that this includes the following for loop:
+
+```html
+{% for row in context.datapoints %}
+```
+
+
+
 ## Creating a feature story
