@@ -215,8 +215,17 @@ We then use `ai2html` to convert the Illustrator file into HTML, which is export
 
 All of the commands are the same for feature stories. The difference is you start with an entire article.
 
-We use a Google doc to house the text for feature stories. Here's a [good example of one](https://docs.google.com/document/d/1CLKjPANEVPMOMPdjX-nrw8DetFXe__zPWeaqx8iQCZs/edit).
+We use a Google doc to house the text for feature stories. Here's a [good example of one we created for a story](https://docs.google.com/document/d/1CLKjPANEVPMOMPdjX-nrw8DetFXe__zPWeaqx8iQCZs/edit) and here's a [the feature article template](https://docs.google.com/document/d/1B_jhK1r75fMZVQev8BGU60dgjh1ffE0AxNDZz5dl-RQ/edit).
 
 We use `archieML` to  convert the text into json. Like graphics, we `data:fetch` them in the same way and the data is put into the `data/data.json` file.
 
+#### Github
+
+One important difference between a graphic and a feature page is feature pages get their own Github repos. To do this, you will need to run the [create command](https://github.com/texastribune/data-visuals-create) outside of the `newsapps-dailies` repo. Make you include `feature` instead of `graphic` when running create. After this is run, you will then need to go to Github and create [a new repo](https://github.com/organizations/texastribune/repositories/new) inside the `texastribune` organization. Follow the instructions for setting up a Git repo inside an existing directory, which you made when you ran `create`.
+
+Here's an example of a [final, feature repo](https://github.com/texastribune/feature-asset-forfeiture-2019-05).
+
+#### Deploy
+
 Once you are ready for the story to go live, make sure you change the `bucket` in the `project.config.js` from moose to apps. Here's what it [should look like](https://github.com/texastribune/feature-asset-forfeiture-2019-05/blob/master/project.config.js#L14) when you're done.
+
