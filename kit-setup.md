@@ -9,7 +9,12 @@ Here's instructions for how [our data visuals kit](https://github.com/texastribu
 - [Credentials](#credentials)
 - [Creating a graphic](#creating-a-graphic)
   - [Nunjucks](#nunjucks)
+  - [Other chart types](#other-chart-types)
+    - [D3](#d3)
+    - [Illustrator](#illustrator)
 - [Creating a feature story](#creating-a-feature-story)
+    - [Github](#github)
+    - [Deploy](#deploy)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
