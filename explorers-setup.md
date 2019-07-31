@@ -84,11 +84,15 @@ python manage.py runserver
 
 You can now go to the admin page and start editing the data on the production database.
 
+### FAQ
+
+We have also created a FAQ page on Confluence for [documenting random issues](https://wiki.texastribune.org/display/APPS/Republic+API+FAQ) we run into.
+
 ## Campaign finance
 
 We have an app for [downloading campaign finance data](https://github.com/texastribune/campaign-finance-viewer) from the state. More information on how it works, as well as resources for federal campaign finance data, can be found on [this Confluence page](https://wiki.texastribune.org/display/APPS/Ryan's+Brain#Ryan'sBrain-CampaignFinance).
 
-This section will be more fleshed out as we begin using the app more and more.
+The [readme](https://github.com/texastribune/campaign-finance-viewer/blob/master/README.md) also has commands for setting up.
 
 ## [Elections](https://apps.texastribune.org/elections/2018/texas-midterm-election-results)
 
