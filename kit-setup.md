@@ -247,7 +247,7 @@ Here's an example of a [final, feature repo](https://github.com/texastribune/fea
 
 #### Getting text on the page
 
-Let's create a feature article and get some text on a page! After creating a feature article, go to the `project.config.js` file and change the `files` variable so it hooks up to [this Google doc](https://docs.google.com/document/d/1vIy6uXDwut2jP-kILbiM3SmECOBxZf3lPxLEtyQ_N_c/edit) of a feature article we've done in the past:
+Let's create a feature article and get some text on a page! First run the `create` command to create a feature article and then go to the `project.config.js` file and change the `files` variable so it hooks up to [this Google doc](https://docs.google.com/document/d/1vIy6uXDwut2jP-kILbiM3SmECOBxZf3lPxLEtyQ_N_c/edit) we've used for a story in the past:
 
 ```js
 files: [
