@@ -202,6 +202,29 @@ const aceData = loadJsonScript('ace-data');
 
 You can see more about how D3 charts are created by looking inside this [project's graphic.js file](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/graphic.js).
 
+You can also load data by importing the data file directly at the top of the graphic JS file, like this:
+
+```js
+import data from '../../../data/data.json';
+```
+
+Note that the import file path will change based on where your JS file is and the name of the data file.
+
+(Yet another) alternative approach is defining 
+
+```js
+<script>
+  window.ttData = {
+    gutenTag: '{{ context.guten_tag or "subject-politics" }}'
+  };
+  window.DATA = {{ data.data|dump }};
+</script>
+```
+
+Examples of how we've created D3 charts:
+- https://github.com/texastribune/three-chambers-voting-patterns-2019-03/blob/master/app/scripts/packs/main.js#L455
+- https://github.com/texastribune/general-early-voter-tracker-2018/blob/master/app/scripts/packs/main.js#L158
+- https://github.com/texastribune/newsapps-dailies/blob/fcee4d6cb943914a2ba8919776a6f839ddddd8b7/graphic-harvey-homeless-teachers-2018-05/app/scripts/graphic.js
 
 #### Illustrator
 
