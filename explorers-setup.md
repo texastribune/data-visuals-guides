@@ -70,12 +70,10 @@ Make sure when it's time to pick a project, you pick the one that starts with `d
 
 We use a cloud sql proxy to open a connection locally to the production database. You will need to install the proxy client using [these instructions](https://cloud.google.com/sql/docs/postgres/quickstart-proxy-test).
 
-Once you've installed the proxy, go to [this page](https://console.cloud.google.com/sql/instances/data-visuals-db/overview?project=data-visuals-161818&duration=PT1H) and copy the `Instance connection name` for the database.
-
-Copy that instance name and run the following command with it:
+Once you've installed the proxy, you should be able to run:
 
 ```sh
-./cloud_sql_proxy -instances=<INSTANCE_CONNECTION_NAME>=tcp:5432
+run-dev
 ```
 
 This will open a proxy. Now open a new tab in your terminal and run the following to get the production database running on your local machine:
@@ -84,15 +82,7 @@ This will open a proxy. Now open a new tab in your terminal and run the followin
 python manage.py runserver
 ```
 
-You can run the following to start editing the data on the production database:
-
-```sh
-python manage.py shell_plus
-```
-
-Right now, we create lawmakers using the [following commands](https://github.com/texastribune/republic/blob/master/CREATING_OFFICEHOLDERS.md).
-
-A few more details on how this works is available in [this Google doc](https://docs.google.com/document/d/1UaUfQKH01QucTewv2p9fuQRx6JCO90PGaik91JilMZM/edit#), which a transcript of a Slack conversation between Chris and Ryan shortly after Ryan left.
+You can now go to the admin page and start editing the data on the production database.
 
 ## Campaign finance
 
