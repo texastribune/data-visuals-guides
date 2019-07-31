@@ -157,9 +157,9 @@ Fire up your localhost if it's not already. And you should a table!
 
 #### D3
 
-We also use D3 for some of our charts. For these, you will be using the [loadJsonScript](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/utils/load-json-script.js) to load in the data from our json file in the data directory.
+We also use D3 for some of our charts. For these, you will be using the [loadJsonScript](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/utils/load-json-script.js) function to load in the data from our json file in the data directory.
 
-For example, [this line chart](https://www.texastribune.org/2019/04/18/dallas-fort-worth-metro-area-saw-biggest-2018-texas-population-growth/) uses D3. It's `data.json file` looks like so:
+For example, [this line chart](https://www.texastribune.org/2019/03/04/lawmakers-want-expand-dallas-teacher-incentive-pay-program/) uses D3. It's `data.json file` looks like so:
 
 ```js
 {
@@ -194,13 +194,26 @@ For example, [this line chart](https://www.texastribune.org/2019/04/18/dallas-fo
 }
 ```
 
-And it's imported into the graphic.js file doing:
+To import the data in the `ace` object, first add [a line like this](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/index.html#L41) to your index.html file inside the `inline_data` block:
+
+```js
+{{ data.data.ace|jsonScript('ace-data') }}
+```
+
+This will turn the data in your `data.json` file into an object on the page that can be accessed globally. Just in case you're curious, this is what the output looks like:
+
+```html
+<script id="ace-data" type="application/json">  [{"year":2015,"ace":51742.02327901564},{"year":2016,"ace":54681.095079787236},{"year":2017,"ace":56553.653136531364},{"year":2018,"ace":57983.79047619048}]
+</script>
+```
+
+Then you'll import the data into the graphic.js file using the script's id tag of `ace-data`:
 
 ```js
 const aceData = loadJsonScript('ace-data');
 ```
 
-You can see more about how D3 charts are created by looking inside this [project's graphic.js file](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/graphic.js).
+This will parse the data for use with D3. You can see more about how D3 charts are created by looking inside this [project's graphic.js file](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/graphic.js).
 
 
 #### Illustrator
@@ -229,6 +242,9 @@ We use `archieML` to  convert the text into json. Like graphics, we `data:fetch`
 One important difference between a graphic and a feature page is feature pages get their own Github repos. To do this, you will need to run the [create command](https://github.com/texastribune/data-visuals-create) outside of the `newsapps-dailies` repo. Make you include `feature` instead of `graphic` when running create. After this is run, you will then need to go to Github and create [a new repo](https://github.com/organizations/texastribune/repositories/new) inside the `texastribune` organization. Follow the instructions for setting up a Git repo inside an existing directory, which you made when you ran `create`.
 
 Here's an example of a [final, feature repo](https://github.com/texastribune/feature-asset-forfeiture-2019-05).
+
+#### Illustrator
+
 
 #### Deploy
 
