@@ -13,6 +13,7 @@ This assumes that everything in the [computer setup](computer-setup.md) section 
 - [Schools](#schools)
 - [Republic API](#republic-api)
   - [Cloud SQL proxy](#cloud-sql-proxy)
+  - [FAQ](#faq)
 - [Campaign finance](#campaign-finance)
 - [Elections](#elections)
 
@@ -73,26 +74,26 @@ We use a cloud sql proxy to open a connection locally to the production database
 Once you've installed the proxy, you should be able to run:
 
 ```sh
-run-dev
+make run-dev
 ```
 
-This will open a proxy. Now open a new tab in your terminal and run the following to get the production database running on your local machine:
+This will open a proxy between your local machine and the production database. You can now go to the admin page and start editing the data on the production database. You can also open up the [admin page](https://republic.texastribune.org/admin/) on production to edit the database.
+
+You may run into isses getting the server to work on your local machine. If so, go to your `/etc/hosts` file and add the following to the bottom of the file:
 
 ```sh
-python manage.py runserver
+127.0.0.1 local.texastribune.org
 ```
-
-You can now go to the admin page and start editing the data on the production database.
 
 ### FAQ
 
-We have also created a FAQ page on Confluence for [documenting random issues](https://wiki.texastribune.org/display/APPS/Republic+API+FAQ) we run into.
+We have also created a FAQ page on Confluence for [documenting random issues](https://wiki.texastribune.org/display/APPS/Republic+API+FAQ) we run into for the Republic API.
 
 ## Campaign finance
 
 We have an app for [downloading campaign finance data](https://github.com/texastribune/campaign-finance-viewer) from the state. More information on how it works, as well as resources for federal campaign finance data, can be found on [this Confluence page](https://wiki.texastribune.org/display/APPS/Ryan's+Brain#Ryan'sBrain-CampaignFinance).
 
-The [readme](https://github.com/texastribune/campaign-finance-viewer/blob/master/README.md) also has commands for setting up.
+The [readme](https://github.com/texastribune/campaign-finance-viewer/blob/master/README.md) also has commands for setting it up on your machine.
 
 ## [Elections](https://apps.texastribune.org/elections/2018/texas-midterm-election-results)
 
