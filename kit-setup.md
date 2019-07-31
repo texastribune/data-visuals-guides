@@ -14,6 +14,8 @@ Here's instructions for how [our data visuals kit](https://github.com/texastribu
     - [Illustrator](#illustrator)
 - [Creating a feature story](#creating-a-feature-story)
     - [Github](#github)
+    - [Getting text on the page](#getting-text-on-the-page)
+    - [Illustrator graphics and other elements](#illustrator-graphics-and-other-elements)
     - [Deploy](#deploy)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -243,8 +245,143 @@ One important difference between a graphic and a feature page is feature pages g
 
 Here's an example of a [final, feature repo](https://github.com/texastribune/feature-asset-forfeiture-2019-05).
 
-#### Illustrator
+#### Getting text on the page
 
+Let's create a feature article and get some text on a page! After creating a feature article, go to the `project.config.js` file and change the `files` variable so it hooks up to [this Google doc](https://docs.google.com/document/d/1vIy6uXDwut2jP-kILbiM3SmECOBxZf3lPxLEtyQ_N_c/edit) of a feature article we've done in the past:
+
+```js
+files: [
+    {
+      fileId: '1vIy6uXDwut2jP-kILbiM3SmECOBxZf3lPxLEtyQ_N_c',
+      type: 'doc',
+      name: 'text',
+    },
+```
+
+Now run the data fetch command. The `text.json` file should now look like this:
+
+```js
+{
+  "title": "How the Supreme Court’s decision on the census citizenship question could affect representation in Texas",
+  "seo_headline": "How a citizenship question on the U.S. Census could cost Texas",
+  "pub_date": "2019-6-21",
+  "authors": [
+    "<a href=\"https://www.texastribune.org/about/staff/alexa-ura/\">Alexa Ura</a>",
+    "<a href=\"https://www.texastribune.org/about/staff/chris-essig/\">Chris Essig</a>",
+    "<a href=\"https://www.texastribune.org/about/staff/darla-cameron/\">Darla Cameron</a>"
+  ],
+  "parsely_authors": [
+    "Alexa Ura",
+    "Chris Essig",
+    "Darla Cameron"
+  ],
+  "parsely_section": "FRONT PAGE",
+  "guten_tag": "subject-redistricting",
+  "summary": "The U.S. Supreme Court could soon alter the political future of Texas when it decides whether the Trump administration can ask about citizenship on the upcoming census.",
+  "tweet_text": "What Texas stands to lose if the Supreme Court approves the citizenship question",
+  "prose": [
+    {
+      "type": "text",
+      "value": "The U.S. Supreme Court could soon alter the political future of Texas when it decides whether the Trump administration can ask about citizenship on the upcoming census."
+    },
+    {
+      "type": "text",
+      "value": "The administration pushed to add the question, citing it as a tool it needs to enforce the federal Voting Rights Act. But demographers and civil rights organizations have warned that immigrants and their families will be too afraid to respond to a government questionnaire that asks about citizenship status. And the U.S. Census Bureau’s own analysis shows including the question could lead to an undercount of Hispanics and noncitizens."
+    },
+    {
+      "type": "text",
+      "value": "Such an undercount in the once-a-decade census would come with serious repercussions for a state like Texas, where the number of noncitizens has helped grow the state’s political clout."
+    },
+    {
+      "type": "insert",
+      "value": {
+        "align": "center",
+        "illustrator": "true",
+        "slug": "summary-chart"
+      }
+    },
+    ...
+    ...
+    ...
+    {
+      "type": "correction",
+      "value": "A previous version of this story included incorrect information about Congressional District 24."
+    },
+    {
+      "type": "extra_credit",
+      "value": "The code we ran for our analysis on noncitizens in Texas’ political districts is available on <a href=\"https://github.com/texastribune/scotus-citizenship-analysis\">Github</a>."
+    }
+  ]
+}
+```
+
+You'll notice that text for our story is given the `type` of `text`, which will be important later.
+
+Now go to your [index.html file](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/index.html). You'll notice this line:
+
+```html
+{{ prose(context.prose, context, data) }}
+```
+
+This calls the prose macro within the [app/templates/macros/prose.html file](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/prose.html) and loops through all lines in your `text.json` file, putting each on the page.
+
+The prose macro goes inside the [app/templates/macros/processors.html file](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/processors.html) and picks out the appropriate macro depending on what type of content is being looped through. For instance, since the story's paragraphs has a type of `text`, it's given to this macro:
+
+```
+{% macro text(value) %}
+  <p class="copy">{{ value }}</p>
+{% endmacro %}
+```
+
+The result is the content is wrapped in a <p> tag and placed on the page.
+
+#### Illustrator graphics and other elements
+
+Graphics and other elements are placed on the page differently than they are in graphics. You will notice in the above example, one of our Illustrator graphics is inserted into the Google doc like so:
+
+```html
+{.insert}
+align: center
+illustrator: true
+slug: summary-chart
+{}
+```
+
+This is then converted into the `text.json` file and looks like so:
+
+```js
+{
+  ...
+  ...
+  ...
+  "prose": [
+    ...
+    ...
+    ...
+    {
+      "type": "insert",
+      "value": {
+        "align": "center",
+        "illustrator": "true",
+        "slug": "summary-chart"
+      }
+    },
+    ...
+    ...
+    ...
+  ]
+}
+```
+
+You'll place that on the page using the same `processors.html` file from before. Only we will need to add a new macro to handle content with the type of `insert`.
+
+```html
+{% macro insert(value) %}
+  {% include "ai2html-output/" + value.slug + ".html" %}
+{% endmacro %}
+```
+
+Here's a more complicated example from [this completed feature story](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/processors.html).
 
 #### Deploy
 
