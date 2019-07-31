@@ -157,6 +157,7 @@ Fire up your localhost if it's not already. And you should a table!
 
 #### D3
 
+### Importing data via loadJsonScript
 We also use D3 for some of our charts. For these, you will be using the [loadJsonScript](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/utils/load-json-script.js) to load in the data from our json file in the data directory.
 
 For example, [this line chart](https://www.texastribune.org/2019/04/18/dallas-fort-worth-metro-area-saw-biggest-2018-texas-population-growth/) uses D3. It's `data.json file` looks like so:
@@ -202,6 +203,7 @@ const aceData = loadJsonScript('ace-data');
 
 You can see more about how D3 charts are created by looking inside this [project's graphic.js file](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/graphic.js).
 
+### Importing data with the filepath
 You can also load data by importing the data file directly at the top of the graphic JS file, like this:
 
 ```js
@@ -210,7 +212,8 @@ import data from '../../../data/data.json';
 
 Note that the import file path will change based on where your JS file is and the name of the data file.
 
-(Yet another) alternative approach is defining 
+### Importing data via window.DATA
+(Yet another) alternative approach is storing the data in a window variable in the HTML file:
 
 ```js
 <script>
