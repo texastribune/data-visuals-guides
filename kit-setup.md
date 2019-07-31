@@ -338,7 +338,7 @@ The result is the paragraph is wrapped in a <p> tag and placed on the page. It d
 
 #### Illustrator graphics and other elements
 
-Graphics and other elements are placed on the page differently than they are in graphics. You will notice in [this example](https://docs.google.com/document/d/1vIy6uXDwut2jP-kILbiM3SmECOBxZf3lPxLEtyQ_N_c/edit), one of our Illustrator graphics is inserted into the Google doc like so:
+Charts and other elements are placed on the page differently than they are in graphic projects. You will notice in [this example](https://docs.google.com/document/d/1vIy6uXDwut2jP-kILbiM3SmECOBxZf3lPxLEtyQ_N_c/edit), one of our Illustrator graphics is inserted into the Google doc like so:
 
 ```html
 {.insert}
