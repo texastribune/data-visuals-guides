@@ -87,11 +87,11 @@ You may run into isses getting the server to work on your local machine. If so, 
 
 ### FAQ
 
-We have also created a FAQ page on Confluence for [documenting random issues](https://wiki.texastribune.org/display/APPS/Republic+API+FAQ) we run into for the Republic API.
+We have also created a FAQ page on Confluence for [documenting random issues](https://wiki.texastribune.org/display/APPS/Republic+API+FAQ) we run into with the API.
 
-## Campaign finance
+## [Campaign finance](https://github.com/texastribune/campaign-finance-viewer_)
 
-We have an app for [downloading campaign finance data](https://github.com/texastribune/campaign-finance-viewer) from the state. More information on how it works, as well as resources for federal campaign finance data, can be found on [this Confluence page](https://wiki.texastribune.org/display/APPS/Ryan's+Brain#Ryan'sBrain-CampaignFinance).
+We have an app for downloading campaign finance data from the state. More information on how it works, as well as resources for federal campaign finance data, can be found on [this Confluence page](https://wiki.texastribune.org/display/APPS/Ryan's+Brain#Ryan'sBrain-CampaignFinance).
 
 The [readme](https://github.com/texastribune/campaign-finance-viewer/blob/master/README.md) also has commands for setting it up on your machine.
 
@@ -100,7 +100,5 @@ The [readme](https://github.com/texastribune/campaign-finance-viewer/blob/master
 These [scripts will pull](https://github.com/texastribune/sos-collector) election results from the Secretary of State. We also have a little bit of documention on election night on [this Confluence page](https://wiki.texastribune.org/display/APPS/Ryan's+Brain#Ryan'sBrain-ElectionNight).
 
 More information on how to work with election results, as well as plans for the next election cycle, is documented in [this Google doc](https://docs.google.com/document/d/1UaUfQKH01QucTewv2p9fuQRx6JCO90PGaik91JilMZM/edit#heading=h.x2ziamsevlx).
-
-This section will be more fleshed out as we get closer to the next elections.
 
 
