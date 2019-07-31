@@ -255,7 +255,8 @@ files: [
       fileId: '1vIy6uXDwut2jP-kILbiM3SmECOBxZf3lPxLEtyQ_N_c',
       type: 'doc',
       name: 'text',
-    },
+    }
+],
 ```
 
 Now run the data fetch command. The `text.json` file should now look like this:
@@ -325,7 +326,7 @@ Now go to your [index.html file](https://github.com/texastribune/feature-scotus-
 
 This calls the prose macro within the [app/templates/macros/prose.html file](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/prose.html) and loops through all lines in your `text.json` file, putting each on the page.
 
-The prose macro goes inside the [app/templates/macros/processors.html file](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/processors.html) and picks out the appropriate macro depending on what type of content is being looped through. For instance, since the story's paragraphs has a type of `text`, it's given to this macro:
+To do this, the prose macro calls another macro within the [app/templates/macros/processors.html file](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/processors.html). It picks out the appropriate macro depending on what type of content is being looped through. For instance, since the story's paragraphs has a type of `text`, it's passed to this macro:
 
 ```
 {% macro text(value) %}
@@ -333,11 +334,11 @@ The prose macro goes inside the [app/templates/macros/processors.html file](http
 {% endmacro %}
 ```
 
-The result is the content is wrapped in a <p> tag and placed on the page.
+The result is the paragraph is wrapped in a <p> tag and placed on the page. It does this over and over, until all the text is placed on the page.
 
 #### Illustrator graphics and other elements
 
-Graphics and other elements are placed on the page differently than they are in graphics. You will notice in the above example, one of our Illustrator graphics is inserted into the Google doc like so:
+Graphics and other elements are placed on the page differently than they are in graphics. You will notice in [this example](https://docs.google.com/document/d/1vIy6uXDwut2jP-kILbiM3SmECOBxZf3lPxLEtyQ_N_c/edit), one of our Illustrator graphics is inserted into the Google doc like so:
 
 ```html
 {.insert}
@@ -347,7 +348,7 @@ slug: summary-chart
 {}
 ```
 
-This is then converted into the `text.json` file and looks like so:
+When it's converted into the `text.json` file, it looks like:
 
 ```js
 {
@@ -373,7 +374,7 @@ This is then converted into the `text.json` file and looks like so:
 }
 ```
 
-You'll place that on the page using the same `processors.html` file from before. Only we will need to add a new macro to handle content with the type of `insert`.
+You'll then place that on the page using the same `processors.html` file from before. Only we will need to add a new macro to handle content with the type of `insert`.
 
 ```html
 {% macro insert(value) %}
@@ -381,7 +382,7 @@ You'll place that on the page using the same `processors.html` file from before.
 {% endmacro %}
 ```
 
-Here's a more complicated example from [this completed feature story](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/processors.html).
+Here's a more complicated example from [this story](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/processors.html).
 
 #### Deploy
 
