@@ -47,14 +47,6 @@ This is the API that powers our directory, as well election results. Basic setup
 
 Once you are have this downloaded and the `pipenv` environment set up, you have several [make commands](https://github.com/texastribune/republic/blob/master/Makefile) at your disposal.
 
-For instance, you can run:
-
-```sh
-make init_db
-```
-
-To get a database set up locally. As of right now, the database is called `tt_dev2_republic_v2`.
-
 To deploy any changes to production, you will need to be added to our `data-visuals` project on the [Google Cloud Platform](https://console.cloud.google.com/home/dashboard?project=data-visuals-161818). Daniel can get you set up with this.
 
 Then you will need to install the Cloud SDK. Instructions for Mac users is available on [this Google Cloud](https://cloud.google.com/sdk/docs/quickstart-macos) page.
@@ -68,16 +60,6 @@ gcloud init
 Make sure when it's time to pick a project, you pick the one that starts with `data-visuals`.
 
 ### Cloud SQL proxy
-
-We use a cloud sql proxy to open a connection locally to the production database. You will need to install the proxy client using [these instructions](https://cloud.google.com/sql/docs/postgres/quickstart-proxy-test).
-
-Once you've installed the proxy, you should be able to run:
-
-```sh
-make run-dev
-```
-
-This will open a proxy between your local machine and the production database. You can now go to the admin page and start editing the data on the production database. You can also open up the [admin page](https://republic.texastribune.org/admin/) on production to edit the database.
 
 You may run into isses getting the server to work on your local machine. If so, go to your `/etc/hosts` file and add the following to the bottom of the file:
 
