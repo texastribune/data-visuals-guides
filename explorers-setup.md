@@ -39,7 +39,17 @@ To deploy to the production DB, you will need to get credentials for the Tribune
 
 The schools app is updated once a year, using new data from the government. The code behind the app is located in this [Github repo](https://github.com/texastribune/scuole). The data is loaded separately in [this repo](https://github.com/texastribune/scuole-data/).
 
-This section will be more fleshed out next time we update schools.
+To get this set up locally, you'll need to create a new directory on your machine. Then clone both of those directories into the directory you created.
+
+Next you'll need to want to create a `.env` file in the `scuole` directory. You'll want to include the following line:
+
+```sh
+export DATA_FOLDER=/Users/chrisessig/Documents/tribune/github/scuole-house/scuole-data/
+```
+
+Make sure you change the location to match the directory of `scuole-data` on your machine.
+
+Once this is completed, you should be able to start running make commands. Some of these are documented in the [scuole readme](https://github.com/texastribune/scuole).
 
 ## [Republic API](https://republic.texastribune.org/api/v1/)
 
