@@ -1,4 +1,4 @@
-# Setting up geographic software on our your computer
+# Setting up geo software on our your computer
 
 This is some of the software we use for geo analysis and tips for using them.
 
