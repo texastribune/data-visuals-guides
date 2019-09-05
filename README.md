@@ -2,19 +2,19 @@
 
 Here you will find a collection of guides for doing various Data Visuals tasks. Find yourself needing to describe how to setup something for a project? Try to document it here instead so it can be linked to later!
 
-## [Set up your News Apps computer environment](computer-setup.md)
+## [News Apps computer environment](computer-setup.md)
 
 There are a few things we have to do to get your computer ready for all the cool stuff you're going to build.
 
-## [Set up our explorers on your computer](explorers-setup.md)
+## [Explorers](explorers-setup.md)
 
 Here's how you get specific explorers set up on your computer
 
-## [Setting up, testing the kit on your machine](kit-setup.md)
+## [Data visuals kit](kit-setup.md)
 
 Here's how to set up and deploy your first projects
 
-## [Setting up geo software on our your computer](geo-setup.md)
+## [Geo software](geo-setup.md)
 
 This is specifically aimed at geo software
 
