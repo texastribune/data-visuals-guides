@@ -24,6 +24,10 @@ Here's how you get specific explorers set up on your computer
 
 Here's how to set up and deploy your first projects
 
+## [Setting up geo software on our your computer](geo-setup.md)
+
+This is specifically aimed at geo software
+
 ## License
 
 All guides are licensed under a [Creative Commons BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/) license.
