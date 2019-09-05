@@ -225,18 +225,7 @@ For more information on git and GitHub, check out [this interactive tutorial](ht
 
 Our team has a kit that is designed to provide you with a framework for creating graphics. Included is the basic page structure, files to put SCSS and javascript in, a simple workflow for working with Google spreadsheets and a way to test your project locally and deploy to a server.
 
-The kit is more fully documented on its [Github page](https://github.com/texastribune/data-visuals-create). You can it install by running:
-
-```sh
-npm install -g @data-visuals/create
-```
-
-If you want to check it out, you can create a test project by running:
-
-```sh
-npx @data-visuals/create graphic test
-```
-Check out its Github page for info on how the folders are structured and how to hook up a Google spreadsheet to pull data to use with your graphic.
+Setting the kit up and creating your first graphic is documented in [it's own readme](kit-setup.md). Fellows will definitely want to go through through that setup.
 
 ### Credentials
 
@@ -256,6 +245,10 @@ We use Illustrator to create many of our graphics. A team password for the Adobe
 
 As part of our setup, we also use [ai2html](http://ai2html.org/) to convert Illustrator files to HTML to put on our site. To set this up, check out our [instructions on Basecamp](https://3.basecamp.com/3098728/buckets/80634/uploads/1035900039).
 
+## Installing QGIS
+
+Although not required, our team uses QGIS to run geographical analysis. This and other mapping tips are avaiable in [the geo-setup file](geo-setup.md).
+
 ## Installing Docker
 
 **NOTE:** This is only required for full-time staffers
@@ -269,6 +262,7 @@ Docker is a tool for containerizing apps. We use it for deploys and database man
 Nearly all of our projects use [PostgreSQL](http://www.postgresql.org/) as their backend. Instead of installing it with Homebrew, we use [Postgres.app](http://postgresapp.com/) instead.
 
 Visit [http://postgresapp.com/](http://postgresapp.com/) and download the installer. After installing, run the app. You should get a pop up window and see a cute little elephant romping around in your menu bar in the top right. If you see the elephant, Postgres.app is live.
+
 
 ## Explorer credentials
 
