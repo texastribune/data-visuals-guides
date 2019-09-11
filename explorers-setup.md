@@ -25,9 +25,13 @@ The basic setup is documented on in its [Github repo](https://github.com/texastr
 
 How to update salaries in [documented on Confluence](https://wiki.texastribune.org/pages/viewpage.action?pageId=12420703).
 
-You will need to SSH into the production server in order to update the DB. You will first need to create a `~/.ssh/config` file if you don't have one already. And then copy the salaries production info shown at the bottom of this [Confluence readme](https://wiki.texastribune.org/display/TECH/AWS+hosts0).
+You will need to SSH into the production server in order to update the DB. You will first need to create a `~/.ssh/config` file if you don't have one already.
 
-As part of the setup, you will need to get a `newsapps.pem` file, which we can hook you up with.
+Then, scroll to the bottom of this [Confluence readme](https://wiki.texastribune.org/display/TECH/AWS+hosts) and paste the `Host proxy` and `Host salaries-prod-2` blocks into your `config` file. You can create these blocks for other commands with the info in the table. 
+
+As part of the setup, you will need to get the `newsapps.pem` and `tribtalk-kp.pem` keyfiles, which we can hook you up with. After you get the keys, you'll need to add them to the path `~/.ssh/trib/`. You can do this by running `cd ~/.ssh/trib/`, `open .`, and then dragging the key files into the Finder window.
+
+Now run `ssh salaries-prod-2`. If you are getting the error `ssh_exchange_identification: Connection closed by remote host`, there may be a problem with your key file. Run `chmod 600 tribtalk.pem` in the `trib/` folder to remove some permissions from the keyfile, and try `ssh salaries-prod-2` again. (The `salaries-prod-2` command relies on the `ssh proxy` command, which relies on the `tribtalk.pem` key file ⁠— it doesn't like key files that are too open.)
 
 ## [Prisons](https://www.texastribune.org/library/data/texas-prisons/)
 
@@ -50,6 +54,8 @@ export DATA_FOLDER=/Users/chrisessig/Documents/tribune/github/scuole-house/scuol
 Make sure you change the location to match the directory of `scuole-data` on your machine.
 
 Once this is completed, you should be able to start running make commands. Some of these are documented in the [scuole readme](https://github.com/texastribune/scuole).
+
+To `ssh` into the schools production database, follow the same instructions for the salaries database but replace `salaries-prod-2` with `schools-prod`.
 
 ## [Republic API](https://republic.texastribune.org/api/v1/)
 
@@ -92,5 +98,3 @@ The [readme](https://github.com/texastribune/campaign-finance-viewer/blob/master
 These [scripts will pull](https://github.com/texastribune/sos-collector) election results from the Secretary of State. We also have a little bit of documention on election night on [this Confluence page](https://wiki.texastribune.org/display/APPS/Ryan's+Brain#Ryan'sBrain-ElectionNight).
 
 More information on how to work with election results, as well as plans for the next election cycle, is documented in [this Google doc](https://docs.google.com/document/d/1UaUfQKH01QucTewv2p9fuQRx6JCO90PGaik91JilMZM/edit#heading=h.x2ziamsevlx).
-
-
