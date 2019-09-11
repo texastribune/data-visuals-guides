@@ -41,7 +41,7 @@ To deploy to the production DB, you will need to get credentials for the Tribune
 
 ## [Schools](https://schools.texastribune.org/)
 
-The schools app is updated once a year, using new data from the government. The code behind the app is located in this [Github repo](https://github.com/texastribune/scuole). The data is loaded separately in [this repo](https://github.com/texastribune/scuole-data/).
+The schools app is updated once a year, using new data from the government. We also update it yearly with new cohorts data. The code behind the app is located in this [Github repo](https://github.com/texastribune/scuole). The data is loaded separately in [this repo](https://github.com/texastribune/scuole-data/).
 
 To get this set up locally, you'll need to create a new directory on your machine. Then clone both of those directories into the directory you created.
 
@@ -55,7 +55,7 @@ Make sure you change the location to match the directory of `scuole-data` on you
 
 Once this is completed, you should be able to start running make commands. Some of these are documented in the [scuole readme](https://github.com/texastribune/scuole).
 
-To `ssh` into the schools production database, follow the same instructions for the salaries database but replace `salaries-prod-2` with `schools-prod`.
+To `ssh` into the schools production database, follow the same instructions for the salaries database but replace `salaries-prod-2` with `schools-prod`. Schools actually has TWO databases so you will need to add `schools-prod` and `schools-prod-2`. When making updates, we need to update both.
 
 ## [Republic API](https://republic.texastribune.org/api/v1/)
 
