@@ -25,13 +25,17 @@ The basic setup is documented on in its [Github repo](https://github.com/texastr
 
 How to update salaries in [documented on Confluence](https://wiki.texastribune.org/pages/viewpage.action?pageId=12420703).
 
-You will need to SSH into the production server in order to update the DB. You will first need to create a `~/.ssh/config` file if you don't have one already.
+You will need to SSH into the test and productions servers in order to update the app. You will first need to create a `~/.ssh/config` file if you don't have one already.
 
-Then, scroll to the bottom of this [Confluence readme](https://wiki.texastribune.org/display/TECH/AWS+hosts) and paste the `Host proxy` and `Host salaries-prod-2` blocks into your `config` file. You can create these blocks for other commands with the info in the table. 
+Then, scroll to the bottom of this [Confluence readme](https://wiki.texastribune.org/display/TECH/AWS+hosts) and paste the `Host proxy`, `Host salaries-test` and `Host salaries-prod-2` blocks into your `config` file. You can create these blocks for other commands with the info in the table. 
 
 As part of the setup, you will need to get the `newsapps.pem` and `tribtalk-kp.pem` keyfiles, which we can hook you up with. After you get the keys, you'll need to add them to the path `~/.ssh/trib/`. You can do this by running `cd ~/.ssh/trib/`, `open .`, and then dragging the key files into the Finder window.
 
-Now run `ssh salaries-prod-2`. If you are getting the error `ssh_exchange_identification: Connection closed by remote host`, there may be a problem with your key file. Run `chmod 600 tribtalk.pem` in the `trib/` folder to remove some permissions from the keyfile, and try `ssh salaries-prod-2` again. (The `salaries-prod-2` command relies on the `ssh proxy` command, which relies on the `tribtalk.pem` key file ⁠— it doesn't like key files that are too open.)
+Now run `ssh salaries-test`. If you are getting the error `ssh_exchange_identification: Connection closed by remote host`, there may be a problem with your key file. Run `chmod 600 tribtalk.pem` in the `trib/` folder to remove some permissions from the keyfile, and try `ssh salaries-test` again. (The `salaries-test` command relies on the `ssh proxy` command, which relies on the `tribtalk.pem` key file ⁠— it doesn't like key files that are too open.)
+
+The test host is the test server where we deploy changes before production. The test server is set up the same as the production server, making it a good place to test code before it goes live.
+
+You'll also need to make sure you can ssh into `salaries-prod-2`, which is the production server for salaries.
 
 ## [Prisons](https://www.texastribune.org/library/data/texas-prisons/)
 
@@ -55,7 +59,9 @@ Make sure you change the location to match the directory of `scuole-data` on you
 
 Once this is completed, you should be able to start running make commands. Some of these are documented in the [scuole readme](https://github.com/texastribune/scuole).
 
-To `ssh` into the schools production database, follow the same instructions for the salaries database but replace `salaries-prod-2` with `schools-prod`. Schools actually has TWO databases so you will need to add `schools-prod` and `schools-prod-2`. When making updates, we need to update both.
+To `ssh` into the schools production database, follow the same instructions for the salaries database but replace `salaries-test` with `schools-test`. This is the test server for schools.
+
+For production, schools actually has TWO databases so you will need to also add `schools-prod` and `schools-prod-2`. When making updates, we need to update both.
 
 ## [Republic API](https://republic.texastribune.org/api/v1/)
 
