@@ -84,15 +84,15 @@ Now you can run the following to download the data:
 npm run data:fetch
 ```
 
-The spreadsheet will be converted into a json file called `data.json` and put into your `data` directory inside your graphic.
+The spreadsheet will be converted into a JSON file called `data.json` and put into your `data` directory inside your graphic.
 
-The name of the json file is set inside the project.config.js file. Each file in the `data` directory has its own object inside the `files` array. You can change the name of the json file by changing the `name` attribute.
+The name of the JSON file is set inside the project.config.js file. Each file in the `data` directory has its own object inside the `files` array. You can change the name of the JSON file by changing the `name` attribute.
 
-This is useful when you want to have multiple json files for your project. 
+This is useful when you want to have multiple JSON files for your project. 
 
 ### Creating a static graphic (HTML table)
 
-Now we're going to get the data from that json file onto the page by recreating the table in [this project](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/index.html). We're using [Nunjucks](https://mozilla.github.io/nunjucks/) as our templating language to make it happen.
+Now we're going to get the data from that JSON file onto the page by recreating the table in [this project](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/index.html). We're using [Nunjucks](https://mozilla.github.io/nunjucks/) as our templating language to make it happen.
 
 First you'll go into your `app/static.html` file (which you can rename to `table.html`) and add the following near the top of the page (but under `base.html`):
 
@@ -100,7 +100,7 @@ First you'll go into your `app/static.html` file (which you can rename to `table
 {% set context = data.data %}
 ```
 
-This will put the json data you downloaded into a variable called `context`.
+This will put the JSON data you downloaded into a variable called `context`.
 
 And then put this inside the `<div class="app">` tag:
 
@@ -133,7 +133,7 @@ You'll notice that this includes the following for loop:
 {% for row in context.datapoints %}
 ```
 
-We're grabbing the `context` variable, which we just created and includes json data from our spreadsheet and looping through it, putting values from the json data on the page as it goes through. The `datapoints` item is a reference to the sheet name in the Google spreadsheet. It gets converted into the `data.json` file and looks like:
+We're grabbing the `context` variable, which we just created and includes JSON data from our spreadsheet and looping through it, putting values from the JSON data on the page as it goes through. The `datapoints` item is a reference to the sheet name in the Google spreadsheet. It gets converted into the `data.json` file and looks like:
 
 ```js
 {
@@ -190,11 +190,28 @@ There are several ways to import data into the JS.
 
 **Method 1: Use the window.DATA variable**
 
+In the boilerplate code, you should see this:
+
+```html
+{% block inline_data %}
+{% if data.data %}
+<script>
+  window.DATA = {{ data.data|dump }};
+</script>
+{% endif %}
+{% endblock inline_data %}
+```
+
+This stores the `data.json` in the `data/` folder as a window variable, which you can access from your JS file with `let data = window.DATA;`.
+
 **Method 2: Import the path to the data**
 
-**Method 2: Use loadJsonScript**
+You can import your data by calling `import data from '../../data/data.json';` directly in the JS file. This path will be different if your data file is named 
+something else.
 
-For these, you will be using the [loadJsonScript](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/utils/load-json-script.js) function to load in the data from our json file in the data directory.
+**Method 2: Use loadJsonScript**s
+
+You can also use the [loadJsonScript](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/utils/load-json-script.js) function to load in the data from our JSON file in the data directory.
 
 For example, [this line chart](https://www.texastribune.org/2019/03/04/lawmakers-want-expand-dallas-teacher-incentive-pay-program/) uses D3. It's `data.json file` looks like so:
 
@@ -258,7 +275,7 @@ All of the commands are the same for feature stories. The difference is you star
 
 We use a Google doc to house the text for feature stories. Here's a [good example of one we created for a story](https://docs.google.com/document/d/1CLKjPANEVPMOMPdjX-nrw8DetFXe__zPWeaqx8iQCZs/edit) and here's a [the feature article template](https://docs.google.com/document/d/1B_jhK1r75fMZVQev8BGU60dgjh1ffE0AxNDZz5dl-RQ/edit).
 
-We use `archieML` to  convert the text into json. Like graphics, we `data:fetch` them in the same way and the data is put into the `data/data.json` file.
+We use `archieML` to  convert the text into JSON. Like graphics, we `data:fetch` them in the same way and the data is put into the `data/data.json` file.
 
 ### Github
 
