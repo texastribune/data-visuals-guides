@@ -76,7 +76,19 @@ The spreadsheet will be converted into a json file called `data.json` and put in
 
 The name of the json file is set inside the project.config.js file. Each file in the `data` directory has its own object inside the `files` array. You can change the name of the json file by changing the `name` attribute.
 
-This is useful when you want to have multiple json files for your project. 
+This is useful when you want to have multiple json files for your project.
+
+In the end, the `files` attribute inside your project.config.js should look like this:
+
+```js
+files: [
+    {
+      fileId: '1Vb2FGVmN7lhrtaueJK_RawQljQEBYS-ZSoVlliPAVEg',
+      type: 'sheet',
+      name: 'data',
+    },
+  ],
+```
 
 ### Nunjucks
 
