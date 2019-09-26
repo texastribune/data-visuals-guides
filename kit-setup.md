@@ -65,8 +65,10 @@ Our graphics are embedded into stories like [this example](https://www.texastrib
 
 We have an `index.html` template, for graphics that require JavaScript, and a `static.html` template, for graphics that do not require JS.
 
-The `index.html` is hooked up to a JS file that calls a `renderGraphic()` function, and in that function is where you'll put any JS needed to render the graphic,
-i.e. D3. `static.html` does not call this function and is mainly for Illustrator embeds or HTML-only graphics, i.e. tables.
+The `index.html` is hooked up to a JS file that calls `renderGraphic()`, and in that function is where you'll put any JS needed to render the graphic,
+i.e. D3. 
+
+`static.html` does not call this function and is mainly for Illustrator embeds or HTML-only graphics, i.e. tables.
 
 ### Fetching the data
 
@@ -178,13 +180,19 @@ We then use `ai2html` to convert the Illustrator file into HTML, which is export
 </div>
 ```
 
-You'll want to use the `static.html` boilerplate. (They already include the code above for embedding an Illustrator graphic.)
+You'll want to use the `static.html` boilerplate. (It already includes the code above for embedding an Illustrator graphic.)
 
 ### Creating a scripted graphic (D3)
 
 We also use D3 for some of our charts. For these, it's best to start with `index.html` and add your D3 code to `renderGraphic()` in `graphic.js`.
 
-There are several ways to import data to use in the JS.
+There are several ways to import data into the JS.
+
+**Method 1: Use the window.DATA variable**
+
+**Method 2: Import the path to the data**
+
+**Method 2: Use loadJsonScript**
 
 For these, you will be using the [loadJsonScript](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/utils/load-json-script.js) function to load in the data from our json file in the data directory.
 
