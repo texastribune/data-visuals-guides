@@ -241,7 +241,7 @@ Once you've got these set up, you'll need one more, which you will generate with
 
 * .google_drive_fetch_token
 
-Once you deploy, you will prompted to enter your account information. The file will automatically be generated on your computer once you're done.
+Once you deploy your graphic, you will prompted to enter your account information. The file will automatically be generated on your computer once you're done.
 
 ## ai2html
 
