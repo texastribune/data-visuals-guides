@@ -231,13 +231,17 @@ Setting the kit up and creating your first graphic is documented in [its own rea
 
 At this point, you will need several files added to the root directory on your computer, which will provide you with the credentials needed to run the kit and other team projects. They include:
 
-* .google_client_secrets.json
-* .google_drive_fetch_token
 * .tt_kit_google_client_secrets.json
 * .aws/config
 * .aws/credentials
 
-You will need to ask someone on the team to get you those files to load onto your computer. These can't be shared on Github and shouldn't be emailed or sent over Slack.
+These are stored in 1Password, which we can give you access to. The `tt_kit_google_client_secrets.json` info is in the `tt_kit_google_client_secrets` note. The aws files are stored in the `AWS credentials` note. Please don't share these on Slack or over email.
+
+Once you've got these set up, you'll need one more, which you will generate with your Google account after you [create your first graphic](https://github.com/texastribune/data-visuals-guides/blob/master/kit-setup.md#creating-a-graphic). This file is:
+
+* .google_drive_fetch_token
+
+Once you deploy, you will prompted to enter your account information. The file will automatically be generated on your computer once you're done.
 
 ## ai2html
 
