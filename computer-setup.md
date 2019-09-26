@@ -225,11 +225,11 @@ For more information on git and GitHub, check out [this interactive tutorial](ht
 
 Our team has a kit that is designed to provide you with a framework for creating graphics. Included is the basic page structure, files to put SCSS and javascript in, a simple workflow for working with Google spreadsheets and a way to test your project locally and deploy to a server.
 
-Setting the kit up and creating your first graphic is documented in [it's own readme](kit-setup.md). Fellows will definitely want to go through through that setup.
+Setting the kit up and creating your first graphic is documented in [its own readme](kit-setup.md). Fellows will definitely want to go through through that setup.
 
 ### Credentials
 
-Congratulations! You're nearly done with setting up your computer. At this point, you will need several files added to the root directory on your computer, which will provide you with the credentials needed to run the kit and other team projects. They include:
+At this point, you will need several files added to the root directory on your computer, which will provide you with the credentials needed to run the kit and other team projects. They include:
 
 * .google_client_secrets.json
 * .google_drive_fetch_token

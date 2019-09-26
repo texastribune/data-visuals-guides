@@ -8,15 +8,16 @@ Here's instructions for how [our data visuals kit](https://github.com/texastribu
 
 - [Credentials](#credentials)
 - [Creating a graphic](#creating-a-graphic)
-  - [Nunjucks](#nunjucks)
-  - [Other chart types](#other-chart-types)
-    - [D3](#d3)
-    - [Illustrator](#illustrator)
+  - [Scripted VS non-scripted/static graphics](#scripted-vs-non-scriptedstatic-graphics)
+  - [Fetching the data](#fetching-the-data)
+  - [Creating a static graphic (HTML table)](#creating-a-static-graphic-html-table)
+  - [Creating a static graphic (Illustrator)](#creating-a-static-graphic-illustrator)
+  - [Creating a scripted graphic (D3)](#creating-a-scripted-graphic-d3)
 - [Creating a feature story](#creating-a-feature-story)
-    - [Github](#github)
-    - [Getting text on the page](#getting-text-on-the-page)
-    - [Illustrator graphics and other elements](#illustrator-graphics-and-other-elements)
-    - [Deploy](#deploy)
+  - [Github](#github)
+  - [Getting text on the page](#getting-text-on-the-page)
+  - [Illustrator graphics and other elements](#illustrator-graphics-and-other-elements)
+  - [Deploy](#deploy)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -38,7 +39,7 @@ To create a feature story, get out of the dailies repo and into another director
 npx @data-visuals/create feature test-feature-story
 ```
 
-All feature stories are placed into their our git repos under the `texastribune` account. Here's [an example](https://github.com/texastribune/feature-asset-forfeiture-2019-05).
+All feature stories are placed into their own git repos under the `texastribune` account. Here's [an example](https://github.com/texastribune/feature-asset-forfeiture-2019-05).
 
 Once the graphic and feature story are installed, [these commands](https://github.com/texastribune/data-visuals-create#available-commands) will become available to you.
 
@@ -58,7 +59,16 @@ npm run deploy
 
 ## Creating a graphic
 
+### Scripted VS non-scripted/static graphics
+
 Our graphics are embedded into stories like [this example](https://www.texastribune.org/2019/04/18/dallas-fort-worth-metro-area-saw-biggest-2018-texas-population-growth/). Now let's create one.
+
+We have an `index.html` template, for graphics that require JavaScript, and a `static.html` template, for graphics that do not require JS.
+
+The `index.html` is hooked up to a JS file that calls a `renderGraphic()` function, and in that function is where you'll put any JS needed to render the graphic,
+i.e. D3. `static.html` does not call this function and is mainly for Illustrator embeds or HTML-only graphics, i.e. tables.
+
+### Fetching the data
 
 We use Google spreadsheets to host the data for our graphics. Here's an example of [the spreadsheet we used](https://docs.google.com/spreadsheets/d/102dLzZtUAD-kCcXIWKTnzbMM0KKhwlmE4WIVmKwSPWU/edit#gid=0) for an old graphic.
 
@@ -78,11 +88,11 @@ The name of the json file is set inside the project.config.js file. Each file in
 
 This is useful when you want to have multiple json files for your project. 
 
-### Nunjucks
+### Creating a static graphic (HTML table)
 
 Now we're going to get the data from that json file onto the page by recreating the table in [this project](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/index.html). We're using [Nunjucks](https://mozilla.github.io/nunjucks/) as our templating language to make it happen.
 
-First you'll go into your `app/index.html` file and add the following near the top of the page (but under `base.html`):
+First you'll go into your `app/static.html` file (which you can rename to `table.html`) and add the following near the top of the page (but under `base.html`):
 
 ```html
 {% set context = data.data %}
@@ -153,13 +163,30 @@ We're grabbing the `context` variable, which we just created and includes json d
 
 This is why we can loop through it.
 
-Fire up your localhost if it's not already. And you should a table!
+Fire up your localhost if it's not already. And you should see a table!
 
-### Other chart types
+### Creating a static graphic (Illustrator)
 
-#### D3
+We also use Illustrator for some charts. All Illustrator files are put into the [workspace directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/workspace).
 
-We also use D3 for some of our charts. For these, you will be using the [loadJsonScript](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/utils/load-json-script.js) function to load in the data from our json file in the data directory.
+We then use `ai2html` to convert the Illustrator file into HTML, which is exported into [app/templates/ai2html-output/ directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/app/templates/ai2html-output). You can then [call the Illustrator graphic(s)](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/map.html#L7) inside an html file in the `apps/` direcotry. 
+
+```html
+<div id="graphic-budget-scraps" class="graphic app">
+  {% set ai2html = "census-map" %}
+  {% include "ai2html-output/" + ai2html + ".html" %}
+</div>
+```
+
+You'll want to use the `static.html` boilerplate. (They already include the code above for embedding an Illustrator graphic.)
+
+### Creating a scripted graphic (D3)
+
+We also use D3 for some of our charts. For these, it's best to start with `index.html` and add your D3 code to `renderGraphic()` in `graphic.js`.
+
+There are several ways to import data to use in the JS.
+
+For these, you will be using the [loadJsonScript](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/utils/load-json-script.js) function to load in the data from our json file in the data directory.
 
 For example, [this line chart](https://www.texastribune.org/2019/03/04/lawmakers-want-expand-dallas-teacher-incentive-pay-program/) uses D3. It's `data.json file` looks like so:
 
@@ -217,20 +244,6 @@ const aceData = loadJsonScript('ace-data');
 
 This will parse the data for use with D3. You can see more about how D3 charts are created by looking inside this [project's graphic.js file](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/graphic.js).
 
-
-#### Illustrator
-
-We also use Illustrator for some charts. All Illustrator files are put into the [workspace directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/workspace).
-
-We then use `ai2html` to convert the Illustrator file into HTML, which is exported into [app/templates/ai2html-output/ directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/app/templates/ai2html-output). You can then [call the Illustrator graphic(s)](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/map.html#L7) inside an html file in the `apps/` direcotry. 
-
-```html
-<div id="graphic-budget-scraps" class="graphic app">
-  {% set ai2html = "census-map" %}
-  {% include "ai2html-output/" + ai2html + ".html" %}
-</div>
-```
-
 ## Creating a feature story
 
 All of the commands are the same for feature stories. The difference is you start with an entire article.
@@ -239,13 +252,13 @@ We use a Google doc to house the text for feature stories. Here's a [good exampl
 
 We use `archieML` to  convert the text into json. Like graphics, we `data:fetch` them in the same way and the data is put into the `data/data.json` file.
 
-#### Github
+### Github
 
 One important difference between a graphic and a feature page is feature pages get their own Github repos. To do this, you will need to run the [create command](https://github.com/texastribune/data-visuals-create) outside of the `newsapps-dailies` repo. Make you include `feature` instead of `graphic` when running create. After this is run, you will then need to go to Github and create [a new repo](https://github.com/organizations/texastribune/repositories/new) inside the `texastribune` organization. Follow the instructions for setting up a Git repo inside an existing directory, which you made when you ran `create`.
 
 Here's an example of a [final, feature repo](https://github.com/texastribune/feature-asset-forfeiture-2019-05).
 
-#### Getting text on the page
+### Getting text on the page
 
 Let's create a feature article and get some text on a page! First run the `create` command to create a feature article and then go to the `project.config.js` file and change the `files` variable so it hooks up to [this Google doc](https://docs.google.com/document/d/1vIy6uXDwut2jP-kILbiM3SmECOBxZf3lPxLEtyQ_N_c/edit) we've used for a story in the past:
 
@@ -336,7 +349,7 @@ To do this, the prose macro calls another macro within the [app/templates/macros
 
 The result is the paragraph is wrapped in a <p> tag and placed on the page. It does this over and over, until all the text is placed on the page.
 
-#### Illustrator graphics and other elements
+### Illustrator graphics and other elements
 
 Charts and other elements are placed on the page differently than they are in graphic projects. You will notice in [this example](https://docs.google.com/document/d/1vIy6uXDwut2jP-kILbiM3SmECOBxZf3lPxLEtyQ_N_c/edit), one of our Illustrator graphics is inserted into the Google doc like so:
 
@@ -384,7 +397,7 @@ You'll then place that on the page using the same `processors.html` file from be
 
 Here's a more complicated example from [this story](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/processors.html).
 
-#### Deploy
+### Deploy
 
 Once you are ready for the story to go live, make sure you change the `bucket` in the `project.config.js` from moose to apps. Here's what it [should look like](https://github.com/texastribune/feature-asset-forfeiture-2019-05/blob/master/project.config.js#L14) when you're done.
 
