@@ -106,15 +106,15 @@ files: [
 
 Now we're going to get the data from that JSON file onto the page by recreating the table in [this project](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/index.html). We're using [Nunjucks](https://mozilla.github.io/nunjucks/) as our templating language to make it happen.
 
-First you'll go into your `app/static.html` file (which you can rename to `table.html`) and add the following near the top of the page (but under `base.html`):
+First change the name of `app/static.html` file to `table.html`. And then make sure your `context` and `data` variables, which arre at the top of the file, look like so:
 
 ```html
-{% set context = data.data %}
+{% set context = data.data.text %}
+{% set data = data.data %}
 ```
+This will put the JSON data you downloaded into a variable called `data`. And `text:kv` data into the `context` variable.
 
-This will put the JSON data you downloaded into a variable called `context`.
-
-And then put this inside the `<div class="app">` tag:
+And then put this inside the `<div class="app">` tag right under `<p class="graphic-prose">{{ context.prose }}</p>`.
 
 ```html
 <table class="dv-table">
@@ -127,7 +127,7 @@ And then put this inside the `<div class="app">` tag:
     </tr>
   </thead>
   <tbody>
-     {% for row in context.datapoints %}
+     {% for row in data.datapoints %}
        <tr>
         <td> {{ row.CTYNAME }} </td>
         <td class="number"> {{ row["2010"] | intcomma }} </td>
@@ -142,34 +142,34 @@ And then put this inside the `<div class="app">` tag:
 You'll notice that this includes the following for loop:
 
 ```html
-{% for row in context.datapoints %}
+{% for row in data.datapoints %}
 ```
 
-We're grabbing the `context` variable, which we just created and includes JSON data from our spreadsheet and looping through it, putting values from the JSON data on the page as it goes through. The `datapoints` item is a reference to the sheet name in the Google spreadsheet. It gets converted into the `data.json` file and looks like:
+We're grabbing the `data` variable, which we just created and includes JSON data from our spreadsheet and looping through it, putting values from the JSON data on the page as it goes through. The `datapoints` item is a reference to the sheet name in the Google spreadsheet. It gets converted into the `data.json` file and looks like:
 
 ```js
 {
   "datapoints": [
-    {
-      "2010": 82,
-      "2018": 152,
-      "CTYNAME": "Loving County",
-      "change": 0.8536585365853658
-    },
     {
       "2010": 157107,
       "2018": 222631,
       "CTYNAME": "Hays County",
       "change": 0.41706607598642964
     },
+    {
+      "2010": 108472,
+      "2018": 148373,
+      "CTYNAME": "Comal County",
+      "change": 0.36784608009440223
+    },
     ...
     ...
     ...
   ],
   "text": {
-    "title": "headline",
+    "title": "Ten fastest-growing large counties in Texas from 2010 to 2018",
     "source": "U.S. Census Bureau",
-    "prose": "graphic_prose",
+    "prose": "The state’s suburban counties are home to the most rapid population growth among counties with a population equal to or greater than 20,000.",
     "credit": "Shiying Cheng"
   }
 }
@@ -177,13 +177,25 @@ We're grabbing the `context` variable, which we just created and includes JSON d
 
 This is why we can loop through it.
 
-Fire up your localhost if it's not already. And you should see a table!
+Fire up your localhost if it's not already:
+
+```sh
+npm run serve
+```
+
+And open up this url in your browser:
+
+```sh
+http://localhost:3000/table/
+```
+
+And you should see your table!
 
 ### Creating a static graphic (Illustrator)
 
 We also use Illustrator for some charts. All Illustrator files are put into the [workspace directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/workspace).
 
-We then use `ai2html` to convert the Illustrator file into HTML, which is exported into [app/templates/ai2html-output/ directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/app/templates/ai2html-output). You can then [call the Illustrator graphic(s)](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/map.html#L7) inside an html file in the `apps/` direcotry. 
+We then use `ai2html` to convert the Illustrator file into HTML, which is exported into [app/templates/ai2html-output/ directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/app/templates/ai2html-output). You can then [call the Illustrator graphic(s)](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/map.html#L7) inside an html file in the `apps/` directory. 
 
 ```html
 <div id="graphic-budget-scraps" class="graphic app">
@@ -198,7 +210,7 @@ You'll want to use the `static.html` boilerplate. (It already includes the code 
 
 We also use D3 for some of our charts. For these, it's best to start with `index.html` and add your D3 code to `renderGraphic()` in `graphic.js`.
 
-There are several ways to import data into the JS.
+There are several ways to import data into the JS. Go ahead and use one of the options below.
 
 **Method 1: Use the window.DATA variable**
 
@@ -221,7 +233,7 @@ This stores the `data.json` in the `data/` folder as a window variable, which yo
 You can import your data by calling `import data from '../../data/data.json';` directly in the JS file. This path will be different if your data file is named 
 something else.
 
-**Method 2: Use loadJsonScript**s
+**Method 3: Use loadJsonScript**
 
 You can also use the [loadJsonScript](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/utils/load-json-script.js) function to load in the data from our JSON file in the data directory.
 
