@@ -23,7 +23,7 @@ Here's instructions for how [our data visuals kit](https://github.com/texastribu
 
 ## Credentials
 
-First thing you'll need to do is grab a few files to give you credentials to use and deploy our graphics. They will need to be given to you on a thumb drive. Take those files out of the `credentials` folder on the thumb drive and put them into your root directory. For example, on my computer it's `User/chrisessig`.
+First thing you'll need to do is get credentials for the kit. More information on this is available in the [credentials section of the computer setup readme](https://github.com/texastribune/data-visuals-guides/blob/master/computer-setup.md#credentials).
 
 Once those on your computer, we will be creating two separate projects: one’s a graphic, another is a feature story. We’ll test both but the commands are the same.
 

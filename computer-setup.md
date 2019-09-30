@@ -235,7 +235,9 @@ At this point, you will need several files added to the root directory on your c
 * .aws/config
 * .aws/credentials
 
-These are stored in 1Password, which we can give you access to. The `tt_kit_google_client_secrets.json` info is in the `tt_kit_google_client_secrets` note. The aws files are stored in the `AWS credentials` note. Please don't share these on Slack or over email.
+For full-time employees, these are stored in 1Password, which we can give you access to. The `tt_kit_google_client_secrets.json` info is in the `tt_kit_google_client_secrets` note. The aws files are stored in the `AWS credentials` note. Please don't share these on Slack or over email.
+
+Fellows don't have access to 1Password. We will need to give you those files on a thumb drive.
 
 Once you've got these set up, you'll need one more, which you will generate with your Google account after you [create your first graphic](https://github.com/texastribune/data-visuals-guides/blob/master/kit-setup.md#creating-a-graphic). This file is:
 
