@@ -239,7 +239,9 @@ For full-time employees, these are stored in 1Password, which we can give you ac
 
 Fellows don't have access to 1Password. We will need to give you those files on a thumb drive.
 
-Once you've got these set up, you'll need one more, which you will generate with your Google account after you [create your first graphic](https://github.com/texastribune/data-visuals-guides/blob/master/kit-setup.md#creating-a-graphic). This file is:
+Once you've got these set up, you'll need one more, which you will generate with your Google account after you [create your first graphic](https://github.com/texastribune/data-visuals-guides/blob/master/kit-setup.md#creating-a-graphic). You should see a url pop up in your terminal, which will direct you to a Google Drive page that says `News Apps Graphics Kit wants to access your Google Account`. Hit `Allow` and the token file will be generated and put in your root.
+
+This file is:
 
 * .google_drive_fetch_token
 
