@@ -93,6 +93,16 @@ If you want to be able to open Sublime Text from your Terminal, you'll need to [
 
 Now you can type `subl <path>` in your terminal and Sublime will open that file or folder.
 
+### VS Code
+
+[Download the installer](https://code.visualstudio.com/download) and install as normal.
+
+#### Hook VS Code into your terminal on Mac
+
+If you want to be able to open VS Code from your Terminal on your Mac, you'll need to [follow this guide](https://code.visualstudio.com/docs/setup/mac).
+
+Now you can type `code <path>` in your terminal and Sublime will open that file or folder.
+
 ## Installing Homebrew
 
 Homebrew describes itself as "The missing package manager for MacOS." This means that it helps with the installation of many of the tools you'll use.
