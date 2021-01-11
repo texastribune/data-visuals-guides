@@ -6,18 +6,19 @@ Here's instructions for how [our data visuals kit](https://github.com/texastribu
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Credentials](#credentials)
-- [Creating a graphic](#creating-a-graphic)
-  - [Scripted VS non-scripted/static graphics](#scripted-vs-non-scriptedstatic-graphics)
-  - [Fetching the data](#fetching-the-data)
-  - [Creating a static graphic (HTML table)](#creating-a-static-graphic-html-table)
-  - [Creating a static graphic (Illustrator)](#creating-a-static-graphic-illustrator)
-  - [Creating a scripted graphic (D3)](#creating-a-scripted-graphic-d3)
-- [Creating a feature story](#creating-a-feature-story)
-  - [Github](#github)
-  - [Getting text on the page](#getting-text-on-the-page)
-  - [Illustrator graphics and other elements](#illustrator-graphics-and-other-elements)
-  - [Deploy](#deploy)
+- [Setting up, testing the kit on your machine](#setting-up-testing-the-kit-on-your-machine)
+  - [Credentials](#credentials)
+  - [Creating a graphic](#creating-a-graphic)
+    - [Scripted VS non-scripted/static graphics](#scripted-vs-non-scriptedstatic-graphics)
+    - [Fetching the data](#fetching-the-data)
+    - [Creating a static graphic (HTML table)](#creating-a-static-graphic-html-table)
+    - [Creating a static graphic (Illustrator)](#creating-a-static-graphic-illustrator)
+    - [Creating a scripted graphic (D3)](#creating-a-scripted-graphic-d3)
+  - [Creating a feature story](#creating-a-feature-story)
+    - [Github](#github)
+    - [Getting text on the page](#getting-text-on-the-page)
+    - [Illustrator graphics and other elements](#illustrator-graphics-and-other-elements)
+    - [Deploy](#deploy)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -57,6 +58,8 @@ You can also test to see if the credentials are working. The following command w
 npm run deploy
 ```
 
+One thing to note: Every time you deploy, your server will stop rendering the graphic correctly. You just need to restart the server to get it showing up again.
+
 ## Creating a graphic
 
 ### Scripted VS non-scripted/static graphics
@@ -74,7 +77,7 @@ i.e. D3.
 
 We use Google spreadsheets to host the data for our graphics. Here's an example of [the spreadsheet we used](https://docs.google.com/spreadsheets/d/102dLzZtUAD-kCcXIWKTnzbMM0KKhwlmE4WIVmKwSPWU/edit#gid=0) for an old graphic.
 
-Now ahead and make a new spreadsheet and hook it up to the test graphic you created. The [readme in the create repo](https://github.com/texastribune/data-visuals-create#how-to-work-with-google-doc-and-google-sheet-files) will provide you the information you need to get this set up.
+Now go ahead and make a new spreadsheet and hook it up to the test graphic you created. The [readme in the create repo](https://github.com/texastribune/data-visuals-create#how-to-work-with-google-doc-and-google-sheet-files) will provide you the information you need to get this set up.
 
 Once you've created a new spreadsheet, copy over the data from [that example](https://docs.google.com/spreadsheets/d/102dLzZtUAD-kCcXIWKTnzbMM0KKhwlmE4WIVmKwSPWU/edit#gid=0). Go ahead and copy over both sheets and change their sheet names to match.
 
@@ -90,12 +93,12 @@ The name of the JSON file is set inside the project.config.js file. Each file in
 
 This is useful when you want to have multiple json files for your project.
 
-In the end, the `files` attribute inside your project.config.js should look like this:
+In the end, the `files` attribute inside your project.config.js should look like this. The spreadsheet ID will be found in the url.
 
 ```js
 files: [
     {
-      fileId: '1Vb2FGVmN7lhrtaueJK_RawQljQEBYS-ZSoVlliPAVEg',
+      fileId: '<--Your Google spreadsheet ID here-->',
       type: 'sheet',
       name: 'data',
     },
@@ -104,19 +107,24 @@ files: [
 
 ### Creating a static graphic (HTML table)
 
-Now we're going to get the data from that JSON file onto the page by recreating the table in [this project](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/index.html). We're using [Nunjucks](https://mozilla.github.io/nunjucks/) as our templating language to make it happen.
+Now we're going to get the data from that JSON file onto the page by recreating the table in [this project](https://github.com/texastribune/newsapps-dailies/tree/master/2019/graphic-census-data-table-2019-04). We're using [Nunjucks](https://mozilla.github.io/nunjucks/) as our templating language to make it happen.
 
-First change the name of `app/static.html` file to `table.html`. And then make sure your `context` and `data` variables, which arre at the top of the file, look like so:
+First change the name of `app/static.html` file to `table.html`. And then make sure your `context` and `data` variables, which are at the top of the file, look like so:
 
 ```html
+{# data.text --> data/text.json #}
 {% set context = data.data.text %}
-{% set data = data.data %}
-```
-This will put the JSON data you downloaded into a variable called `data`. And `text:kv` data into the `context` variable.
 
-And then put this inside the `<div class="app">` tag right under `<p class="graphic-prose">{{ context.prose }}</p>`.
+{# data.data --> data/data.json #}
+{% set graphicData = data.data %}
+```
+
+This will put the JSON data you downloaded into a variable called `graphicData`. And `text:kv` data into the `context` variable.
+
+And then put this inside the `<div class="app">` tag and remove `{{ prose(context.prose, context, graphicData) }}`.
 
 ```html
+<p class="graphic-prose">{{ context.prose }}</p>
 <table class="dv-table">
   <thead>
     <tr> 
@@ -127,7 +135,7 @@ And then put this inside the `<div class="app">` tag right under `<p class="grap
     </tr>
   </thead>
   <tbody>
-     {% for row in data.datapoints %}
+     {% for row in graphicData.datapoints %}
        <tr>
         <td> {{ row.CTYNAME }} </td>
         <td class="number"> {{ row["2010"] | intcomma }} </td>
@@ -142,10 +150,10 @@ And then put this inside the `<div class="app">` tag right under `<p class="grap
 You'll notice that this includes the following for loop:
 
 ```html
-{% for row in data.datapoints %}
+{% for row in graphicData.datapoints %}
 ```
 
-We're grabbing the `data` variable, which we just created and includes JSON data from our spreadsheet and looping through it, putting values from the JSON data on the page as it goes through. The `datapoints` item is a reference to the sheet name in the Google spreadsheet. It gets converted into the `data.json` file and looks like:
+We're grabbing the `graphicData` variable, which we just created and includes JSON data from our spreadsheet and looping through it, putting values from the JSON data on the page as it goes through. The `datapoints` item is a reference to the sheet name in the Google spreadsheet. It gets converted into the `data.json` file and looks like:
 
 ```js
 {
