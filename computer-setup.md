@@ -47,7 +47,7 @@ Everything we do here is only going to work if you have admin privileges. How do
 
 ![Are you the admin?](http://i.imgur.com/rTsdp5C.png?1)
 
-Don't have admin powers? Reach out to [Rodney](rgibbs@texastribune.org) and he'll get you set up.
+Don't have admin powers? Reach out to the team and we'll help get you set up.
 
 ### Check for MacOS updates
 
