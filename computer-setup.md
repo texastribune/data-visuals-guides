@@ -65,11 +65,11 @@ With `Terminal` in focus, open the `Preferences`. Up at the top of the box, clic
 
 ![terminal preferences window](http://i.imgur.com/Oaphc7L.png)
 
-Beautiful! There's a whole world of color schemes out there that go beyond the defaults (and this article). We encourage you to seek them out when you want to spice things up!
+Beautiful! There's a whole world of color schemes out there that go beyond the defaults. We encourage you to seek them out when you want to spice things up!
 
 ## Code Editors
 
-Two editors are used here at The Texas Tribune – [Atom](https://atom.io/) and [Sublime Text](http://www.sublimetext.com/). We have no particular preference – try them both out! (You're welcome to use anything else, too.)
+Three editors are primarily used here at The Texas Tribune – [Atom](https://atom.io/), [Sublime Text](http://www.sublimetext.com/) and [VS Code](https://code.visualstudio.com/). We have no particular preference – try them both out! (You're welcome to use anything else, too.)
 
 ### Atom
 
