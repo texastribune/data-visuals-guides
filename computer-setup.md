@@ -101,7 +101,7 @@ Now you can type `subl <path>` in your terminal and Sublime will open that file 
 
 If you want to be able to open VS Code from your Terminal on your Mac, you'll need to [follow this guide](https://code.visualstudio.com/docs/setup/mac).
 
-Now you can type `code <path>` in your terminal and Sublime will open that file or folder.
+Now you can type `code <path>` in your terminal and VS Code will open that file or folder.
 
 ## Installing Homebrew
 
