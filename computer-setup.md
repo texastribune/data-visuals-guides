@@ -135,7 +135,7 @@ The first Homebrew package we're going to install is Python. "But wait," you say
 
 You're right! But it's a good idea to not monkey around with your computer's installed software. There's some fragile stuff in there that your computer depends on to function, so we try our best not to disturb it. Plus it is much easier to troubleshoot if you know exactly where your version of Python lives.
 
-Homebrew has [dedicated an entire document](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Homebrew-and-Python.md) to how it works with Python. It's worth a quick read.
+Homebrew has [dedicated an entire document](https://docs.brew.sh/Homebrew-and-Python) to how it works with Python. It's worth a quick read.
 
 The Data Visuals team defaults to **Python 3**. If are in the rare situation where you still need **Python 2**, let someone know and we can help.
 
@@ -175,7 +175,7 @@ To install that, run the following:
 nvm install lts/carbon
 ```
 
-We also use [npx](https://github.com/zkat/npx) with our kit that is used to create graphics, which will be explaining later. In the meantime, make sure it's installed by running:
+We also use [npx](https://github.com/npm/npx) with our kit that is used to create graphics, which will be explaining later. In the meantime, make sure it's installed by running:
 
 ```sh
 npx
@@ -245,9 +245,7 @@ At this point, you will need several files added to the root directory on your c
 * .aws/config
 * .aws/credentials
 
-For full-time employees, these are stored in 1Password, which we can give you access to. The `tt_kit_google_client_secrets.json` info is in the `tt_kit_google_client_secrets` note. The aws files are stored in the `AWS credentials` note. Please don't share these on Slack or over email.
-
-Fellows don't have access to 1Password. We will need to give you those files on a thumb drive.
+For fellows and full-time employees, these are stored in 1Password, which you should have access to after you go through the onboarding process. The `tt_kit_google_client_secrets.json` info is in the `tt_kit_google_client_secrets` note. The aws files are stored in the `AWS credentials` note. Please don't share these on Slack or over email.
 
 Once you've got these set up, you'll need one more, which you will generate with your Google account after you [create your first graphic](https://github.com/texastribune/data-visuals-guides/blob/master/kit-setup.md#creating-a-graphic). You should see a url pop up in your terminal, which will direct you to a Google Drive page that says `News Apps Graphics Kit wants to access your Google Account`. Hit `Allow` and the token file will be generated and put in your root.
 
@@ -284,7 +282,7 @@ Visit [http://postgresapp.com/](http://postgresapp.com/) and download the instal
 
 ## Explorer credentials
 
-Separate credentials are required for setting up our explorers. Instructions for them explorers are in a [separate readme](explorers-setup.md).
+Separate credentials are required for setting up our explorers. Instructions for these explorers are in a [separate readme](explorers-setup.md).
 
 On your first day, you won't need to worry about setting them up.
 
