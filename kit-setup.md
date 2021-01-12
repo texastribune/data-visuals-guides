@@ -450,7 +450,7 @@ You'll then place that on the page using the same `processors.html` file from be
 {% endmacro %}
 ```
 
-Here's a more complicated example from [this story](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/processors.html).
+You should now see this working if you fire up localhost. Here's a more complicated example from [this story](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/processors.html).
 
 ### Deploy
 
