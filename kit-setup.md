@@ -305,7 +305,7 @@ All of the commands are the same for feature stories. The difference is you star
 
 We use a Google doc to house the text for feature stories. Here's a [good example of one we created for a story](https://docs.google.com/document/d/1CLKjPANEVPMOMPdjX-nrw8DetFXe__zPWeaqx8iQCZs/edit) and here's a [the feature article template](https://docs.google.com/document/d/1B_jhK1r75fMZVQev8BGU60dgjh1ffE0AxNDZz5dl-RQ/edit).
 
-We use `archieML` to  convert the text into JSON. Like graphics, we `data:fetch` them in the same way and the data is put into the `data/data.json` file.
+We use [archieML](http://archieml.org/) to  convert the text into JSON. Like graphics, we `data:fetch` them in the same way and the data is put into the `data/data.json` file.
 
 ### Github
 
@@ -327,7 +327,7 @@ files: [
 ],
 ```
 
-Now run the data fetch command. The `text.json` file should now look like this:
+Now run the data fetch command. The `data/text.json` file should now look like this:
 
 ```js
 {
@@ -386,19 +386,19 @@ Now run the data fetch command. The `text.json` file should now look like this:
 
 You'll notice that text for our story is given the `type` of `text`, which will be important later.
 
-Now go to your [index.html file](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/index.html). You'll notice this line:
+Now go to your index.html file. You'll notice this line:
 
 ```html
-{{ prose(context.prose, context, data) }}
+{{ prose(context.prose, context, featureData) }}
 ```
 
-This calls the prose macro within the [app/templates/macros/prose.html file](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/prose.html) and loops through all lines in your `text.json` file, putting each on the page.
+This calls the `prose` macro within the [app/templates/macros/prose.html file](https://github.com/texastribune/data-visuals-create/blob/master/templates/__common__/app/templates/macros/prose.html) and loops through all lines in your `text.json` file, putting each on the page.
 
-To do this, the prose macro calls another macro within the [app/templates/macros/processors.html file](https://github.com/texastribune/feature-scotus-citizenship-2019-06/blob/master/app/templates/macros/processors.html). It picks out the appropriate macro depending on what type of content is being looped through. For instance, since the story's paragraphs has a type of `text`, it's passed to this macro:
+To do this, the prose macro calls another macro within the [app/templates/macros/processors.html file](https://github.com/texastribune/data-visuals-create/blob/master/templates/feature/app/templates/macros/processors.html). It picks out the appropriate macro depending on what type of content is being looped through. For instance, since the story's paragraphs has a type of `text` in the `data.json` file, it's passed to this macro:
 
 ```
-{% macro text(value) %}
-  <p class="copy">{{ value }}</p>
+{% macro text(value, context, data) %}
+  <p class="copy">{{ value | renderStringWithNunjucks(data) }}</p>
 {% endmacro %}
 ```
 
