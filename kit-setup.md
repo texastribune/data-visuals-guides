@@ -201,15 +201,13 @@ And you should see your table!
 
 ### Creating a static graphic (Illustrator)
 
-We also use Illustrator for some charts. All Illustrator files are put into the [workspace directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/workspace).
+We also use Illustrator for some charts. All Illustrator files are put into the `workspace` directory.
 
-We then use `ai2html` to convert the Illustrator file into HTML, which is exported into [app/templates/ai2html-output/ directory](https://github.com/texastribune/newsapps-dailies/tree/master/graphic-census-data-table-2019-04/app/templates/ai2html-output). You can then [call the Illustrator graphic(s)](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-census-data-table-2019-04/app/map.html#L7) inside an html file in the `apps/` directory. 
+We then use `ai2html` to convert the Illustrator file into HTML, which is exported into `app/templates/ai2html-output/` directory (here's an [example of a project that uses it](https://github.com/texastribune/newsapps-dailies/tree/master/2021/graphic-vaccine-sites-2021-01/app/templates/ai2html-output)). You can then call the Illustrator graphic(s) inside an html file in the `apps/` directory. 
 
-```html
-<div id="graphic-budget-scraps" class="graphic app">
-  {% set ai2html = "census-map" %}
-  {% include "ai2html-output/" + ai2html + ".html" %}
-</div>
+```js
+{% set ai2html = "" %}
+{% include "ai2html-output/" + ai2html + ".html" %}
 ```
 
 You'll want to use the `static.html` boilerplate. (It already includes the code above for embedding an Illustrator graphic.)
