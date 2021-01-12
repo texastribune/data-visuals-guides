@@ -394,7 +394,7 @@ Now go to your index.html file. You'll notice this line:
 
 This calls the `prose` macro within the [app/templates/macros/prose.html file](https://github.com/texastribune/data-visuals-create/blob/master/templates/__common__/app/templates/macros/prose.html) and loops through all lines in your `text.json` file, putting each on the page.
 
-To do this, the prose macro calls another macro within the [app/templates/macros/processors.html file](https://github.com/texastribune/data-visuals-create/blob/master/templates/feature/app/templates/macros/processors.html). It picks out the appropriate macro depending on what type of content is being looped through. For instance, since the story's paragraphs has a type of `text` in the `data.json` file, it's passed to this macro:
+To do this, the `prose` macro calls another macro within the [app/templates/macros/processors.html file](https://github.com/texastribune/data-visuals-create/blob/master/templates/feature/app/templates/macros/processors.html). It picks out the appropriate macro depending on what type of content is being looped through. For instance, since the story's paragraphs has a type of `text` in the `data.json` file, it's passed to this macro:
 
 ```
 {% macro text(value, context, data) %}
@@ -402,7 +402,7 @@ To do this, the prose macro calls another macro within the [app/templates/macros
 {% endmacro %}
 ```
 
-The result is the paragraph is wrapped in a <p> tag and placed on the page. It does this over and over, until all the text is placed on the page.
+The result is the paragraph is wrapped in a `<p>` tag and placed on the page. It does this over and over, until all the text is placed on the page.
 
 ### Illustrator graphics and other elements
 
