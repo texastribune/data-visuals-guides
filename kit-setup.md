@@ -442,11 +442,11 @@ When it's converted into the `text.json` file, it looks like:
 }
 ```
 
-You'll then place that on the page using the same `processors.html` file from before. Only we will need to add a new macro to handle content with the type of `insert`.
+You'll then place that on the page using the same `processors.html` file from before. Only we will need to add a new macro to handle content with the type of `insert`. So go ahead and add this macro into that file:
 
 ```html
 {% macro insert(value) %}
-  {% include "ai2html-output/" + value.slug + ".html" %}
+  <h1>Slug: {{ value.slug }}</h1>
 {% endmacro %}
 ```
 
@@ -454,5 +454,5 @@ Here's a more complicated example from [this story](https://github.com/texastrib
 
 ### Deploy
 
-Once you are ready for the story to go live, make sure you change the `bucket` in the `project.config.js` from moose to apps. Here's what it [should look like](https://github.com/texastribune/feature-asset-forfeiture-2019-05/blob/master/project.config.js#L14) when you're done.
+Once you are ready for the story to go live, make sure you change the `bucket` in the `project.config.js` from `capybara-test` to `apps`. Here's what it [should look like](https://github.com/texastribune/feature-asset-forfeiture-2019-05/blob/master/project.config.js#L14) when you're done.
 
