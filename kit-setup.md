@@ -402,7 +402,7 @@ To do this, the `prose` macro calls another macro within the [app/templates/macr
 {% endmacro %}
 ```
 
-The result is the paragraph is wrapped in a `<p>` tag and placed on the page. It does this over and over, until all the text is placed on the page.
+The result is the paragraph is wrapped in a `<p class="copy">` tag and placed on the page. It does this over and over, until all the text is placed on the page.
 
 ### Illustrator graphics and other elements
 
