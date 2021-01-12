@@ -203,7 +203,7 @@ And you should see your table!
 
 We also use Illustrator for some charts. All Illustrator files are put into the `workspace` directory.
 
-We then use `ai2html` to convert the Illustrator file into HTML, which is exported into `app/templates/ai2html-output/` directory (here's an [example of a project that uses an Illustator graphic](https://github.com/texastribune/newsapps-dailies/tree/master/2021/graphic-vaccine-sites-2021-01/app/templates/ai2html-output)). You can then call the Illustrator graphic(s) inside an html file in the `apps/` directory. 
+We then use `ai2html` to convert the Illustrator file into HTML, which is exported into the `app/templates/ai2html-output/` directory (here's an [example of a project that uses an Illustator graphic](https://github.com/texastribune/newsapps-dailies/tree/master/2021/graphic-vaccine-sites-2021-01/app/templates/ai2html-output)). You can then call the Illustrator graphic(s) inside an html file in the `apps/` directory:
 
 ```js
 {% set ai2html = "" %}
@@ -241,7 +241,7 @@ something else.
 
 **Method 3: Use loadJsonScript**
 
-You can also use the [loadJsonScript](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/utils/load-json-script.js) function to load in the data from our JSON file in the data directory.
+You can also use the [loadJsonScript](https://github.com/texastribune/data-visuals-create/blob/d1065320512de892f628fecb60719479774e8b2c/templates/__common__/app/scripts/utils/load-json-script.js) function to load in the data from our JSON file in the data directory.
 
 For example, [this line chart](https://www.texastribune.org/2019/03/04/lawmakers-want-expand-dallas-teacher-incentive-pay-program/) uses D3. It's `data.json file` looks like so:
 
@@ -278,7 +278,7 @@ For example, [this line chart](https://www.texastribune.org/2019/03/04/lawmakers
 }
 ```
 
-To import the data in the `ace` object, first add [a line like this](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/index.html#L41) to your index.html file inside the `inline_data` block:
+To import the data in the `ace` object, first add [a line like this](https://github.com/texastribune/newsapps-dailies/blob/master/2019/graphic-dallas-teacher-pay-2019-03/app/index.html#L41) to your index.html file inside the `inline_data` block:
 
 ```js
 {{ data.data.ace|jsonScript('ace-data') }}
@@ -297,7 +297,7 @@ Then you'll import the data into the graphic.js file using the script's id tag o
 const aceData = loadJsonScript('ace-data');
 ```
 
-This will parse the data for use with D3. You can see more about how D3 charts are created by looking inside this [project's graphic.js file](https://github.com/texastribune/newsapps-dailies/blob/master/graphic-dallas-teacher-pay-2019-03/app/scripts/graphic.js).
+This will parse the data for use with D3. You can see more about how D3 charts are created by looking inside this [project's graphic.js file](https://github.com/texastribune/newsapps-dailies/blob/master/2019/graphic-dallas-teacher-pay-2019-03/app/scripts/graphic.js#L13).
 
 ## Creating a feature story
 
