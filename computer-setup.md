@@ -239,7 +239,7 @@ Setting the kit up and creating your first graphic is documented in [its own rea
 
 ### Credentials
 
-At this point, you will need several files added to the root directory on your computer, which will provide you with the credentials needed to run the kit and other team projects. They include:
+At this point, you will need several files added to the home directory on your computer ('Users/yourname'), which will provide you with the credentials needed to run the kit and other team projects. They include:
 
 * .tt_kit_google_client_secrets.json
 * .aws/config
@@ -247,7 +247,7 @@ At this point, you will need several files added to the root directory on your c
 
 For fellows and full-time employees, these are stored in 1Password, which you should have access to after you go through the onboarding process. The `tt_kit_google_client_secrets.json` info is in the `tt_kit_google_client_secrets` note. The aws files are stored in the `AWS credentials` note. Please don't share these on Slack or over email.
 
-Once you've got these set up, you'll need one more, which you will generate with your Google account after you [create your first graphic](https://github.com/texastribune/data-visuals-guides/blob/master/kit-setup.md#creating-a-graphic). You should see a url pop up in your terminal, which will direct you to a Google Drive page that says `News Apps Graphics Kit wants to access your Google Account`. Hit `Allow` and the token file will be generated and put in your root.
+Once you've got these set up, you'll need one more, which you will generate with your Google account after you [create your first graphic](https://github.com/texastribune/data-visuals-guides/blob/master/kit-setup.md#creating-a-graphic). You should see a url pop up in your terminal, which will direct you to a Google Drive page that says `News Apps Graphics Kit wants to access your Google Account`. Hit `Allow` and the token file will be generated and put in your home directory.
 
 This file is:
 
