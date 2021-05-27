@@ -215,7 +215,7 @@ git config --global user.email "<your-email>"
 
 > Don't want your email public? GitHub can help with that. On the email settings page, there is a setting at the bottom labeled `Keep my email address private`. You can then use the proxy email GitHub provides.
 
-Next we'll set up authentication. The Homebrew install of git adds a helper that allows it to use MacOS's built-in Keychain.
+Next we'll set up authentication. The Homebrew install of git adds a helper that allows it to use MacOS's built-in Keychain. 
 
 Run the following to tell git to use it:
 
@@ -229,7 +229,7 @@ We also need to tell git to use `https` for cloning.
 git config --global hub.protocol https
 ```
 
-For more information on git and GitHub, check out [this interactive tutorial](https://try.github.io/) or [this walk through](https://guides.github.com/activities/hello-world/) to get started.
+If it's your first time using Github in terminal on the computer you're using, you will need to generate a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) and use that instead of a password the first time you clone or commit. For more information on git and GitHub, check out [this interactive tutorial](https://try.github.io/) or [this walk through](https://guides.github.com/activities/hello-world/) to get started.
 
 ## Installing the data-visuals kit
 
