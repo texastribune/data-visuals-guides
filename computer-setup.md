@@ -245,7 +245,7 @@ At this point, you will need several files added to the home directory on your c
 * .aws/config
 * .aws/credentials
 
-For fellows and full-time employees, these are stored in 1Password, which you should have access to after you go through the onboarding process. The `tt_kit_google_client_secrets.json` info is a downloadable file. When you download it, you need to manually add the `.` back into the filename. The aws files are stored in the `AWS credentials` note. Please don't share these on Slack or over email.
+For fellows and full-time employees, these are stored in 1Password, which you should have access to after you go through the onboarding process. The `tt_kit_google_client_secrets.json` info is a downloadable file. When you download it, you need to manually add the `.` back into the filename (this is easier to change in terminal than Finder!). The aws files are stored in the `AWS credentials` note. Please don't share these on Slack or over email.
 
 Once you've got these set up, you'll need one more, which you will generate with your Google account after you [create your first graphic](https://github.com/texastribune/data-visuals-guides/blob/master/kit-setup.md#creating-a-graphic). You should see a url pop up in your terminal, which will direct you to a Google Drive page that says `News Apps Graphics Kit wants to access your Google Account`. Hit `Allow` and the token file will be generated and put in your home directory.
 
