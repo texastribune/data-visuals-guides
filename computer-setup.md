@@ -175,7 +175,31 @@ To install that, run the following:
 nvm install lts/carbon
 ```
 
-We also use [npx](https://github.com/npm/npx) with our kit that is used to create graphics, which will be explaining later. In the meantime, make sure it's installed by running:
+It's possible you will run into issues involving node versions, like [this readFile one](https://github.com/fraction/oasis/issues/30). If that happens, you could try installing a newer version:
+
+```sh
+nvm install lts/dubnium
+```
+
+Or:
+
+```sh
+nvm install lts/erbium
+```
+
+At any point, you can check the versions these are using by running:
+
+```sh
+nvm ls
+```
+
+If you need to switch versions of node at all, you can run:
+
+```sh
+nvm use 12.8
+```
+
+We also use [npx](https://github.com/npm/npx) with our kit that is used to create graphics, which will be explained later. In the meantime, make sure it's installed by running:
 
 ```sh
 npx
