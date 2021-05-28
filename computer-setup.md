@@ -239,7 +239,7 @@ git config --global user.email "<your-email>"
 
 > Don't want your email public? GitHub can help with that. On the email settings page, there is a setting at the bottom labeled `Keep my email address private`. You can then use the proxy email GitHub provides.
 
-Next we'll set up authentication. The Homebrew install of git adds a helper that allows it to use MacOS's built-in Keychain.
+Next we'll set up authentication. The Homebrew install of git adds a helper that allows it to use MacOS's built-in Keychain. 
 
 Run the following to tell git to use it:
 
@@ -253,7 +253,7 @@ We also need to tell git to use `https` for cloning.
 git config --global hub.protocol https
 ```
 
-For more information on git and GitHub, check out [this interactive tutorial](https://try.github.io/) or [this walk through](https://guides.github.com/activities/hello-world/) to get started.
+If it's your first time using Github in terminal on the computer you're using, you will need to generate a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) and use that instead of a password the first time you clone or commit. For more information on git and GitHub, check out [this interactive tutorial](https://try.github.io/) or [this walk through](https://guides.github.com/activities/hello-world/) to get started.
 
 ## Installing the data-visuals kit
 
@@ -269,7 +269,7 @@ At this point, you will need several files added to the home directory on your c
 * .aws/config
 * .aws/credentials
 
-For fellows and full-time employees, these are stored in 1Password, which you should have access to after you go through the onboarding process. The `tt_kit_google_client_secrets.json` info is in the `tt_kit_google_client_secrets` note. The aws files are stored in the `AWS credentials` note. Please don't share these on Slack or over email.
+For fellows and full-time employees, these are stored in 1Password, which you should have access to after you go through the onboarding process. The `tt_kit_google_client_secrets.json` info is a downloadable file. When you download it, you need to manually add the `.` back into the filename (this is easier to change in terminal than Finder!). The aws files are stored in the `AWS credentials` note. Please don't share these on Slack or over email.
 
 Once you've got these set up, you'll need one more, which you will generate with your Google account after you [create your first graphic](https://github.com/texastribune/data-visuals-guides/blob/master/kit-setup.md#creating-a-graphic). You should see a url pop up in your terminal, which will direct you to a Google Drive page that says `News Apps Graphics Kit wants to access your Google Account`. Hit `Allow` and the token file will be generated and put in your home directory.
 

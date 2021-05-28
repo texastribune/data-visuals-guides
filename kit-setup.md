@@ -28,7 +28,7 @@ First thing you'll need to do is get credentials for the kit. More information o
 
 Once those on your computer, we will be creating two separate projects: one’s a graphic, another is a feature story. We’ll test both but the commands are the same.
 
-To create a graphic, git clone our [dailies repo](https://github.com/texastribune/newsapps-dailies) and `cc` into the repo. Then run:
+To create a graphic, git clone our [dailies repo](https://github.com/texastribune/newsapps-dailies) and `cc` into the repo. All embedded graphics are published in this repo. Then run:
 
 ```sh
 npx @data-visuals/create graphic test-graphic
