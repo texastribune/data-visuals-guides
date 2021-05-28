@@ -193,10 +193,10 @@ At any point, you can check the versions these are using by running:
 nvm ls
 ```
 
-If you need to switch versions of node at all, you can run:
+If you need to set a newer version of node as your default, you can run:
 
 ```sh
-nvm use 12.8
+nvm alias default 12.8
 ```
 
 We also use [npx](https://github.com/npm/npx) with our kit that is used to create graphics, which will be explained later. In the meantime, make sure it's installed by running:
