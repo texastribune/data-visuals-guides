@@ -158,6 +158,12 @@ brew install pipenv
 
 That's all you will need to do for now. You will use them more as you get up and running on projects that use them. A few include the [salaries app](https://github.com/texastribune/salaries.texastribune.org) and the [Republic API](https://github.com/texastribune/republic).
 
+Note: If you are using python 3.9, you may run into [this issue](https://github.com/pypa/pipenv/issues/4564) when installing packages like numpy inside a pipenv environment. To fix, try running:
+
+```sh
+ export SYSTEM_VERSION_COMPAT=1
+ pipenv install
+ ```
 
 ## Installing Node.js
 
