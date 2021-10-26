@@ -1,7 +1,7 @@
 {
   "private": true,
   "devDependencies": {
-    "doctoc": "^1.4.0"
+    "doctoc": "^2.1.0"
   },
   "scripts": {
     "update-toc": "doctoc ."
