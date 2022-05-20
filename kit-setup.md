@@ -2,6 +2,8 @@
 
 Here's instructions for how [our data visuals kit](https://github.com/texastribune/data-visuals-create) works and how you can get it working on your machine.
 
+We also have an [overview video](https://drive.google.com/file/d/1dRGaABiiFxsrBP2eX37zLmY-DoP45hjT/view?usp=sharing) of the kit and it's history from former team member Mandi Cai, who mantained it for several years.
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
