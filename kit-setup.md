@@ -68,12 +68,12 @@ One thing to note: Every time you deploy, your server will stop rendering the gr
 
 Our graphics are embedded into stories like [this example](https://www.texastribune.org/2019/04/18/dallas-fort-worth-metro-area-saw-biggest-2018-texas-population-growth/). Now let's create one.
 
-We have an `index.html` template, for graphics that require JavaScript, and a `static.html` template, for graphics that do not require JS.
+We have an `graphic.html` template, for graphics that require JavaScript, and a `graphic-static.html` template, for graphics that do not require JS. Both are in the `app/templates/` folder
 
-The `index.html` is hooked up to a JS file that calls `renderGraphic()`, and in that function is where you'll put any JS needed to render the graphic,
-i.e. D3. 
+The `graphic.html` is hooked up to a JS file that calls `renderGraphic()`, and in that function is where you'll put any JS needed to render the graphic,
+i.e. D3.
 
-`static.html` does not call this function and is mainly for Illustrator embeds or HTML-only graphics, i.e. tables.
+`graphic-static.html` does not call this function and is mainly for Illustrator embeds or HTML-only graphics, i.e. tables.
 
 ### Fetching the data
 
@@ -111,7 +111,7 @@ files: [
 
 Now we're going to get the data from that JSON file onto the page by recreating the table in [this project](https://github.com/texastribune/newsapps-dailies/tree/master/2019/graphic-census-data-table-2019-04). We're using [Nunjucks](https://mozilla.github.io/nunjucks/) as our templating language to make it happen.
 
-First change the name of `app/static.html` file to `table.html`. And then make sure your `context` and `data` variables, which are at the top of the file, look like so:
+Copy and paste the file `app/templates/graphic-static.html` in the `app/` folder (at the same level as `index.html`). Change `graphic-static.html` to `table.html`. And then make sure your `context` and `data` variables, which are at the top of the file, look like so:
 
 ```html
 {# data.text --> data/text.json #}
@@ -212,11 +212,11 @@ We then use `ai2html` to convert the Illustrator file into HTML, which is export
 {% include "ai2html-output/" + ai2html + ".html" %}
 ```
 
-You'll want to use the `static.html` boilerplate. (It already includes the code above for embedding an Illustrator graphic.)
+You'll want to use the `graphic-static.html` boilerplate. (It already includes the code above for embedding an Illustrator graphic.)
 
 ### Creating a scripted graphic (D3)
 
-We also use D3 for some of our charts. For these, it's best to start with `index.html` and add your D3 code to `renderGraphic()` in `graphic.js`.
+We also use D3 for some of our charts. For these, it's best to start with `graphic.html` and add your D3 code to `renderGraphic()` in `graphic.js`.
 
 There are several ways to import data into the JS. Go ahead and use one of the options below.
 
@@ -280,7 +280,7 @@ For example, [this line chart](https://www.texastribune.org/2019/03/04/lawmakers
 }
 ```
 
-To import the data in the `ace` object, first add [a line like this](https://github.com/texastribune/newsapps-dailies/blob/master/2019/graphic-dallas-teacher-pay-2019-03/app/index.html#L41) to your index.html file inside the `inline_data` block:
+To import the data in the `ace` object, first add [a line like this](https://github.com/texastribune/newsapps-dailies/blob/master/2019/graphic-dallas-teacher-pay-2019-03/app/index.html#L41) to your `graphic.html` file inside the `inline_data` block:
 
 ```js
 {{ data.data.ace|jsonScript('ace-data') }}
@@ -388,7 +388,7 @@ Now run the data fetch command. The `data/text.json` file should now look like t
 
 You'll notice that text for our story is given the `type` of `text`, which will be important later.
 
-Now go to your index.html file. You'll notice this line:
+Now go to your `graphic.html` file. You'll notice this line:
 
 ```html
 {{ prose(context.prose, context, featureData) }}
@@ -457,4 +457,3 @@ You should now see this working if you fire up localhost. Here's a more complica
 ### Deploy
 
 Once you are ready for the story to go live, make sure you change the `bucket` in the `project.config.js` from `capybara-test` to `apps`. Here's what it [should look like](https://github.com/texastribune/feature-asset-forfeiture-2019-05/blob/master/project.config.js#L14) when you're done.
-
