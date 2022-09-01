@@ -6,18 +6,6 @@ This assumes that everything in the [computer setup](computer-setup.md) section 
 
 NOTE: If you are onboarding as a fellow or full-time developer, you DO NOT need to install any of these, unless prompted by your editor. This is mostly just an attempt to gather all these docs into one place.
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-- [Set up our explorers on your computer](#set-up-our-explorers-on-your-computer)
-  - [Salaries](#salaries)
-  - [Schools](#schools)
-  - [Republic API](#republic-api)
-  - [Campaign finance](#campaign-finance)
-  - [Elections](#elections)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 ## [Salaries](https://salaries.texastribune.org/)
 
 The setup and update processes are documented on in its [Github repo](https://github.com/texastribune/state-salaries-draft).
