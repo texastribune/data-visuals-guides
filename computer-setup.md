@@ -5,29 +5,28 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-
-  - [Pre-setup](#pre-setup)
-    - [Make sure you're the admin](#make-sure-youre-the-admin)
-    - [Check for MacOS updates](#check-for-macos-updates)
-    - [You and your terminal](#you-and-your-terminal)
-  - [Code Editors](#code-editors)
-    - [Atom](#atom)
-      - [Hook Atom into your terminal](#hook-atom-into-your-terminal)
-      - [Suggested reading](#suggested-reading)
-    - [Sublime Text](#sublime-text)
-      - [Hook Sublime Text into your terminal](#hook-sublime-text-into-your-terminal)
-  - [Installing Homebrew](#installing-homebrew)
-    - [Installation](#installation)
-  - [Installing Python](#installing-python)
-    - [Pipenv for virtual environments](#pipenv-for-virtual-environments)
-  - [Installing Node.js](#installing-nodejs)
-  - [Installing git](#installing-git)
-  - [Installing the data-visuals kit](#installing-the-data-visuals-kit)
-    - [Credentials](#credentials)
-  - [ai2html](#ai2html)
-  - [Installing Docker](#installing-docker)
-  - [Installing PostgreSQL](#installing-postgresql)
-  - [Explorer credentials](#explorer-credentials)
+- [Pre-setup](#pre-setup)
+  - [Make sure you're the admin](#make-sure-youre-the-admin)
+  - [Check for MacOS updates](#check-for-macos-updates)
+  - [You and your terminal](#you-and-your-terminal)
+- [Code Editors](#code-editors)
+  - [Atom](#atom)
+    - [Hook Atom into your terminal](#hook-atom-into-your-terminal)
+    - [Suggested reading](#suggested-reading)
+  - [Sublime Text](#sublime-text)
+    - [Hook Sublime Text into your terminal](#hook-sublime-text-into-your-terminal)
+- [Installing Homebrew](#installing-homebrew)
+  - [Installation](#installation)
+- [Installing Python](#installing-python)
+  - [Pipenv for virtual environments](#pipenv-for-virtual-environments)
+- [Installing Node.js](#installing-nodejs)
+- [Installing git](#installing-git)
+- [Installing the data-visuals kit](#installing-the-data-visuals-kit)
+  - [Credentials](#credentials)
+- [ai2html](#ai2html)
+- [Installing Docker](#installing-docker)
+- [Installing PostgreSQL](#installing-postgresql)
+- [Explorer credentials](#explorer-credentials)
 - [&#9733; Bonus Rounds! &#9733;](#9733-bonus-rounds-9733)
   - [Show invisible files](#show-invisible-files)
   - [Hub](#hub)
@@ -61,7 +60,7 @@ Open `Terminal`. It can be found in your `Applications` folder, or, search for i
 
 Currently it's just a white box with black text. Let's fix that.
 
-With `Terminal` in focus, open the `Preferences`. Up at the top of the box, click on `Profiles` and pick a cute color scheme that speaks to you from the side menu, or get crazy and click that little `+` at the bottom of the menu and make your own. At the bottom of the side menu next to the `+` you'll see a button for   `Default` – click that after you've made your selection.
+With `Terminal` in focus, open the `Preferences`. Up at the top of the box, click on `Profiles` and pick a cute color scheme that speaks to you from the side menu, or get crazy and click that little `+` at the bottom of the menu and make your own. At the bottom of the side menu next to the `+` you'll see a button for `Default` – click that after you've made your selection.
 
 ![terminal preferences window](http://i.imgur.com/Oaphc7L.png)
 
@@ -163,7 +162,7 @@ Note: If you are using python 3.9, you may run into [this issue](https://github.
 ```sh
  export SYSTEM_VERSION_COMPAT=1
  pipenv install
- ```
+```
 
 ## Installing Node.js
 
@@ -245,7 +244,7 @@ git config --global user.email "<your-email>"
 
 > Don't want your email public? GitHub can help with that. On the email settings page, there is a setting at the bottom labeled `Keep my email address private`. You can then use the proxy email GitHub provides.
 
-Next we'll set up authentication. The Homebrew install of git adds a helper that allows it to use MacOS's built-in Keychain. 
+Next we'll set up authentication. The Homebrew install of git adds a helper that allows it to use MacOS's built-in Keychain.
 
 Run the following to tell git to use it:
 
@@ -271,19 +270,19 @@ Setting the kit up and creating your first graphic is documented in [its own rea
 
 At this point, you will need several files added to the home directory on your computer ('Users/yourname'), which will provide you with the credentials needed to run the kit and other team projects. They include:
 
-* .tt_kit_google_client_secrets.json
-* .aws/config
-* .aws/credentials
+- `.tt_kit_google_client_secrets.json`
+- `.aws/config`
+- `.aws/credentials`
 
 For fellows and full-time employees, these are stored in 1Password, which you should have access to after you go through the onboarding process. The `tt_kit_google_client_secrets.json` info is a downloadable file. When you download it, you need to manually add the `.` back into the filename (this is easier to change in terminal than Finder!). The aws files are stored in the `AWS credentials` note. Please don't share these on Slack or over email.
 
-Once you've got these set up, you'll need one more, which you will generate with your Google account after you [create your first graphic](https://github.com/texastribune/data-visuals-guides/blob/master/kit-setup.md#creating-a-graphic). You should see a url pop up in your terminal, which will direct you to a Google Drive page that says `News Apps Graphics Kit wants to access your Google Account`. Hit `Allow` and the token file will be generated and put in your home directory.
+Once you've got these set up, you'll need one more, which you will generate with your Google account after you [create your first graphic](https://github.com/texastribune/data-visuals-guides/blob/master/kit-setup.md#creating-a-graphic). You should see a url pop up in your terminal, which will direct you to a Google Drive page that says `News Apps Graphics Kit wants to access your Google Account`. Hit `Allow`. After you are redirected, the page will look broken, but you can copy the page URL and paste it back in your terminal. The token file will be generated and put in your home directory.
 
 This file is:
 
-* .google_drive_fetch_token
+- `.google_drive_fetch_token`
 
-Once you deploy your graphic, you will prompted to enter your account information. The file will automatically be generated on your computer once you're done.
+Once you deploy your graphic, you will be prompted to enter your account information. The file will automatically be generated on your computer once you're done.
 
 ## ai2html
 
@@ -308,7 +307,6 @@ Docker is a tool for containerizing apps. We use it for deploys and database man
 Nearly all of our projects use [PostgreSQL](http://www.postgresql.org/) as their backend. Instead of installing it with Homebrew, we use [Postgres.app](http://postgresapp.com/) instead.
 
 Visit [http://postgresapp.com/](http://postgresapp.com/) and download the installer. After installing, run the app. You should get a pop up window and see a cute little elephant romping around in your menu bar in the top right. If you see the elephant, Postgres.app is live.
-
 
 ## Explorer credentials
 
