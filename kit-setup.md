@@ -52,6 +52,8 @@ You can run the following to fire up them on your localhost:
 npm run serve
 ```
 
+If you run into problems and get a readFile error, you might need to install a newer version of `npm`, which is [documented here](https://github.com/texastribune/data-visuals-guides/blob/master/computer-setup.md#installing-nodejs).
+
 The graphic template starts empty and will remain that way until you add code. The feature article is not empty; it increase a headline, a headline, styles for the text and more.
 
 You can also test to see if the credentials are working. The following command will deploy the project a development or a production server, depending on your settings:
