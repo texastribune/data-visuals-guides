@@ -5,29 +5,33 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Pre-setup](#pre-setup)
-  - [Make sure you're the admin](#make-sure-youre-the-admin)
-  - [Check for MacOS updates](#check-for-macos-updates)
-  - [You and your terminal](#you-and-your-terminal)
-- [Code Editors](#code-editors)
-  - [Atom](#atom)
-    - [Hook Atom into your terminal](#hook-atom-into-your-terminal)
-    - [Suggested reading](#suggested-reading)
-  - [Sublime Text](#sublime-text)
-    - [Hook Sublime Text into your terminal](#hook-sublime-text-into-your-terminal)
-- [Installing Homebrew](#installing-homebrew)
-  - [Installation](#installation)
-- [Installing Python](#installing-python)
-  - [Pipenv for virtual environments](#pipenv-for-virtual-environments)
-- [Installing Node.js](#installing-nodejs)
-- [Installing git](#installing-git)
-- [Installing the data-visuals kit](#installing-the-data-visuals-kit)
-  - [Credentials](#credentials)
-- [ai2html](#ai2html)
-- [Installing Docker](#installing-docker)
-- [Installing PostgreSQL](#installing-postgresql)
-- [Explorer credentials](#explorer-credentials)
-- [&#9733; Bonus Rounds! &#9733;](#9733-bonus-rounds-9733)
+- [Set up your News Apps environment](#set-up-your-news-apps-environment)
+  - [Pre-setup](#pre-setup)
+    - [Make sure you're the admin](#make-sure-youre-the-admin)
+    - [Check for MacOS updates](#check-for-macos-updates)
+    - [You and your terminal](#you-and-your-terminal)
+  - [Code Editors](#code-editors)
+    - [Atom](#atom)
+      - [Hook Atom into your terminal](#hook-atom-into-your-terminal)
+      - [Suggested reading](#suggested-reading)
+    - [Sublime Text](#sublime-text)
+      - [Hook Sublime Text into your terminal](#hook-sublime-text-into-your-terminal)
+    - [VS Code](#vs-code)
+      - [Hook VS Code into your terminal on Mac](#hook-vs-code-into-your-terminal-on-mac)
+  - [Installing Homebrew](#installing-homebrew)
+    - [Installation](#installation)
+  - [Installing Python](#installing-python)
+    - [Pipenv for virtual environments](#pipenv-for-virtual-environments)
+  - [Installing Node.js](#installing-nodejs)
+  - [Installing git](#installing-git)
+  - [Installing the data-visuals kit](#installing-the-data-visuals-kit)
+    - [Credentials](#credentials)
+  - [ai2html](#ai2html)
+  - [Installing QGIS](#installing-qgis)
+  - [Installing Docker](#installing-docker)
+  - [Installing PostgreSQL](#installing-postgresql)
+  - [Explorer credentials](#explorer-credentials)
+- [★ Bonus Rounds! ★](#-bonus-rounds-)
   - [Show invisible files](#show-invisible-files)
   - [Hub](#hub)
   - [Pyenv](#pyenv)
@@ -288,7 +292,7 @@ Once you deploy your graphic, you will be prompted to enter your account informa
 
 We use Illustrator to create many of our graphics. A team password for the Adobe Creative Cloud is available in 1Password.
 
-As part of our setup, we also use [ai2html](http://ai2html.org/) to convert Illustrator files to HTML to put on our site. To set this up, check out our [instructions on Basecamp](https://3.basecamp.com/3098728/buckets/80634/uploads/1035900039).
+As part of our setup, we also use [ai2html](http://ai2html.org/) to convert Illustrator files to HTML to put on our site. To set this up, check out our [instructions on Confluence](https://texastribune.atlassian.net/wiki/spaces/APPS/pages/2277474309/AI2HTML+Illustrator+files).
 
 ## Installing QGIS
 
