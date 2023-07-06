@@ -196,6 +196,8 @@ Or:
 nvm install lts/erbium
 ```
 
+In case you are curious: carbon, dubnium and erbium each represent different version numbers in node.js. You can read more about them in [this StackOverflow answer](https://stackoverflow.com/questions/50734477/what-is-this-carbon-boron-argon-which-is-used-for-nodejs).
+
 At any point, you can check the versions these are using by running:
 
 ```sh
