@@ -21,6 +21,7 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
   - [Installing Homebrew](#installing-homebrew)
     - [Installation](#installation)
   - [Installing Python](#installing-python)
+    - [Pyenv](#pyenv)
     - [Pipenv for virtual environments](#pipenv-for-virtual-environments)
   - [Installing Node.js](#installing-nodejs)
   - [Installing git](#installing-git)
@@ -31,10 +32,9 @@ Welcome to the News Apps team! We know you're probably dying to get started, but
   - [Installing Docker](#installing-docker)
   - [Installing PostgreSQL](#installing-postgresql)
   - [Explorer credentials](#explorer-credentials)
-- [★ Bonus Rounds! ★](#-bonus-rounds-)
-  - [Show invisible files](#show-invisible-files)
-  - [Hub](#hub)
-  - [Pyenv](#pyenv)
+  - [★ Bonus Rounds! ★](#-bonus-rounds-)
+    - [Show invisible files](#show-invisible-files)
+    - [Hub](#hub)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -144,12 +144,26 @@ The Data Visuals team defaults to **Python 3**. If are in the rare situation whe
 
 ```sh
 brew install python
-pip install --upgrade setuptools pip wheel
+pip install --upgrade pip
 ```
 
-### Pipenv for virtual environments
+If you get an error message about `pip`, check out [this discussion](https://github.com/texastribune/data-visuals-guides/discussions/25) for a potential fix:
 
-**NOTE:** This is only required for full-time staffers, although fellows are more than welcome to install if they want.
+```sh
+brew unlink python && brew link python
+```
+
+### Pyenv
+
+Pyenv can help manage [python versions](https://github.com/pyenv/pyenv) on your computer. You can install with the following:
+
+```sh
+brew install pyenv
+```
+
+You can also download the [Python Wrangler](http://littlecolumns.com/tools/python-wrangler/) to keep track of python versions on your computer.
+
+### Pipenv for virtual environments
 
 When you start working on group projects, it's important to make sure that everyone's working environment is as close to identical as possible. Virtual environments keep a Python project's installs in their own little boxes so there are no conflicts between versions being used in other projects, or those already installed on your computer.
 
@@ -172,7 +186,7 @@ Note: If you are using python 3.9, you may run into [this issue](https://github.
 
 [Node.js](https://nodejs.org/) makes is possible to build server-side apps using JavaScript. At the Tribune, we use it to run our project building tools.
 
-Let's install it! We use [`nvm`](https://github.com/creationix/nvm) to manage versions. Here's a [direct link to the install instructions](https://github.com/creationix/nvm#install-script).
+Let's install it! We use [`nvm`](https://github.com/nvm-sh/nvm) to manage versions. Here's a [direct link to the install instructions](https://github.com/nvm-sh/nvm#install-script).
 
 Now, if you run `nvm ls-remote`, you'll be able to see all the versions of Node.js that are available.
 
@@ -181,22 +195,9 @@ We currently base all of our projects on the current Long-term Support (LTS) ver
 To install that, run the following:
 
 ```sh
-nvm install lts/carbon
+nvm install --lts
+nvm use --lts
 ```
-
-It's possible you will run into issues involving node versions, like [this readFile one](https://github.com/fraction/oasis/issues/30). If that happens, you could try installing a newer version:
-
-```sh
-nvm install lts/dubnium
-```
-
-Or:
-
-```sh
-nvm install lts/erbium
-```
-
-In case you are curious: carbon, dubnium and erbium each represent different version numbers in node.js. You can read more about them in [this StackOverflow answer](https://stackoverflow.com/questions/50734477/what-is-this-carbon-boron-argon-which-is-used-for-nodejs).
 
 At any point, you can check the versions these are using by running:
 
@@ -207,7 +208,7 @@ nvm ls
 If you need to set a newer version of node as your default, you can run:
 
 ```sh
-nvm alias default 12.8
+nvm alias default 22.3
 ```
 
 We also use [npx](https://github.com/npm/npx) with our kit that is used to create graphics, which will be explained later. In the meantime, make sure it's installed by running:
@@ -320,11 +321,11 @@ Separate credentials are required for setting up our explorers. Instructions for
 
 On your first day, you won't need to worry about setting them up.
 
-# &#9733; Bonus Rounds! &#9733;
+## &#9733; Bonus Rounds! &#9733;
 
 Below are some things you can set up that aren't necessary, but can be very useful.
 
-## Show invisible files
+### Show invisible files
 
 Run this command in your terminal to show hidden files in Finder:
 
@@ -340,7 +341,7 @@ killall Finder
 
 In the next Finder window you open, you'll start seeing hidden files!
 
-## Hub
+### Hub
 
 `hub` is an extension for git that adds extra functionality. [Read more about the perks](https://hub.github.com/).
 
@@ -355,15 +356,3 @@ Next, we'll need to alias `hub` to point to git in your `.bash_profile`. (Don't 
 ```sh
 alias git=hub
 ```
-
-## Pyenv
-
-Pyenv can help manage [python versions](https://github.com/pyenv/pyenv) on your computer. You can install with the following:
-
-```sh
-brew install pyenv
-```
-
-This is optional and depends on the setup on your machine.
-
-You can also download the [Python Wrangler](http://littlecolumns.com/tools/python-wrangler/) to keep track of python versions on your computer.
